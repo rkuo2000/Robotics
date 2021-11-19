@@ -16,7 +16,7 @@ tags: [jekyll, ai]
 使用個人電腦或筆電進行以下步驟：<br />
 以Google Chrome打開網址 **[https://ai2.appinventor.mit.edu](https://ai2.appinventor.mit.edu)**, 即可使用App Inventor 2 開發環境
 
-* 使用 iOS 手機者, 請參考 https://youtu.be/z9YmWY8FeII<br />
+* 使用 iOS 手機者, 請參考 [https://youtu.be/z9YmWY8FeII](https://youtu.be/z9YmWY8FeII)<br />
   步驟如下:
  - iPhone 安裝MIT App Inventor, 啟動後產生QR碼
  - PC Chrome開啟ai2.appinventor.mit.edu之計畫，上方選單選Connect，後選AI companion ，產生QR碼及文字碼
@@ -25,7 +25,7 @@ tags: [jekyll, ai]
 
 ---
 ### 開發 AirDigit 手機應用程式
-1. 先下載 AirDigit.aia (https://drive.google.com/file/d/1bKW38dGtjk3XkeMbiFFcalfw-CyR1rTM/view?usp=sharing)於電腦<br />
+1. 先下載 [AirDigit.aia](https://drive.google.com/file/d/1bKW38dGtjk3XkeMbiFFcalfw-CyR1rTM/view?usp=sharing)於電腦<br />
 2. 於Chrome 中之App Inventor 2頁面, 上方選 **import project(.aia) from my computer**<br />
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/AI2_import_aia.png?raw=true)
 
