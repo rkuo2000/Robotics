@@ -99,9 +99,9 @@ tags: [jekyll, ai]
 
 * 將airdigit_cnn.h5至於~/tf/models
 
-* 執行服務器程式 [airdigit_server.py](https://github.com/rkuo2000/tf/blob/master/airdigit_server.py)<br />
+* 執行服務器程式 [airdigit_cnn.py](https://github.com/rkuo2000/tf/blob/master/airdigit_cnn.py)<br />
 `$ cd ~/tf`<br />
-`$ python airdigit_server.py`<br />
+`$ python airdigit_cnn.py`<br />
 
 ---
 ### 使用手機AirDigit App進行手勢動作辨識
