@@ -64,7 +64,7 @@ tags: [jekyll, ai]
 4. 按下[開始取樣] 開始取樣（接著馬上搖動手機做出手勢動作）
 5. 每個空中手寫數字動作儲存成不同檔案名，需做至少20次以上，
 6. 尋找存有 0_000.csv, ... 0_019.csv, 1_000.csv ...之檔案夾, 將其壓縮成.zip
-7. 上傳至Kaggle Datasets以建立[AirDigit-dataset](https://kaggle.com/airdigit)
+7. 上傳至Kaggle Datasets以建立你的AirDigit資料集: https://kaggle.com/your_name/airdigit
 
 **Note:** 請注意手寫數字之筆畫順序，需固定筆畫順序進行
 
