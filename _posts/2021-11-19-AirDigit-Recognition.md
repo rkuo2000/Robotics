@@ -80,12 +80,15 @@ tags: [jekyll, ai]
 ### 使用電腦啟動 AI辨識服務器
 
 #### 安裝環境
-* 於電腦終端機(Windows使用GitBash或Anaconda之Command, MAC/Linux PC使用Terminal）執行以下命令<br />
+* 於電腦安裝[Annaconda 3](https://www.anaconda.com/products/individual)<br />
+* 啟動**Anaconda Prompt** (MAC or Ubuntu PC 開啟Terminal)<br />
+* 以下安裝python3所之packages 含opencv-python, tensorflow<br />
 `$conda create -n tensor`<br />
 `$conda activate tensor`<br />
 `$conda install matplotlib pillow`<br />
 `$pip install pandas requests`<br />
 `$pip install opencv-python`<br />
+* 檢查tensorflow版本, 並安裝與kaggle平台相同之tensorflow版本<br />
 `$python -c 'import tensorflow as tf; print(tf.__version__)'`<br />
 `$pip install tensorflow`(==2.6.0 to match kaggle version)<br />
 
