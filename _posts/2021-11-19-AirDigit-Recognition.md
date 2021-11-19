@@ -84,6 +84,11 @@ tags: [jekyll, ai]
 `$conda create -n tensor`<br />
 `$conda activate tensor`<br />
 `$cd tensor`<br />
+`$pip install tensorflow`
+`$pip install matplotlib pillow`
+`$pip install pandas requests`
+`$pip install opencv-python`
+`$python -c 'import tensorflow as tf; print(tf.__version__)'`
 
 * 取得程式範例<br />
 `!git clone https://github.com/rkuo2000/tf`<br />
