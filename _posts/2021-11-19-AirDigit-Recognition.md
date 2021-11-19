@@ -114,7 +114,7 @@ tags: [jekyll, ai]
 * 按下**[開始取樣]**收錄動作資料
 
 * 完成後再按下**[傳送資料]**即可由服務器傳回辨識之答案
-
+<br />
 
 *This site was last updated {{ site.time | date: "%B %d, %Y" }}.*
 
