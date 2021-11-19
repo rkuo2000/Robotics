@@ -85,17 +85,17 @@ tags: [jekyll, ai]
 * 啟動**Anaconda Prompt** (MAC or Ubuntu PC 開啟Terminal)<br />
 
 * 以下安裝python3所之packages 含opencv-python, tensorflow<br />
-`$conda create -n tensor`<br />
-`$conda activate tensor`<br />
-`$conda install matplotlib pillow`<br />
-`$pip install pandas requests`<br />
-`$pip install opencv-python`<br />
+`$ conda create -n tensor`<br />
+`$ conda activate tensor`<br />
+`$ conda install matplotlib pillow`<br />
+`$ pip install pandas requests`<br />
+`$ pip install opencv-python`<br />
 * 檢查tensorflow版本, 並安裝與kaggle平台相同之tensorflow版本<br />
-`$python -c 'import tensorflow as tf; print(tf.__version__)'`<br />
-`$pip install tensorflow`==2.6.0 (安裝與kaggle相同之tensorflow版本)<br />
+`$ python -c 'import tensorflow as tf; print(tf.__version__)'`<br />
+`$ pip install tensorflow`==2.6.0 (安裝與kaggle相同之tensorflow版本)<br />
 
 * 取得程式範例<br />
-`!git clone https://github.com/rkuo2000/tf`<br />
+`$ git clone https://github.com/rkuo2000/tf`<br />
 
 * 將airdigit_cnn.h5至於~/tf/models
 
