@@ -105,7 +105,7 @@ tags: [jekyll, ai]
 
 ---
 ### 使用手機AirDigit App進行手勢動作辨識
-<p align="center"><img src="https://github.com/rkuo2000/Robotics/blob/gh-pages/images/AirDigit_app.png?raw=true"></p>
+<p align="center"><img src="https://github.com/rkuo2000/Robotics/blob/gh-pages/images/AirDigit_app.png?raw=true"></p><br />
 
 * 讓電腦與手機連到同一網路 (可由手機開熱點分享給電腦)
 
@@ -114,8 +114,6 @@ tags: [jekyll, ai]
 * 按下**[開始取樣]**收錄動作資料
 
 * 完成後再按下**[傳送資料]**即可由服務器傳回辨識之答案
-
-
 
 
 *This site was last updated {{ site.time | date: "%B %d, %Y" }}.*
