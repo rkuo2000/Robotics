@@ -70,7 +70,7 @@ tags: [jekyll, ai]
 
 ---
 ### 於Kaggle平台使用資料集訓練AI模型
-**[airdigit-cnn](https://kaggle.com/airdigt-cnn)**
+**[airdigit-cnn](https://kaggle.com/rkuo2000/airdigt-cnn)** : https://kaggle.com/your_name/airdigit-cnn
 使用CNN神經網路模型訓練辨識空中手寫數字0~9:
 1. 於電腦上打開kaggle.com網頁
 2. 於Kaggle上執行AirDigit-CNN進行模型訓練（點選上方Run-All來執行所有程式）
