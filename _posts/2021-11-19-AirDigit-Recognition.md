@@ -90,7 +90,7 @@ tags: [jekyll, ai]
 `$pip install opencv-python`<br />
 * 檢查tensorflow版本, 並安裝與kaggle平台相同之tensorflow版本<br />
 `$python -c 'import tensorflow as tf; print(tf.__version__)'`<br />
-`$pip install tensorflow`(==2.6.0 to match kaggle version)<br />
+`$pip install tensorflow`==2.6.0 (安裝與kaggle相同之tensorflow版本)<br />
 
 * 取得程式範例<br />
 `!git clone https://github.com/rkuo2000/tf`<br />
@@ -105,7 +105,9 @@ tags: [jekyll, ai]
 ### 使用手機AirDigit App進行手勢動作辨識
 <p align="center"><img src="https://github.com/rkuo2000/Robotics/blob/gh-pages/images/AirDigit_app.png?raw=true"></p>
 
-* 須設定PC服務器之IP位址（並須與手機同一個網路,可由手機開熱點分享給跑AI辨識服務器的PC)
+* 讓電腦與手機連到同一網路 (可由手機開熱點分享給電腦)
+
+* [URL]輸入電腦的IP位址 (例如: 192.168.43.123:5000/predict) 
 
 * 按下**[開始取樣]**收錄動作資料
 
