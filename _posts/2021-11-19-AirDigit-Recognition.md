@@ -83,7 +83,7 @@ tags: [jekyll, ai]
 * 於電腦終端機(Windows使用GitBash或Anaconda之Command, MAC/Linux PC使用Terminal）執行以下命令<br />
 `$conda create -n tensor`<br />
 `$conda activate tensor`<br />
-`$cd tensor`<br />
+`$conda install matplotlib pillow`<br />
 `$pip install pandas requests`<br />
 `$pip install opencv-python`<br />
 `$python -c 'import tensorflow as tf; print(tf.__version__)'`<br />
