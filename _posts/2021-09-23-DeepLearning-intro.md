@@ -7,8 +7,6 @@ tags: [jekyll, ai]
 ---
 
 深度學習（Deep Learning）是機器學習的分支，一種以人工神經網路為架構，對資料進行表徵學習的演算法
-運用智慧型手機, 利用紀錄手機之三軸加速器可將空中手寫數字或其他手勢動作儲存加速器之資料, 透過Kaggle平台訓練AI模型,
-再安裝於電腦執行辨識, 由手機應用程式紀錄動作傳送至PC進行辨識。
 
 ---
 ## 硬體加速器
@@ -41,6 +39,7 @@ tags: [jekyll, ai]
   </tr>
 </table>
 
+---
 ## [2021 最酷的十個 AI加速晶片](https://www.crn.com/slide-shows/components-peripherals/the-10-coolest-ai-chips-of-2021-so-far-/1)
 * Ambarella CV52S
 * Atlazo AZ-N1
@@ -78,6 +77,7 @@ meaning that one ExaPOD alone will deliver a maximum theoretical performance of 
   </tr>
 </table>
 
+---
 ## Google TPU
 ### [TPU System Architecture](https://cloud.google.com/tpu/docs/system-architecture-tpu-vm)
 #### Cloud TPU虛擬機
