@@ -161,7 +161,7 @@ meaning that one ExaPOD alone will deliver a maximum theoretical performance of 
 
 ---
 ### [Unity ML-agents](https://unity.com/products/machine-learning-agents)
-![](https://unity.com/sites/default/files/styles/16_9_s_scale_width/public/2020-05/Complex-AI-environments_0.jpg?itok=oSensH5M)
+![](https://unity.com/sites/default/files/styles/16_9_s_scale_width/public/2020-05/Complex-AI-environments_0.jpg?itok=oSensH5M)<br />
 **Blog**: [A hands-on introduction to deep reinforcement learning using Unity ML-Agents](https://medium.com/coder-one/a-hands-on-introduction-to-deep-reinforcement-learning-using-unity-ml-agents-e339dcb5b954)<br />
 ![](https://miro.medium.com/max/600/0*ojKXHwzo_a-rjwpz.gif)
 <br />
