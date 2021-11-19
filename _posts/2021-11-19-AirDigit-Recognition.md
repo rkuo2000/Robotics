@@ -81,7 +81,9 @@ tags: [jekyll, ai]
 
 #### 安裝環境
 * 於電腦安裝[Annaconda 3](https://www.anaconda.com/products/individual)<br />
+
 * 啟動**Anaconda Prompt** (MAC or Ubuntu PC 開啟Terminal)<br />
+
 * 以下安裝python3所之packages 含opencv-python, tensorflow<br />
 `$conda create -n tensor`<br />
 `$conda activate tensor`<br />
