@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Autonomous Driving
+title: 自動駕駛技術介紹
 author: [Richard Kuo]
 category: [Lecture]
 tags: [jekyll, ai]
