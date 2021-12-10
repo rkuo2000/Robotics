@@ -26,6 +26,12 @@ Quadruped Robot Introduction includes Petoti Bittle, PIPPY, BeeDog, SpotMicro, U
 <iframe width="854" height="480" src="https://www.youtube.com/embed/S-uzWG9Z-5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
+### Stanford Pupper
+**[Stanford Pupper](https://www.ruten.com.tw/item/show?22126526576318)**<br>
+
+![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/StanfordPupper.jpg?raw=true)
+
+---
 ### [Unitree-Go1](https://www.unitree.com/products/go1/)
 <iframe width="854" height="480" src="https://www.youtube.com/embed/a3-JVELVkfc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
