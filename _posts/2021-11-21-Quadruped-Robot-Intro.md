@@ -33,6 +33,8 @@ Quadruped Robot Introduction includes Petoti Bittle, PIPPY, BeeDog, SpotMicro, U
 
 ---
 ### [Unitree-Go1](https://www.unitree.com/products/go1/)
+**[Unitree Pybullet](https://github.com/unitreerobotics/unitree_pybullet)**<br>
+
 <iframe width="854" height="480" src="https://www.youtube.com/embed/a3-JVELVkfc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
