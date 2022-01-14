@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Robot Operating System (ROS)
+title: 機器人作業系統
 author: [Richard Kuo]
 category: [Lecture]
 tags: [jekyll, ai]
 ---
 
-The ROS is a set of software libraries and tools that help you build robot applications.
+The Robot Operating System(ROS) is a set of software libraries and tools that help you build robot applications.
 
 ---
 ## ROS Introduction
@@ -33,6 +33,11 @@ There are several ways to organize nodes, hubs, messages and topics in a distrib
 
 ![](https://d3i71xaburhd42.cloudfront.net/402e1ddcb55d584722bbe32f67a87a905f64afb0/7-Figure4-1.png)
 (a) Direct node type oriented communication; (b) State collector hub aided node type oriented communication
+
+**TurtleBot**<br>
+![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/ROS%20Robot%20System%20Diagram.png?raw=true)
+![](https://emanual.robotis.com/assets/images/platform/turtlebot3/overview/turtlebot3_with_logo.png)
+[TurtleBot3 手冊](https://github.com/ROBOTIS-GIT/turtlebot3)<br>
 
 ---
 ### [ROS](https://www.ros.org/)
