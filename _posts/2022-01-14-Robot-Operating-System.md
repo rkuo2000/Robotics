@@ -230,7 +230,7 @@ GazeboCircuit2TurtlebotLidar-v0
 
 ![](https://github.com/erlerobot/gym-gazebo/blob/master/imgs/GazeboCircuit2TurtlebotLidar-v0.png?raw=true)
 
-GazeboCircuitTurtlebotLidar-v0.png
+GazeboCircuitTurtlebotLidar-v0
 
 ![](https://github.com/erlerobot/gym-gazebo/blob/master/imgs/GazeboCircuitTurtlebotLidar-v0.png?raw=true)
 
