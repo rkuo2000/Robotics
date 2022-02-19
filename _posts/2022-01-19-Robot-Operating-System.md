@@ -215,7 +215,7 @@ sudo apt install --no-install-recommends -y \
 ```
 mkdir -p ~/ros2_galactic/src
 cd ~/ros2_galactic
-wget https://raw.githubusercontent.com/ros2/ros2/foxy/ros2.repos
+wget https://raw.githubusercontent.com/ros2/ros2/galactic/ros2.repos
 vcs import src < ros2.repos
 ```
 
