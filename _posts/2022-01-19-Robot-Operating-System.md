@@ -154,9 +154,9 @@ Installation successful!
 * Run **ubuntu2004.exe** as adminstrator(管理者權限) to install Anaconda3 <br>
 ```
 cd /tmp
-curl –O https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
-sha256sum Anaconda3–2020.02–Linux–x86_64.sh
-bash Anaconda3-2020.02-Linux-x86_64.sh
+curl –O https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
+sha256sum Anaconda3–2021.11–Linux–x86_64.sh
+bash Anaconda3-2021.11-Linux-x86_64.sh
 ```
 
 ---
@@ -177,7 +177,6 @@ sudo apt update && sudo apt install -y \
   cmake \
   git \
   libbullet-dev \
-  python3-colcon-common-extensions \
   python3-flake8 \
   python3-pip \
   python3-pytest-cov \
@@ -187,6 +186,7 @@ sudo apt update && sudo apt install -y \
   wget
 # install some pip packages needed for testing
 python3 -m pip install -U \
+  colcon-common-extensions \
   argcomplete \
   flake8-blind-except \
   flake8-builtins \
