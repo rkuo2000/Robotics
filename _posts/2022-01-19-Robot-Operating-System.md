@@ -235,6 +235,7 @@ pip3 install shiboken2
 sudo apt install libeigen3-dev
 sudo cp -rf /usr/include/eigen3/Eigen /usr/local/include
 sudo apt install liblog4cxx-dev
+sudo apt install libacl1-dev
 ```
 
 * Build the code in the workspace (~1.8 hours)
