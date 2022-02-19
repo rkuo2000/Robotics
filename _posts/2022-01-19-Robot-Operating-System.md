@@ -232,6 +232,8 @@ conda install curl cmake
 pip3 install catkin_pkg empy lark
 sudo apt remove shiboken2 libshiboken2-dev libshiboken2-py3-5.14
 pip3 install shiboken2
+sudo apt install libeigen3-dev
+sudo cp -rf /usr/include/eigen3/Eigen /usr/local/include
 ```
 
 * Build the code in the workspace (~1.8 hours)
