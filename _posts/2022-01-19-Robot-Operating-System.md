@@ -186,7 +186,7 @@ sudo apt update && sudo apt install -y \
   python3-pytest-cov \
   python3-rosdep \
   python3-setuptools \
-  python3-vcstools \
+  python3-vcstool \
   wget
 # install some pip packages needed for testing
 python3 -m pip install -U \
