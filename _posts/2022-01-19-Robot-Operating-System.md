@@ -164,7 +164,7 @@ conda activate
 
 ---
 ### Ubuntu 20.04
-**[Building ROS 2 on Ubuntu Linux](https://docs.ros.org/en/foxy/Installation/Ubuntu-Development-Setup.html)**<br>
+**[Building ROS 2 on Ubuntu Linux](https://docs.ros.org/en/galactic/Installation/Ubuntu-Development-Setup.html)**<br>
 `sudo apt update && sudo apt install curl gnupg2 lsb-release`<br>
 `sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg`<br>
 
