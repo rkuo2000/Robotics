@@ -180,6 +180,7 @@ sudo apt update && sudo apt install -y \
   cmake \
   git \
   libbullet-dev \
+  python3-colcon-common-extensions \
   python3-flake8 \
   python3-pip \
   python3-pytest-cov \
@@ -189,7 +190,6 @@ sudo apt update && sudo apt install -y \
   wget
 # install some pip packages needed for testing
 python3 -m pip install -U \
-  colcon-common-extensions \
   argcomplete \
   flake8-blind-except \
   flake8-builtins \
@@ -229,9 +229,9 @@ rosdep install --from-paths src --ignore-src -y --skip-keys "fastcdr rti-connext
 * Packages for build failures
 ```
 conda install curl cmake
-pip install catkin_pkg empy lark
+pip3 install catkin_pkg empy lark
 sudo apt remove shiboken2 libshiboken2-dev libshiboken2-py3-5.14
-pip install shiboken2
+pip3 install shiboken2
 ```
 
 * Build the code in the workspace (~1.8 hours)
