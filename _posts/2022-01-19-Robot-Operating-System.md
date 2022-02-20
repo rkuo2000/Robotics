@@ -154,7 +154,7 @@ Installation successful!
 * Run **ubuntu2004.exe** as adminstrator(管理者權限) to install Anaconda3 <br>
 ```
 cd /tmp
-curl –O https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
+curl -O https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
 sha256sum Anaconda3–2020.02–Linux–x86_64.sh
 bash Anaconda3-2020.02-Linux-x86_64.sh
 cd ~
