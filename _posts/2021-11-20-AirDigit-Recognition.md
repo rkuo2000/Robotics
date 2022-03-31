@@ -16,7 +16,7 @@ tags: [jekyll, ai]
 ---
 ## 手機 App開發平台: MIT App Inventor 2
 ### Android 系統
-以Google Chrome瀏覽器打開網址 **[https://ai2.appinventor.mit.edu](https://ai2.appinventor.mit.edu)**, 即可使用App Inventor 2 開發環境
+以Google Chrome瀏覽器打開網址 **[http://ai2.appinventor.mit.edu](http://ai2.appinventor.mit.edu)**, 即可使用App Inventor 2 開發環境
 
 ### iOS 系統
 * 操作步驟請參考 [https://youtu.be/z9YmWY8FeII](https://youtu.be/z9YmWY8FeII)<br />
