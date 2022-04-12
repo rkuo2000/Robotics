@@ -468,7 +468,6 @@ sudo apt install python3-rosdep python3-rosinstall python3-rosinstall-generator 
 ```
 8. Initialize rosdep
 ```
-sudo apt install python3-rosdep
 sudo rosdep init
 rosdep update
 ```
