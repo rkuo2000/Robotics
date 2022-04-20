@@ -334,7 +334,6 @@ It is integrated with the python project [pyLiDAR-SLAM](https://github.com/Kitwa
   
 ---
 ## cm-Level GPS positioning
-**SparkFun原廠 GPS-RTK Board - NEO-M8P-2 (GPS-15005)**<br>
 ![](https://img.ruten.com.tw/s1/9/58/23/21006055090211_380.jpg)
 <iframe width="826" height="465" src="https://www.youtube.com/embed/28_YpdN8Thw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
