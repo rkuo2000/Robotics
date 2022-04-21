@@ -122,8 +122,6 @@ Open Source Autopilotfor Drone Developers<br>
 * [pid.ino](https://github.com/rkuo2000/arduino/blob/master/examples/Robot/Esp32Copter/pid.ino)<br>
 * [rc.ino](https://github.com/rkuo2000/arduino/blob/master/examples/Robot/Esp32Copter/rc.ino)<br>
 
-### [HomeWork]: Draw flow-chart of Esp32Copter.ino
-
 <br />
 <br />
 
