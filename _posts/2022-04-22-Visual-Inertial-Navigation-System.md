@@ -317,8 +317,8 @@ Images(a,b) are LBD descriptor matching scenes - the line of the same color is t
 [Leveraging Structural Information to Improve Point Line Visual-Inertial Odometry](https://arxiv.org/pdf/2105.04064.pdf)
 ![](https://ai2-s2-public.s3.amazonaws.com/figures/2017-08-08/b770639b633bb6469a13805ea28ba6626dc682ce/1-Figure1-1.png)
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/PLS-VIO_benchmark.png?raw=true)
-[Code](https://github.com/xubogithub/Structural-and-Non-structural-line)<br>
-![](https://github.com/xubogithub/Structural-and-Non-structural-line/raw/master/bin/demo/simulate_line.gif)
+[Code](https://github.com/rkuo2000/Structural-and-Non-structural-line)<br>
+![](https://github.com/rkuo2000/Structural-and-Non-structural-line/raw/master/bin/demo/simulate_line.gif)
 
 --- 
 ### GPS-VIO
