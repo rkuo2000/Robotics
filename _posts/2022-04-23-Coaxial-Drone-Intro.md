@@ -6,7 +6,7 @@ category: [Lecture]
 tags: [jekyll, ai]
 ---
 
-Introduction to MonoSpinner, and Coaxial Drones.
+Introduction to MonoSpinner, Coaxial Drones, Single Propeller Drone, Coaxial motor control.
 
 ---
 ## MonoSpinner
