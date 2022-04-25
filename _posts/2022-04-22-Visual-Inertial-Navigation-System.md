@@ -299,7 +299,7 @@ source devel/setup.bash
 
 ---
 ### Improved VINS-Mono
-[Robust Visual-Inertial Navigation System for Low Precision Sensors under Indoor and Outdoor Environments]()
+[Robust Visual-Inertial Navigation System for Low Precision Sensors under Indoor and Outdoor Environments](https://www.mdpi.com/2072-4292/13/4/772/pdf)
 ![](https://www.researchgate.net/publication/349465261/figure/fig1/AS:993333975474176@1613840683010/The-improved-visual-inertial-navigation-system-VINS-mono-system-architecture-framework.png)
 ![](https://www.researchgate.net/publication/349465261/figure/tbl2/AS:993333975449602@1613840683457/Trajectory-accuracy-of-the-improved-VINS-mono-EuRoc-Dataset.png)
 
