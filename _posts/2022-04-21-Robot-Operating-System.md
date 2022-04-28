@@ -266,7 +266,7 @@ echo $ROS_PACKAGE_PATH
 1. ros master
 ```
 source_ros1
-rosrun
+roscore
 ```
 
 2. turtlesim node
