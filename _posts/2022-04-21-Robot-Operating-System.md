@@ -98,9 +98,9 @@ OMG Data Distribution Service interoperability
 * Twin Oaks Software
 
 ---
-## Ubuntu20.04 on Win10
+## Ubuntu20.04 on Windows
 
-### Windows10 
+### Windows 10/11 
 *run WSL to install Ubuntu 20.04*<br>
 
 **For Disk C:**
