@@ -246,7 +246,7 @@ cd ../
 catkin build
 source devel/setup.bash
 ```
-<span style="color: red;">*The build took ~30 hours on Ubuntu20.04 (i7-920 @2.67GHz) !!!*</span><br>
+<span style="color: red">*The build took ~30 hours on i7-920 @2.67GHz !!!*</span><br>
 
 **VI-Car**<br>
 ![](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/raw/master/support_files/image/car_gif.gif)
@@ -327,6 +327,7 @@ source devel/setup.bash
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/PL-VINS_benchmark.png?raw=true)
 **[Code](https://github.com/rkuo2000/PL-VINS)**<br>
 ![](https://github.com/cnqiangfu/PL-VINS/raw/master/support_files/plvins-vinsmono.png)
+<span style="color: red">*The build took ~37 hours on i7-920 @2.67GHz !!!*</span><br>
 
 ---
 ### IPL-VIO
