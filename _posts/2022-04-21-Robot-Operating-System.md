@@ -307,32 +307,53 @@ rostopic list
 ```
 source_ros1
 mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
+```
+* Initialize worksapce
+```
+cd ~/catkin_ws
+catkin init
+```
+* If you can not initialize to ~/catkin, then 
+`rm -rf ~/.catkin_tools`<br>
 
-cd ..
-catkin config --extend /opt/ros/noetic
-
+* Create package
+```
 cd src
-catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+catkin_create_pkg beginner_tutorials std_msgs rospy roscpp --rosdistro noetic
+```
 
+* Create talker.cpp & listener.cpp
+```
 cd beginner_tutorials/src
 wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/roscpp_tutorials/talker/talker.cpp
 wget https://raw.github.com/ros/ros_tutorials/kinetic-devel/roscpp_tutorials/listener/listener.cpp
-
+```
+* Modify CMakeLists.txt for talker & listener
+```
 cd ..
 mv CMakeLists.txt CMakeLists.txt.0
 wget https://raw.github.com/ros/catkin_tutorials/master/create_package_pubsub/catkin_ws/src/beginner_tutorials/CMakeLists.txt
-
-cd src
-mkdir srv
-roscp rospy_tutorials AddTwoInts.srv srv/AddTwoInts.srv
-
+```
+* Create messages & services
+```
 mkdir msg
 echo "int64 num" > msg/Num.msg
 
-cd ../..
-catkin build  # catkin_make
+mkdir srv
+roscp rospy_tutorials AddTwoInts.srv srv/AddTwoInts.srv
 ```
+* Using catkin_make to compile
+```
+cd ~/catkin_ws
+catkin_make
+```
+* Using catkin build to compile
+```
+cd ~/catkin_ws
+catkin build
+```
+
+**Exercise: Talker & Listener**<br>
 1. ROS master
 ```
 source_ros1 
