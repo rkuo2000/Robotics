@@ -142,22 +142,14 @@ Rename-Item .\Ubuntu.appx Ubuntu.zip
 Expand-Archive .\Ubuntu.zip -Verbose
 ```
 
-* Run **ubuntu2004.exe** as adminstrator(管理者權限) to register user<br>
+* Open Folder D:\WSL\Ubuntu, run **ubuntu_2004.2021.825.0_x64.appx** as adminstrator(管理者權限)<br>
 ```
 installing, this may take a few minutes...
 Enter new UNIX username: yourname 
-Enter new UNIX password: ****
+Enter new UNIX password: **** 
 Retype new UNIX password: ****
 passwd: password updated successfully
 Installation successful!
-```
-
-* Run **ubuntu2004.exe** as adminstrator(管理者權限) to install Anaconda3 <br>
-```
-cd /tmp
-curl –O https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh
-sha256sum Anaconda3–2020.02–Linux–x86_64.sh
-bash Anaconda3-2020.02-Linux-x86_64.sh
 ```
 
 ---
