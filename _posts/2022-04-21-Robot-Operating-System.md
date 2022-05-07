@@ -170,9 +170,8 @@ sudo apt upgrade
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/MobaXterm_logo.png?raw=true)
 
 * Download & Install [MobaXterm](https://mobaxterm.mobatek.net/download.html)
-* [MobaXterm live demo](https://mobaxterm.mobatek.net/demo.html)
+* Run MobaXterm to *find DISPLAY ip-address from X-server icon at upper-right corner*
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/MobaXterm_Xserver_listening_DISPLAYS.png?raw=true)
-*DISPLAY ip-address shown at X-server icon !*
 
 * set DISPLAY ip-address in ~/.bashrc<br>
 `nano ~/.bashrc` # add 3 lines<br>
