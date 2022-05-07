@@ -125,11 +125,13 @@ wsl --install -d ubuntu
 ```
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
+* Create D:\WSL directory
 ```
 Set-Location D:
 New-Item WSL -ItemType Directory
 Set-Location .\WSL
 ```
+* Download Ubuntu.appx 
 ```
 Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
 ```
@@ -144,13 +146,13 @@ Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBas
 > OpenSUSE Leap 42 - https://aka.ms/wsl-opensuse-42<br>
 > SLES - https://aka.ms/wsl-sles-12<br>
 
-* rename & unzip 
+* rename Ubuntu.appx to .zip & unzip it
 ```
 Rename-Item .\Ubuntu.appx Ubuntu.zip
 Expand-Archive .\Ubuntu.zip -Verbose
 ```
 
-* Open Folder D:\WSL\Ubuntu, run **ubuntu_2004.2021.825.0_x64.appx** as adminstrator(管理者權限)<br>
+* Go to Folder D:\WSL\Ubuntu, run **ubuntu_2004.2021.825.0_x64.appx** as adminstrator(管理者權限)<br>
 ```
 installing, this may take a few minutes...
 Enter new UNIX username: yourname 
@@ -159,19 +161,19 @@ Retype new UNIX password: ****
 passwd: password updated successfully
 Installation successful!
 ```
-* Update & Upgrade
+* Ubuntu update & upgrade
 ```
 sudo apt update
 sudo apt upgrade
 ```
 
-**If forgot user passwd, then the follwing will reset user password:**
+**If forgot user passwd, then:**
 * run **Command-Prompt**
   `ubuntu config --default-user root`<br>
 * run **Ubuntu**
-  `passwd usrname`<br>
+  `passwd username`<br>
 * **Command-Prompt**
-  `ubuntu config --default-user usrname`<br>
+  `ubuntu config --default-user username`<br>
 
 ---
 ### Xserver for Win11 display
