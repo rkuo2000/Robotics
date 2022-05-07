@@ -108,8 +108,16 @@ OMG Data Distribution Service interoperability
 *run WSL to install Ubuntu 20.04*<br>
 
 **For Disk C:**
+[WSL 的基本命令](https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands)<br>
 * Open **PowerShell** as administrator (管理者權限)<br>
-`wsl --install -d ubuntu`<br>
+```
+wsl --status
+wsl --update
+wsl --shutdown
+```
+```
+wsl --install -d ubuntu
+```
 
 [Installing WSL Distro to a different/custom location](https://vpraharsha3.medium.com/installing-wsl-distro-to-a-different-custom-location-30d101f04113)<br> 
 **For Disk D:** 
