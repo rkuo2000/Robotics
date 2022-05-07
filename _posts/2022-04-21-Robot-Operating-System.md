@@ -169,11 +169,11 @@ sudo apt upgrade
 
 **If forgot user passwd, then:**
 * run **Command-Prompt**
-  `ubuntu config --default-user root`<br>
+`ubuntu config --default-user root`<br>
 * run **Ubuntu**
-  `passwd username`<br>
+`passwd username`<br>
 * **Command-Prompt**
-  `ubuntu config --default-user username`<br>
+`ubuntu config --default-user username`<br>
 
 ---
 ### Xserver for Win11 display
