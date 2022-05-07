@@ -176,11 +176,10 @@ sudo apt upgrade
 
 * set DISPLAY ip-address in ~/.bashrc<br>
 `nano ~/.bashrc` #edit .bashrc to add the following 3 lines
-```
-export DISPLAY=**192.168.0.20:0**<br>
-export LIBGL_ALWAYS_INDIRECT=<br>
-export LIBGL_ALWAYS_SOFTWARE=1<br>
-```
+<br>
+&emsp;export DISPLAY=**192.168.0.20:0**<br>
+&emsp;export LIBGL_ALWAYS_INDIRECT=<br>
+&emsp;export LIBGL_ALWAYS_SOFTWARE=1<br>
 
 ---
 ## ROS
