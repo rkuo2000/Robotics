@@ -152,6 +152,14 @@ passwd: password updated successfully
 Installation successful!
 ```
 
+**If forgot user passwd, then the follwing will reset user password:**
+* run Command-Prompt
+  `ubuntu config --default-user root`<br>
+* run Ubuntu application
+  `passwd usrname`<br>
+* Command-Prompt
+  `ubuntu config --default-user usrname`<br>
+
 ---
 ### Xserver for Win11 display
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/MobaXterm_logo.png?raw=true)
