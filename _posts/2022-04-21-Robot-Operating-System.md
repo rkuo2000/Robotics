@@ -167,7 +167,13 @@ sudo apt update
 sudo apt upgrade
 ```
 
-**If forgot user passwd, then:**
+---
+### How to move existing WSL installation to D: drive
+**export for backup or move to D: drive**
+<iframe width="989" height="556" src="https://www.youtube.com/embed/ON_dPAO4KZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+### Forgot User Password
 * run **Command-Prompt**<br>
 `ubuntu config --default-user root`<br>
 * run **Ubuntu**<br>
