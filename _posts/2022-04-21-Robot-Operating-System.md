@@ -313,7 +313,7 @@ mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws
 catkin init
 ```
-* If you can not initialize workspace to ~/catkin_ws, then
+* If you can not initialize workspace to ~/catkin_ws, then you need <br>
   `rm -rf ~/.catkin_tools`<br>
 
 * Create package
