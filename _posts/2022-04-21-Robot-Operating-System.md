@@ -174,11 +174,10 @@ sudo apt upgrade
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/MobaXterm_Xserver_listening_DISPLAYS.png?raw=true)
 
 * Find DISPLAY ip-address at MobaXterm X-Server icon, then add it into ~/.bashrc
-
-`nano ~/.bashrc`<br>
-export DISPLAY=192.168.0.21:0<br>
-export LIBGL_ALWAYS_INDIRECT=<br>
-export LIBGL_ALWAYS_SOFTWARE=1<br>
+  `nano ~/.bashrc`<br>
+  export DISPLAY=192.168.0.21:0<br>
+  export LIBGL_ALWAYS_INDIRECT=<br>
+  export LIBGL_ALWAYS_SOFTWARE=1<br>
 
 ---
 ## ROS
