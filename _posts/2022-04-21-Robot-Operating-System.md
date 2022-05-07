@@ -184,7 +184,7 @@ sudo apt upgrade
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/MobaXterm_Xserver_listening_DISPLAYS.png?raw=true)
 
 * set DISPLAY ip-address in ~/.bashrc<br>
-`nano ~/.bashrc` # add 3 lines<br>
+`nano ~/.bashrc` # add 3 lines below<br>
 &ensp;export DISPLAY=**192.168.0.20:0**<br>
 &ensp;export LIBGL_ALWAYS_INDIRECT=<br>
 &ensp;export LIBGL_ALWAYS_SOFTWARE=1<br>
