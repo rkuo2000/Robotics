@@ -168,11 +168,11 @@ sudo apt upgrade
 ```
 
 **If forgot user passwd, then:**
-* run **Command-Prompt**
+* run **Command-Prompt**<br>
 `ubuntu config --default-user root`<br>
-* run **Ubuntu**
+* run **Ubuntu**<br>
 `passwd username`<br>
-* **Command-Prompt**
+* **Command-Prompt**<br>
 `ubuntu config --default-user username`<br>
 
 ---
