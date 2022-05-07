@@ -102,19 +102,19 @@ OMG Data Distribution Service interoperability
 * Twin Oaks Software
 
 ---
-## Ubuntu20.04 on Windows
+## Ubuntu20.04 on Windows 10/11
 
-### Windows 10/11 
-*run WSL to install Ubuntu 20.04*<br>
-
-**For Disk C:**
+### WSL install Ubuntu20.04
 [WSL 的基本命令](https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands)<br>
+
 * Open **PowerShell** as administrator (管理者權限)<br>
 ```
 wsl --status
 wsl --update
 wsl --shutdown
 ```
+
+**For Disk C:**
 ```
 wsl --install -d ubuntu
 ```
@@ -166,11 +166,11 @@ sudo apt upgrade
 ```
 
 **If forgot user passwd, then the follwing will reset user password:**
-* run Command-Prompt
+* run **Command-Prompt**
   `ubuntu config --default-user root`<br>
-* run Ubuntu application
+* run **Ubuntu**
   `passwd usrname`<br>
-* Command-Prompt
+* **Command-Prompt**
   `ubuntu config --default-user usrname`<br>
 
 ---
