@@ -151,6 +151,11 @@ Retype new UNIX password: ****
 passwd: password updated successfully
 Installation successful!
 ```
+* Update & Upgrade
+```
+sudo apt update
+sudo apt upgrade
+```
 
 **If forgot user passwd, then the follwing will reset user password:**
 * run Command-Prompt
