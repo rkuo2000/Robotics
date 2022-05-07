@@ -333,7 +333,7 @@ cd ..
 mv CMakeLists.txt CMakeLists.txt.0
 wget https://raw.github.com/ros/catkin_tutorials/master/create_package_pubsub/catkin_ws/src/beginner_tutorials/CMakeLists.txt
 ```
-* Create messages and services
+* Create messages & services
 ```
 mkdir msg
 echo "int64 num" > msg/Num.msg
