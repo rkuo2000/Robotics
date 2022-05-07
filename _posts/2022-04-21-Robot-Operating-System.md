@@ -321,7 +321,6 @@ catkin init
 cd src
 catkin_create_pkg beginner_tutorials std_msgs rospy roscpp --rosdistro noetic
 ```
-
 * Create talker.cpp & listener.cpp
 ```
 cd beginner_tutorials/src
@@ -338,7 +337,6 @@ wget https://raw.github.com/ros/catkin_tutorials/master/create_package_pubsub/ca
 ```
 mkdir msg
 echo "int64 num" > msg/Num.msg
-
 mkdir srv
 roscp rospy_tutorials AddTwoInts.srv srv/AddTwoInts.srv
 ```
