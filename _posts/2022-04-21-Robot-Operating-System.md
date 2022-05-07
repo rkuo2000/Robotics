@@ -223,7 +223,7 @@ rosrun turtlesim turtle_teleop_key
 ```
 5. print a publishing topic
 ```
-souce_ros1
+source_ros1
 rostopic echo /turtle1/cmd_vel
 ```
 6. Make the turtle move in a circle (Ctrl-C to stop)
