@@ -175,8 +175,7 @@ sudo apt upgrade
 *DISPLAY ip-address shown at X-server icon !*
 
 * set DISPLAY ip-address in ~/.bashrc<br>
-`nano ~/.bashrc` #edit .bashrc to add the following 3 lines
-<br>
+`nano ~/.bashrc` #edit .bashrc to add the following 3 lines<br>
 &emsp;export DISPLAY=**192.168.0.20:0**<br>
 &emsp;export LIBGL_ALWAYS_INDIRECT=<br>
 &emsp;export LIBGL_ALWAYS_SOFTWARE=1<br>
