@@ -160,9 +160,9 @@ Installation successful!
 * [MobaXterm live demo](https://mobaxterm.mobatek.net/demo.html)
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/MobaXterm_Xserver_listening_DISPLAYS.png?raw=true)
 
-* `nano ~/.bashrc` to add the following:
+* `nano ~/.bashrc` to add the following: (check DISPLAY ip-address of MobaXterm X server)
 ```
-export DISPLAY=$(ip route list default | awk '{print $3}'):0
+export DISPLAY=192.168.0.21:0 # set to X server DISPLAY ip address
 export LIBGL_ALWAYS_INDIRECT=
 export LIBGL_ALWAYS_SOFTWARE=1
 ```
