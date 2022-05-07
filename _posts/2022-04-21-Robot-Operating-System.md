@@ -446,16 +446,15 @@ sudo apt-get install python3-pip
 pip -V
 pip install -U colcon-common-extensions
 ```
-
 ```
 echo "alias source_ros2=\"source /opt/ros/$ROS2_DISTRO/setup.bash\"" >> ~/.bashrc
 source ~/.bashrc
 ```
-
 ```
 source_ros2
 ```
 
+* test mutlicasting
 ```
 ros2 multicast receive
 ```
