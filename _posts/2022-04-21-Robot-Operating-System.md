@@ -184,7 +184,6 @@ sudo apt-get install libeigen3-dev libboost-all-dev libceres-dev
 **Environment setup**<br>
 ```
 echo "alias source_ros1=\"source /opt/ros/$ROS1_DISTRO/setup.bash\"" >> ~/.bashrc
-echo "alias source_devel=\"source devel/setup.bash\"" >> ~/.bashrc
 source ~/.bashrc
 ```
 
@@ -443,12 +442,13 @@ export ROS2_DISTRO=galactic # dashing=18.04, galactic=20.04
 sudo apt install ros-$ROS2_DISTRO-desktop
 sudo apt-get install ros-$ROS2_DISTRO-ros2bag ros-$ROS2_DISTRO-rosbag2* # rosbag utilities (seems to be separate)
 sudo apt-get install libeigen3-dev libboost-all-dev libceres-dev
+sudo apt-get install python3-pip
+pip -V
 pip install -U colcon-common-extensions
 ```
 
 ```
 echo "alias source_ros2=\"source /opt/ros/$ROS2_DISTRO/setup.bash\"" >> ~/.bashrc
-echo "alias source_install=\"source install/setup.bash\"" >> ~/.bashrc
 source ~/.bashrc
 ```
 
