@@ -270,57 +270,6 @@ rostopic pub -r 1 /turtle1/cmd_vel geometry_msgs/Twist -- '[2.0, 0.0, 0.0]' '[0.
 ```
 
 ---
-### ROS USB-Cam
-`sudo apt-get install ros-noetic-usb-cam`<br>
-
-1. run master
-```
-source_ros1
-roscore
-```
-2. launch usb_cam
-```
-source_ros1
-roslaunch usb_cam usb_cam-test.launch
-```
-3. topic list
-```
-source_ros1
-rostopic list
-```
-> /image_view/output<br>
-> /image_view/parameter_descriptions<br>
-> /image_view/parameter_updates<br>
-> /rosout<br>
-> /rosout_agg<br>
-> /usb_cam/camera_info<br>
-> /usb_cam/image_raw<br>
-> /usb_cam/image_raw/compressed<br>
-> /usb_cam/image_raw/compressed/parameter_descriptions<br>
-> /usb_cam/image_raw/compressed/parameter_updates<br>
-> /usb_cam/image_raw/compressedDepth<br>
-> /usb_cam/image_raw/compressedDepth/parameter_descriptions<br>
-> /usb_cam/image_raw/compressedDepth/parameter_updates<br>
-> /usb_cam/image_raw/theora<br>
-> /usb_cam/image_raw/theora/parameter_descriptions<br>
-> /usb_cam/image_raw/theora/parameter_updates<br>
-
-**NODES**:<br>
->  image_view (image_view/image_view)<br>
->  usb_cam (usb_cam/usb_cam_node)<br>
-
-**PARAMETERS**<br>
-* /image_view/autosize: True
-* /rosdistro: noetic
-* /rosversion: 1.15.14
-* /usb_cam/camera_frame_id: usb_cam
-* /usb_cam/image_height: 480
-* /usb_cam/image_width: 640
-* /usb_cam/io_method: mmap
-* /usb_cam/pixel_format: yuyv
-* /usb_cam/video_device: /dev/video0
-
----
 ## [ROS Tutorials](https://wiki.ros.org/ROS/Tutorials/)
 ### Navigating the ROS Filesystem
 `sudo apt-get install ros-noetic-ros-tutorials`<br>
