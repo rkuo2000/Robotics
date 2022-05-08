@@ -505,7 +505,6 @@ ros2 node info /my_turtle
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/ros2_demo_nodes_py-listener.png?raw=true)
 
 * ROS2 Nodes:
-  - `ros2 run turtlesim turtlesim_node`
   - `ros2 node list`
   - `ros2 node info /my_turtle`
 
