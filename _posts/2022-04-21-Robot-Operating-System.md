@@ -168,8 +168,17 @@ sudo apt upgrade
 ```
 
 ---
+### export Ubuntu for backup
+* Open PowerShell as adminstrator
+```
+wsl --shutdown
+wsl -l -v
+cd D:\WSL\Backup
+wsl --export Ubuntu ubuntu_backup.tar
+```
+
+---
 ### How to move existing WSL installation to D: drive
-**export for backup or move to D: drive**
 <iframe width="989" height="556" src="https://www.youtube.com/embed/ON_dPAO4KZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
