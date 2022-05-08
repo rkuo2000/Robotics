@@ -590,25 +590,19 @@ cd ..
 colcon build
 source install/local_setup.bash
 ```
-
-3. Creating a new firmware workspace for ESP32 <br>
-`ros2 run micro_ros_setup create_firmware_ws.sh freertos esp32`<br>
-
-4. Configuring created firmware<br>
-`ros2 run micro_ros_setup configure_firmware.sh int32_publisher -t udp -i 192.168.1.7 -p 8888`<br>
-`ros2 run micro_ros_setup build_firmware.sh menuconfig` # configure WiFi ssid & passwd<br>
-Other [demo codes](https://github.com/micro-ROS/freertos_apps/tree/foxy/apps)<br>
-
-5. Build firmware<br>
-`ros2 run micro_ros_setup build_firmware.sh`<br>
-
-6. Flash firmware<br>
-`ros2 run micro_ros_setup flash_firmware.sh`<br>
-
-7. Create the micro-ROS agent<br>
-`ros2 run micro_ros_setup create_agent_ws.sh`<br>
-`ros2 run micro_ros_setup build_agent.sh`<br>
-`source install/local_setup.bash`<br>
+1. Install rosdep
+```
+sudo apt install python3-vcstool
+sudo apt-get install python3-rosdep
+sudo rosdep init
+rosdep update
+```
+2. Create the micro-ROS agent<br>
+```
+ros2 run micro_ros_setup create_agent_ws.sh
+ros2 run micro_ros_setup build_agent.sh
+source install/local_setup.bash
+```
 
 8. Running the micro-ROS agent<br>
 `ros2 run micro_ros_agent micro_ros_agent udp4 --port 8888`<br>
