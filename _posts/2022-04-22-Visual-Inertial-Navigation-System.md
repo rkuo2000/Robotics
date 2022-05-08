@@ -83,6 +83,18 @@ Given a car equipped with an omnidirectional camera, the motion of the vehicle c
 
 ---
 ### Prerequisites for VINS installation
+* check if Swap is on<br>
+`swapon -s`<br>
+* if not add Swap space
+```
+sudo mkdir -p /var/cache/swap/
+sudo dd if=/dev/zero of=/var/cache/swap/swap0 bs=64M count=64 # swap=64MB*64=4096MB
+sudo chmod 0600 /var/cache/swap/swap0
+sudo mkswap /var/cache/swap/swap0
+sudo swapon /var/cache/swap/swap0
+sudo swapon -s
+```
+
 [Installation Guide](https://docs.openvins.com/gs-installing.html)<br>
 * [ROS 1 Noetic (uses OpenCV 4.2)](http://wiki.ros.org/noetic/Installation/Ubuntu)<br>
 * [ROS 2 Galactic (uses OpenCV 4.2)](https://docs.ros.org/en/galactic/)<br>
@@ -218,15 +230,6 @@ catkin build
 source devel/setup.bash
 ```
 <span style="color: red">*catkin build took ~30 hours on i7-920 @2.67GHz !!!*</span><br>
-* If `C++: fatal error: Killed signal terminated program cc1plus`, then add Swap
-```
-sudo mkdir -p /var/cache/swap/
-sudo dd if=/dev/zero of=/var/cache/swap/swap0 bs=64M count=64 # swap=64MB*64=4096MB
-sudo chmod 0600 /var/cache/swap/swap0
-sudo mkswap /var/cache/swap/swap0
-sudo swapon /var/cache/swap/swap0
-sudo swapon -s
-```
 
 **VI-Car**<br>
 ![](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/raw/master/support_files/image/car_gif.gif)
