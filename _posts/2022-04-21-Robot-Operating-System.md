@@ -182,7 +182,7 @@ wsl --export Ubuntu ubuntu_backup.tar
 <iframe width="989" height="556" src="https://www.youtube.com/embed/ON_dPAO4KZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
-### Forgot User Password
+### Reset User Password if forgotten
 * run **Command-Prompt**<br>
 `ubuntu config --default-user root`<br>
 * run **Ubuntu**<br>
