@@ -211,10 +211,22 @@ colcon build --event-handlers console_cohesion+ --packages-select ov_core ov_ini
 cd ~/catkin_ws/src
 git clone https://github.com/rkuo/VINS-Fusion.git
 cd ../
+catkin build camera_models
+catkin build global_fusion
+catkin build loop_fusion
 catkin build
 source devel/setup.bash
 ```
-<span style="color: red">*The build took ~30 hours on i7-920 @2.67GHz !!!*</span><br>
+<span style="color: red">*catkin build took ~30 hours on i7-920 @2.67GHz !!!*</span><br>
+* If `C++: fatal error: Killed signal terminated program cc1plus`, then add Swap
+```
+sudo mkdir -p /var/cache/swap/
+sudo dd if=/dev/zero of=/var/cache/swap/swap0 bs=64M count=64 # swap=64MB*64=4096MB
+sudo chmod 0600 /var/cache/swap/swap0
+sudo mkswap /var/cache/swap/swap0
+sudo swapon /var/cache/swap/swap0
+sudo swapon -s
+```
 
 **VI-Car**<br>
 ![](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/raw/master/support_files/image/car_gif.gif)
