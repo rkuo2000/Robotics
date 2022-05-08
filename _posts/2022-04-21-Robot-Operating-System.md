@@ -582,6 +582,7 @@ eProsima Micro XRCE-DDS contains:
 
 2. Micro-ROS Installation<br>
 ```
+pip install pytest==5.3
 mkdir -p ~/microros_ws/src
 cd ~/microros_ws/src
 git clone -b galactic https://github.com/micro-ROS/micro_ros_setup.git
