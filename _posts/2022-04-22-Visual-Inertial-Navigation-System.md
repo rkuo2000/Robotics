@@ -146,12 +146,16 @@ mkdir -p ~/catkin_openvins/src/
 cd ~/catkin_openvins/src/
 git clone https://github.com/rpng/open_vins
 cd ..
-# for ROS1
-catkin build
-# for ROS2
-colcon build
-colcon build --event-handlers console_cohesion+ --packages-select ov_core ov_init ov_msckf ov_eval # ROS2 with verbose output
 ```
+  - For ROS1
+  ```
+  catkin build
+  ```
+  - For ROS2
+  ```
+  colcon build
+  colcon build --event-handlers console_cohesion+ --packages-select ov_core ov_init ov_msckf ov_eval # ROS2 with verbose output
+  ```
 **Demo Videos:**<br>
 <iframe width="370" height="208" src="https://www.youtube.com/embed/KCX51GvYGss" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <iframe width="370" height="208" src="https://www.youtube.com/embed/Lc7VQHngSuQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -222,15 +226,13 @@ colcon build --event-handlers console_cohesion+ --packages-select ov_core ov_ini
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/rkuo/VINS-Fusion.git
-cd ../
-catkin build camera_models
-catkin build global_fusion
-catkin build loop_fusion
+cd ..
 catkin build
-source devel/setup.bash
 ```
 <span style="color: red">*catkin build took ~30 hours on i7-920 @2.67GHz !!!*</span><br>
-
+```
+source devel/setup.bash
+```
 **VI-Car**<br>
 ![](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/raw/master/support_files/image/car_gif.gif)
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion_vi_car.png?raw=true)
