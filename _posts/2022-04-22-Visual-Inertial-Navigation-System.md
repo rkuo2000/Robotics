@@ -217,7 +217,6 @@ cd ..
   - feature_manager.cpp/.h：特征点管理，三角化，关键帧等
   - parameters.cpp/.h：读取参数
   
-
 ---
 ### [VINS-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion)
 [A General Optimization-based Framework for Local Odometry Estimation with Multiple Sensors](https://arxiv.org/pdf/1901.03638.pdf)
@@ -229,7 +228,7 @@ git clone https://github.com/rkuo/VINS-Fusion.git
 cd ..
 catkin build
 ```
-<span style="color: red">*catkin build took ~30 hours on i7-920 @2.67GHz !!!*</span><br>
+<span style="color: red">*catkin build took ~3.5 hours on Intel Celeron dual 1.10GHz !!!*</span><br>
 ```
 source devel/setup.bash
 ```
