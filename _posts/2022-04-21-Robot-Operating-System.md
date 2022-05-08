@@ -580,51 +580,46 @@ eProsima Micro XRCE-DDS contains:
 1. ESP IDF Installation<br>
 [ESP Get Started](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/)<br>
 
-2. Source ROS2 setup<br>
+2. Micro-ROS Installation<br>
 ```
-cd ~/ros2_galactic
-. ./install/local_setup.bash
-cd ~
-```
-3. Micro-ROS Installation<br>
-```
-mkdir microros_ws
-cd microros_ws
-git clone -b galactic https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
+mkdir -p ~/microros_ws/src
+cd ~/microros_ws/src
+git clone -b galactic https://github.com/micro-ROS/micro_ros_setup.git
+cd ..
 colcon build
 source install/local_setup.bash
 ```
 
-4. Creating a new firmware workspace for ESP32 <br>
+3. Creating a new firmware workspace for ESP32 <br>
 `ros2 run micro_ros_setup create_firmware_ws.sh freertos esp32`<br>
 
-5. Configuring created firmware<br>
+4. Configuring created firmware<br>
 `ros2 run micro_ros_setup configure_firmware.sh int32_publisher -t udp -i 192.168.1.7 -p 8888`<br>
 `ros2 run micro_ros_setup build_firmware.sh menuconfig` # configure WiFi ssid & passwd<br>
 Other [demo codes](https://github.com/micro-ROS/freertos_apps/tree/foxy/apps)<br>
 
-6. Build firmware<br>
+5. Build firmware<br>
 `ros2 run micro_ros_setup build_firmware.sh`<br>
 
-7. Flash firmware<br>
+6. Flash firmware<br>
 `ros2 run micro_ros_setup flash_firmware.sh`<br>
 
-8. Create the micro-ROS agent<br>
+7. Create the micro-ROS agent<br>
 `ros2 run micro_ros_setup create_agent_ws.sh`<br>
 `ros2 run micro_ros_setup build_agent.sh`<br>
 `source install/local_setup.bash`<br>
 
-9. Running the micro-ROS agent<br>
+8. Running the micro-ROS agent<br>
 `ros2 run micro_ros_agent micro_ros_agent udp4 --port 8888`<br>
 Once connected: <br>
 ![](https://miro.medium.com/max/2000/1*Gp97hV_qzgiUbcbaQwepGQ.png)
 
-10. Testing the micro-ROS app<br>
+9. Testing the micro-ROS app<br>
 `ros2 topic list`<br>
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/ros2_topic_list.png?raw=true)
 `ros2 topic echo /freertos_int32_publisher`<br>
 
-11. ESP32 running micro-ROS client<br>
+10. ESP32 running micro-ROS client<br>
 `ros2 topic echo /microros_esp32`<br>
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/ros2_topic_echo_microros_esp32.png?raw=true)
 
