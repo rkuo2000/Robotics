@@ -82,46 +82,12 @@ Given a car equipped with an omnidirectional camera, the motion of the vehicle c
 <iframe width="826" height="465" src="https://www.youtube.com/embed/ymI3FmwU9AY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
-## VINS required installations
+### Prerequisites for VINS installation
 [Installation Guide](https://docs.openvins.com/gs-installing.html)<br>
-* [Ubuntu 20.04 ROS 1 Noetic (uses OpenCV 4.2)](http://wiki.ros.org/noetic/Installation/Ubuntu)<br>
-* [Ubuntu 20.04 ROS 2 Galactic (uses OpenCV 4.2)](https://docs.ros.org/en/galactic/)<br>
+* [ROS 1 Noetic (uses OpenCV 4.2)](http://wiki.ros.org/noetic/Installation/Ubuntu)<br>
+* [ROS 2 Galactic (uses OpenCV 4.2)](https://docs.ros.org/en/galactic/)<br>
 
-### ROS1 Install
-```
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-sudo apt-get update
-export ROS1_DISTRO=noetic # kinetic=16.04, melodic=18.04, noetic=20.04
-sudo apt-get install ros-$ROS1_DISTRO-desktop-full
-sudo apt-get install python3-catkin-tools python3-osrf-pycommon # ubuntu 20.04
-sudo apt-get install libeigen3-dev libboost-all-dev libceres-dev
-```
-```
-echo "alias source_ros1=\"source /opt/ros/$ROS1_DISTRO/setup.bash\"" >> ~/.bashrc
-echo "alias source_devel=\"source devel/setup.bash\"" >> ~/.bashrc
-source ~/.bashrc
-```
-
-### ROS2 Install
-```
-sudo apt update && sudo apt install curl gnupg lsb-release
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-sudo apt-get update
-export ROS2_DISTRO=galactic # dashing=18.04, galactic=20.04
-sudo apt install ros-$ROS2_DISTRO-desktop
-sudo apt-get install ros-$ROS2_DISTRO-ros2bag ros-$ROS2_DISTRO-rosbag2* # rosbag utilities (seems to be separate)
-sudo apt-get install libeigen3-dev libboost-all-dev libceres-dev
-pip install -U colcon-common-extensions
-```
-```
-echo "alias source_ros2=\"source /opt/ros/$ROS2_DISTRO/setup.bash\"" >> ~/.bashrc
-echo "alias source_install=\"source install/setup.bash\"" >> ~/.bashrc
-source ~/.bashrc
-```
-
-### [Ceres Solver installation](http://ceres-solver.org/installation.html)
+### [Ceres Solver 2.1.0 Installation](http://ceres-solver.org/installation.html) (optional)
 ```
 sudo apt-get install cmake 
 sudo apt-get install libgoogle-glog-dev libgflags-dev
@@ -164,12 +130,14 @@ The OpenVINS project houses some core computer vision code along with a state-of
 * [Documentation](https://docs.openvins.com/)<br>
 * [Getting started guide](https://docs.openvins.com/getting-started.html)
 ```
-mkdir -p ~/workspace/catkin_ws_ov/src/
-cd ~/workspace/catkin_ws_ov/src/
-git clone https://github.com/rpng/open_vins/
+mkdir -p ~/catkin_openvins/src/
+cd ~/catkin_openvins/src/
+git clone https://github.com/rpng/open_vins
 cd ..
-catkin build # ROS1
-colcon build # ROS2
+# for ROS1
+catkin build
+# for ROS2
+colcon build
 colcon build --event-handlers console_cohesion+ --packages-select ov_core ov_init ov_msckf ov_eval # ROS2 with verbose output
 ```
 **Demo Videos:**<br>
