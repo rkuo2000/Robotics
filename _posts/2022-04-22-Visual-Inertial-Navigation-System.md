@@ -217,41 +217,17 @@ cd ..
   - feature_manager.cpp/.h：特征点管理，三角化，关键帧等
   - parameters.cpp/.h：读取参数
   
-
 ---
 ### [VINS-Fusion](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion)
 [A General Optimization-based Framework for Local Odometry Estimation with Multiple Sensors](https://arxiv.org/pdf/1901.03638.pdf)
 
 **[Code](https://github.com/rkuo2000/VINS-Fusion)**<br>
-```
-cd ~/catkin_ws/src
-git clone https://github.com/rkuo/VINS-Fusion.git
-cd ..
-catkin build
-```
-<span style="color: red">*catkin build took ~8 hours on Celeron 1.10GHzx2 !!!*</span><br>
-```
-source devel/setup.bash
-```
+
 **VI-Car**<br>
 ![](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/raw/master/support_files/image/car_gif.gif)
-  - Download [car bag](https://drive.google.com/open?id=10t9H1u8pMGDOI6Q2w2uezEq5Ib-Z8tLz) to YOUR_DATASET_FOLDER.
-  - `roslaunch vins vins_rviz.launch`
-  - `rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion/config/vi_car/vi_car.yaml`
-  - (optional) `rosrun loop_fusion loop_fusion_node ~/catkin_ws/src/VINS-Fusion/config/vi_car/vi_car.yaml`
-  - `rosbag play YOUR_DATASET_FOLDER/car.bag`
-![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion_vi_car.png?raw=true)
 
 **EuRoC-MAV**<br>
 ![](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/raw/master/support_files/image/euroc.gif)
-MH_01_easy
-* Monocualr camera + IMU
-  - `roslaunch vins vins_rviz.launch`
-  - `rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion/config/euroc/euroc_mono_imu_config.yaml`
-  - (optional) `rosrun loop_fusion loop_fusion_node ~/catkin_ws/src/VINS-Fusion/config/euroc/euroc_mono_imu_config.yaml`
-  - `rosbag play YOUR_DATASET_FOLDER/MH_01_easy.bag`
-  ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion_MH_01_easy.png?raw=true)
-  ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion-EoRoC-MAV-MH_01_easy.gif?raw=true)
   
 **KITTI**<br>
 ![](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/raw/master/support_files/image/kitti.gif)
@@ -483,6 +459,46 @@ The KAIST VIO dataset is a dataset of a MAV in an indoor 3.15 x 3.60 x 2.50 mete
 ### [CT-ICP: Elastic SLAM for LiDAR sensors](https://arxiv.org/abs/2109.12979)
 ![](https://xuwuzhou.top/images/%E8%AE%BA%E6%96%8754%E5%9B%BE%E7%89%872.png)
 
+----
+## [Homeworks]
+### VINS-Fusion
+```
+source_ros1
+mkdir ~/catkin_vins/src
+cd ~/catkin_vins/src
+git clone https://github.com/rkuo/VINS-Fusion.git
+cd ..
+catkin build
+```
+<span style="color: red">*catkin build took ~8 hours on Celeron 1.10GHzx2 !!!*</span><br>
+
+* open Terminals
+```
+source_ros1
+cd ~/catkin_vins
+source devel/setup.bash
+```
+
+### VI-Car
+* Download [car bag](https://drive.google.com/open?id=10t9H1u8pMGDOI6Q2w2uezEq5Ib-Z8tLz) to YOUR_DATASET_FOLDER.
+* `roslaunch vins vins_rviz.launch`
+* `rosrun vins vins_node ~/catkin_vins/src/VINS-Fusion/config/vi_car/vi_car.yaml`
+* (optional) `rosrun loop_fusion loop_fusion_node ~/catkin_vins/src/VINS-Fusion/config/vi_car/vi_car.yaml`
+* `rosbag play YOUR_DATASET_FOLDER/car.bag`
+![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion_vi_car.png?raw=true)
+
+### EuRoc-MAV
+**Monocualr camera + IMU**<br>
+* [EuRoC MAV Dataset](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets)
+* **MH_01_easy**
+  - Download [MH_01_easy](http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/machine_hall/MH_01_easy/MH_01_easy.bag) 
+  - `roslaunch vins vins_rviz.launch`
+  - `rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion/config/euroc/euroc_mono_imu_config.yaml`
+  - (optional) `rosrun loop_fusion loop_fusion_node ~/catkin_ws/src/VINS-Fusion/config/euroc/euroc_mono_imu_config.yaml`
+  - `rosbag play YOUR_DATASET_FOLDER/MH_01_easy.bag`
+  ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion_MH_01_easy.png?raw=true)
+  ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion-EoRoC-MAV-MH_01_easy.gif?raw=true)
+  
 <br>
 <br>
 
