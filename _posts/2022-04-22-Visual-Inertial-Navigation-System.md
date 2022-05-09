@@ -235,24 +235,23 @@ source devel/setup.bash
 ```
 **VI-Car**<br>
 ![](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/raw/master/support_files/image/car_gif.gif)
-![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion_vi_car.png?raw=true)
   - Download [car bag](https://drive.google.com/open?id=10t9H1u8pMGDOI6Q2w2uezEq5Ib-Z8tLz) to YOUR_DATASET_FOLDER.
   - `roslaunch vins vins_rviz.launch`
   - `rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion/config/vi_car/vi_car.yaml`
   - (optional) `rosrun loop_fusion loop_fusion_node ~/catkin_ws/src/VINS-Fusion/config/vi_car/vi_car.yaml`
   - `rosbag play YOUR_DATASET_FOLDER/car.bag`
+![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion_vi_car.png?raw=true)
 
 **EuRoC-MAV**<br>
 ![](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/raw/master/support_files/image/euroc.gif)
-  - MH_01_easy
-  ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion_MH_01_easy.png?raw=true)
-  ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion-EoRoC-MAV-MH_01_easy.gif?raw=true)
-
+MH_01_easy
 * Monocualr camera + IMU
   - `roslaunch vins vins_rviz.launch`
   - `rosrun vins vins_node ~/catkin_ws/src/VINS-Fusion/config/euroc/euroc_mono_imu_config.yaml`
   - (optional) `rosrun loop_fusion loop_fusion_node ~/catkin_ws/src/VINS-Fusion/config/euroc/euroc_mono_imu_config.yaml`
   - `rosbag play YOUR_DATASET_FOLDER/MH_01_easy.bag`
+  ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion_MH_01_easy.png?raw=true)
+  ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/VINS-Fusion-EoRoC-MAV-MH_01_easy.gif?raw=true)
   
 **KITTI**<br>
 ![](https://github.com/HKUST-Aerial-Robotics/VINS-Fusion/raw/master/support_files/image/kitti.gif)
