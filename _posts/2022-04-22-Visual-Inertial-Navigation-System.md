@@ -92,7 +92,7 @@ sudo dd if=/dev/zero of=/var/cache/swap/swap0 bs=64M count=64 # swap=64MB*64=409
 sudo chmod 0600 /var/cache/swap/swap0
 sudo mkswap /var/cache/swap/swap0
 sudo swapon /var/cache/swap/swap0
-sudo swapon -s
+swapon -s
 ```
 
 [Installation Guide](https://docs.openvins.com/gs-installing.html)<br>
