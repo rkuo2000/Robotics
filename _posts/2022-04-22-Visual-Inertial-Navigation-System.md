@@ -229,7 +229,7 @@ git clone https://github.com/rkuo/VINS-Fusion.git
 cd ..
 catkin build
 ```
-<span style="color: red">*catkin build took ~30 hours on i7-920 @2.67GHz !!!*</span><br>
+<span style="color: red">*catkin build took ~8 hours on Celeron 1.10GHzx2 !!!*</span><br>
 ```
 source devel/setup.bash
 ```
