@@ -103,22 +103,39 @@ OMG Data Distribution Service interoperability
 
 ---
 ## Ubuntu20.04 on Windows 10/11
+[在Windows 10 使用WSL2 安裝Linux系統](https://rdfarm.net/windows-10-install-wsl2/)<br>
+[WSL 的基本命令](https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands)<br>
 
 ### Install Ubuntu 20.04
-Method 1. Microsoft Store> **Ubuntu 20.04.4 LTS**
-
-Method 2. PowerShell> **wsl --install -d ubuntu**
-[WSL 的基本命令](https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands)<br>
 * Open **PowerShell** as administrator (管理者權限)<br>
+* 啟用 Windows 子系統 Linux
+```
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+```
+* 啟用 虛擬機器平台 
+```
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+* 更新wsl
 ```
 wsl --status
 wsl --update
-wsl --shutdown
+```
+* 設WSL2為預設版本
+```
+wsl --set-default--version 2
 wsl -l -v
+```
+
+**Method 1.** Microsoft Store> **Ubuntu 20.04.4 LTS**<br>
+
+**Method 2.** PowerShell> wsl --install<br>
+* Open **PowerShell** as administrator (管理者權限)<br>
+```
 wsl --install -d ubuntu
 ```
 
-Method 3. PowerShell download Ubuntu.appx then install
+**Method 3.**manually download Ubuntu.appx then install<br>
 [Installing WSL Distro to a different/custom location](https://vpraharsha3.medium.com/installing-wsl-distro-to-a-different-custom-location-30d101f04113)<br> 
 * Open **PowerShell** as administrator (管理者權限)<br>
 ```
