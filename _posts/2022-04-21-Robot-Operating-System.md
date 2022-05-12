@@ -9,6 +9,19 @@ tags: [jekyll, ai]
 The Robot Operating System(ROS) is a set of software libraries and tools that help you build robot applications.
 
 ---
+## Linux OS
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Linux_architecture.png/400px-Linux_architecture.png)
+
+### Linux Kernel Architecture
+[Linux系統—架構淺析](https://iter01.com/488176.html)
+![](https://i.iter01.com/images/1b4dd25a1aa669a424546bcfd5a8779a985b1874041d5a593bb74ac364570536.jpg)
+* 程式排程
+* 記憶體管理
+* 檔案系統
+* 裝置驅動
+* 網路
+
+---
 ## ROS Introduction
 **Paper:** [A ROS2 based communication architecture for control in collaborative and intelligent automation systems](https://arxiv.org/abs/1905.09654)<br>
 
