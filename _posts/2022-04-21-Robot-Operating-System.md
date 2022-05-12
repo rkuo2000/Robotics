@@ -104,23 +104,22 @@ OMG Data Distribution Service interoperability
 ---
 ## Ubuntu20.04 on Windows 10/11
 
-### WSL install Ubuntu20.04
-[WSL 的基本命令](https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands)<br>
+### Install Ubuntu 20.04
+Method 1. Microsoft Store> **Ubuntu 20.04.4 LTS**
 
+Method 2. PowerShell> **wsl --install -d ubuntu**
+[WSL 的基本命令](https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands)<br>
 * Open **PowerShell** as administrator (管理者權限)<br>
 ```
 wsl --status
 wsl --update
 wsl --shutdown
-```
-
-**For Disk C:**
-```
+wsl -l -v
 wsl --install -d ubuntu
 ```
 
+Method 3. PowerShell download Ubuntu.appx then install
 [Installing WSL Distro to a different/custom location](https://vpraharsha3.medium.com/installing-wsl-distro-to-a-different-custom-location-30d101f04113)<br> 
-**For Disk D:** 
 * Open **PowerShell** as administrator (管理者權限)<br>
 ```
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
@@ -135,24 +134,14 @@ Set-Location .\WSL
 ```
 Invoke-WebRequest -Uri https://aka.ms/wslubuntu2004 -OutFile Ubuntu.appx -UseBasicParsing
 ```
-> Available Distros:<br>
-> Ubuntu 20.04 - https://aka.ms/wslubuntu2004<br>
-> Ubuntu 20.04 ARM - https://aka.ms/wslubuntu2004arm<br>
-> Ubuntu 18.04 - https://aka.ms/wsl-ubuntu-1804<br>
-> Ubuntu 18.04 ARM - https://aka.ms/wsl-ubuntu-1804-arm<br>
-> Ubuntu 16.04 - https://aka.ms/wsl-ubuntu-1604<br>
-> Debian GNU/Linux - https://aka.ms/wsl-debian-gnulinux<br>
-> Kali Linux - https://aka.ms/wsl-kali-linux-new<br>
-> OpenSUSE Leap 42 - https://aka.ms/wsl-opensuse-42<br>
-> SLES - https://aka.ms/wsl-sles-12<br>
-
 * rename Ubuntu.appx to .zip & unzip it
 ```
 Rename-Item .\Ubuntu.appx Ubuntu.zip
 Expand-Archive .\Ubuntu.zip -Verbose
 ```
+* Go to Folder D:\WSL\Ubuntu, run ubuntu_2004.2021.825.0_x64.appx as adminstrator(管理者權限)
 
-* Go to Folder D:\WSL\Ubuntu, run **ubuntu_2004.2021.825.0_x64.appx** as adminstrator(管理者權限)<br>
+### Starting Ubuntu
 ```
 installing, this may take a few minutes...
 Enter new UNIX username: yourname 
