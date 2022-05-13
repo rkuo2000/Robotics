@@ -461,6 +461,25 @@ The KAIST VIO dataset is a dataset of a MAV in an indoor 3.15 x 3.60 x 2.50 mete
 
 ----
 ## [Homeworks]
+### Ceres Solver installation
+```
+sudo apt-get install cmake 
+sudo apt-get install libgoogle-glog-dev libgflags-dev
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libeigen3-dev
+sudo apt-get install libsuitesparse-dev
+```
+```
+wget http://ceres-solver.org/ceres-solver-2.1.0.tar.gz
+tar zxf ceres-solver-2.1.0.tar.gz
+mkdir ceres-bin
+cd ceres-bin
+cmake ../ceres-solver-2.1.0
+make -j4
+make install
+```
+
+---
 ### VINS-Fusion
 ```
 source_ros1
