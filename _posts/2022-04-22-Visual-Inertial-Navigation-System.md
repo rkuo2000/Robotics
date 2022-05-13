@@ -477,7 +477,7 @@ mkdir ceres-bin
 cd ceres-bin
 cmake ..
 make -j4
-make install
+sudo make install
 ```
 
 ---
