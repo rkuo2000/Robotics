@@ -113,7 +113,7 @@ tar zxf ceres-solver-2.1.0.tar.gz
 cd ceres-solver-2.1.0
 mkdir ceres-bin
 cd ceres-bin
-cmake ../ceres-solver-2.1.0
+cmake ..
 make -j4
 sudo make install
 ```
@@ -494,7 +494,7 @@ tar zxf ceres-solver-2.1.0.tar.gz
 cd ceres-solver-2.1.0
 mkdir ceres-bin
 cd ceres-bin
-cmake ../ceres-solver-2.1.0
+cmake ..
 make -j4
 sudo make install
 ```
