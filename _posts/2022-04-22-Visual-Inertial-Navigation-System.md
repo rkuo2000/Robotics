@@ -82,44 +82,6 @@ Given a car equipped with an omnidirectional camera, the motion of the vehicle c
 <iframe width="826" height="465" src="https://www.youtube.com/embed/ymI3FmwU9AY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
-### Prerequisites for VINS installation
-* check if Swap is on<br>
-`swapon -s`<br>
-* if not add Swap space
-```
-sudo mkdir -p /var/cache/swap/
-sudo dd if=/dev/zero of=/var/cache/swap/swap0 bs=64M count=64 # swap=64MB*64=4096MB
-sudo chmod 0600 /var/cache/swap/swap0
-sudo mkswap /var/cache/swap/swap0
-sudo swapon /var/cache/swap/swap0
-swapon -s
-```
-
-[Installation Guide](https://docs.openvins.com/gs-installing.html)<br>
-* [ROS 1 Noetic (uses OpenCV 4.2)](http://wiki.ros.org/noetic/Installation/Ubuntu)<br>
-* [ROS 2 Galactic (uses OpenCV 4.2)](https://docs.ros.org/en/galactic/)<br>
-
-### [Ceres Solver 2.1.0 Installation](http://ceres-solver.org/installation.html) (optional)
-```
-sudo apt-get remove cereslib-dev
-sudo apt-get install cmake 
-sudo apt-get install libgoogle-glog-dev libgflags-dev
-sudo apt-get install libatlas-base-dev
-sudo apt-get install libeigen3-dev
-sudo apt-get install libsuitesparse-dev
-```
-```
-wget http://ceres-solver.org/ceres-solver-2.1.0.tar.gz
-tar zxf ceres-solver-2.1.0.tar.gz
-cd ceres-solver-2.1.0
-mkdir ceres-bin
-cd ceres-bin
-cmake ..
-make -j4
-sudo make install
-```
-
----
 ### ROVIO
 [Iterated extended Kalman filter based visual-inertial odometry using direct photometric feedback](https://www.research-collection.ethz.ch/bitstream/handle/20.500.11850/263423/ROVIO.pdf?sequence=1&isAllowed=y)<br>
 ![](https://d3i71xaburhd42.cloudfront.net/6b8ac6a81515f023f45e7f2ffa6a18177682d8be/7-Figure3-1.png)
@@ -477,11 +439,12 @@ sudo swapon /var/cache/swap/swap0
 swapon -s
 ```
 
+### ROS 
 [Installation Guide](https://docs.openvins.com/gs-installing.html)<br>
 * [ROS 1 Noetic (uses OpenCV 4.2)](http://wiki.ros.org/noetic/Installation/Ubuntu)<br>
 * [ROS 2 Galactic (uses OpenCV 4.2)](https://docs.ros.org/en/galactic/)<br>
 
-### [Ceres Solver 2.1.0 Installation](http://ceres-solver.org/installation.html) (optional)
+### [Ceres Solver 2.1.0 Installation](http://ceres-solver.org/installation.html)
 ```
 sudo apt-get remove cereslib-dev
 sudo apt-get install cmake 
