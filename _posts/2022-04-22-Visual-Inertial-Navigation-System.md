@@ -101,6 +101,7 @@ swapon -s
 
 ### [Ceres Solver 2.1.0 Installation](http://ceres-solver.org/installation.html) (optional)
 ```
+sudo apt-get remove cereslib-dev
 sudo apt-get install cmake 
 sudo apt-get install libgoogle-glog-dev libgflags-dev
 sudo apt-get install libatlas-base-dev
@@ -482,6 +483,7 @@ swapon -s
 
 ### [Ceres Solver 2.1.0 Installation](http://ceres-solver.org/installation.html) (optional)
 ```
+sudo apt-get remove cereslib-dev
 sudo apt-get install cmake 
 sudo apt-get install libgoogle-glog-dev libgflags-dev
 sudo apt-get install libatlas-base-dev
