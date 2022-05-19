@@ -446,7 +446,6 @@ swapon -s
 
 ### [Ceres Solver 2.1.0 Installation](http://ceres-solver.org/installation.html)
 ```
-sudo apt-get remove cereslib-dev
 sudo apt-get install cmake 
 sudo apt-get install libgoogle-glog-dev libgflags-dev
 sudo apt-get install libatlas-base-dev
@@ -566,7 +565,3 @@ rosbag play /mnt/c/Users/user/Downloads/MH_01_easy.bag
 <br>
 
 *This site was last updated {{ site.time | date: "%B %d, %Y" }}.*
-
-
-
-
