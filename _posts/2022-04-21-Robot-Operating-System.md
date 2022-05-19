@@ -187,7 +187,7 @@ sudo apt upgrade
 ```
 
 ---
-### export Ubuntu for backup
+### export Ubuntu to backup
 * Open PowerShell as adminstrator
 ```
 wsl --shutdown
@@ -199,6 +199,19 @@ wsl --export Ubuntu ubuntu_backup.tar
 ---
 ### How to move existing WSL installation to D: drive
 <iframe width="989" height="556" src="https://www.youtube.com/embed/ON_dPAO4KZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+### import Ubuntu from backup
+* Import
+```
+wsl --unregister Ubuntu-20.04
+wsl -l -v
+cd D:\WSL\Working
+wsl --import Ubuntu-20.04 . ..\Backup\Ubuntu-2004.tar
+```
+
+* open PowerhShell / Command prompt (set default-user)
+ubuntu2004.exe config --default-user username
 
 ---
 ### Reset User Password if forgotten
