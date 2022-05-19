@@ -148,7 +148,7 @@ wsl -l -v
 wsl --install -d ubuntu
 ```
 
-**Method 3.**manually download Ubuntu.appx then install<br>
+**Method 3.** manually download Ubuntu.appx then install<br>
 [Installing WSL Distro to a different/custom location](https://vpraharsha3.medium.com/installing-wsl-distro-to-a-different-custom-location-30d101f04113)<br> 
 * Open **PowerShell** as administrator (管理者權限)<br>
 ```
@@ -193,7 +193,7 @@ sudo apt upgrade
 wsl --shutdown
 wsl -l -v
 cd D:\WSL\Backup
-wsl --export Ubuntu ubuntu_backup.tar
+wsl --export Ubuntu-20.04 Ubuntu_2004.tar
 ```
 
 ---
@@ -207,7 +207,7 @@ wsl --export Ubuntu ubuntu_backup.tar
 wsl --unregister Ubuntu-20.04
 wsl -l -v
 cd D:\WSL\Working
-wsl --import Ubuntu-20.04 . ..\Backup\Ubuntu-2004.tar
+wsl --import Ubuntu-20.04 . ..\Backup\Ubuntu_2004.tar
 ```
 
 * open PowerhShell / Command prompt (set default-user)
