@@ -232,9 +232,9 @@ ubuntu2004.exe config --default-user username
 
 * set DISPLAY ip-address in ~/.bashrc<br>
 `nano ~/.bashrc` # add 3 lines below<br>
-&ensp;export DISPLAY=**192.168.0.20:0**<br>
-&ensp;export LIBGL_ALWAYS_INDIRECT=<br>
-&ensp;export LIBGL_ALWAYS_SOFTWARE=1<br>
+export DISPLAY=**192.168.0.20:0**<br>
+export LIBGL_ALWAYS_INDIRECT=<br>
+export LIBGL_ALWAYS_SOFTWARE=1<br>
 
 ---
 ## ROS
