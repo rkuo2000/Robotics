@@ -467,9 +467,9 @@ sudo make install
 ### VINS-Fusion
 ```
 source_ros1
-mkdir ~/catkin_vins/src
+mkdir -p ~/catkin_vins/src
 cd ~/catkin_vins/src
-git clone https://github.com/rkuo/VINS-Fusion.git
+git clone https://github.com/rkuo2000/VINS-Fusion.git
 cd ..
 catkin build
 ```
