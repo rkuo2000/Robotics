@@ -473,8 +473,7 @@ git clone https://github.com/rkuo2000/VINS-Fusion.git
 cd ..
 catkin build
 ```
-*catkin build took<span style="color: red"> ~7.5 hours</span> on Celeron 1.10GHzx2 !!!*<br>
-*catkin build took<span style="color: red"> ~3 hours</span> on i7-920 2.67GHzx4 !!!*<br>
+*catkin build took<span style="color: red"> ~18 hours</span> on Celeron 1.10GHzx2 !!!*<br>
 
 * open Terminals
 ```
