@@ -57,7 +57,7 @@ Quadcopter states: (a) Forward motion; (b) backwards motion; (c) movement left; 
 <iframe width="712" height="359" src="https://www.youtube.com/embed/DjWONLRgvZ0" title="【新手入門級】S91折疊無人機 自動避障航拍機【8K雙攝像頭+30分鐘長續航" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 無人機功能：
 1. 一鍵起飛
-2. 三向避障
+2. 三避障
 3. 前進避障
 4. 左右避障
 5. 前置鏡頭，底置鏡頭
