@@ -28,7 +28,7 @@ Assume you have a github account: `https://github.com/yourname`
 ### Add Theme
 6. Edit Gemfile to add: <br />
 ```
-theme  "jekyll-theme-hydure"
+gem "jekyll-theme-hydure"
 ```
 7. Edit _config.yml to add: <br />
 To submit to github,
