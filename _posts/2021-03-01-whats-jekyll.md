@@ -10,9 +10,10 @@ tags: [jekyll]
 ---
 ## Gem installs
 ```
-sudo apt-get install ruby-dev
+sudo apt-get install ruby-full
 gem install jekyll bundler
 gem install "jekyll-theme-hydure"
+bundle add webrick
 ```
 
 ---
@@ -30,11 +31,19 @@ Assume you have a github account: `https://github.com/yourname`
 theme  "jekyll-theme-hydure"
 ```
 7. Edit _config.yml to add: <br />
+To submit to github,
 ```
 plugin:
   - jekyll-remote-theme
 remote_theme: zivong/jekyll-theme-hydure
 ```
+For running on localhost (PC), use the following:
+```
+plugin:
+#  - jekyll-remote-theme
+theme: zivong/jekyll-theme-hydure
+```
+
 ### Change Cover.jpg
 8. Upload a cover.jpg (1920x2880) to **_layouts** <br /> 
 9. Modify **_layouts/default.hmtl** to change path of cover.jpg <br />
