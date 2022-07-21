@@ -41,7 +41,7 @@ For running on localhost (PC), use the following:
 ```
 plugin:
 #  - jekyll-remote-theme
-theme: zivong/jekyll-theme-hydure
+theme: jekyll-theme-hydure
 ```
 
 ### Change Cover.jpg
