@@ -370,9 +370,7 @@ ARIACPick-v0
 
 ---
 ## ROS2
-![](https://www.ros.org/imgs/humble.png)
 
----
 ### ROS2 install on Ubuntu22.04 LTS
 <img width="50%" height="50%" src="https://www.ros.org/imgs/humble.png">
 
