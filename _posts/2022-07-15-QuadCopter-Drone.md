@@ -44,11 +44,11 @@ tags: [jekyll, ai]
 * **鋰電池 (LiPo)**
 Lithium-ion polymer battery
 <table>
-<
+<tr>
 <td><img src="https://a.rimg.com.tw/s1/5/3a/a5/22209045359269_638.jpg"></td>
 <td><img src="https://a.rimg.com.tw/s1/e/35/ab/22209043850667_916.jpg"></td>
 </tr>
-<table>
+</table>
 * **感測器原理**
 慣性測量單元（Inertial Measurement Unit, IMU）捕捉物體運動的資訊、測量物體姿態的一種電子元件，又稱為慣性感測器，主要由陀螺儀（Gyroscope）與加速度計（Accelerometer）組成，部分的應用中有時也會加入磁力計（Magnetometer）與氣壓計（Barometer）來輔助估算相關訊息，經常使用在載具的導航上面。
 四軸飛行器上面常會使用一些感測器做為回授，來取得飛行器的姿態、航向或是高度等資訊，常見有陀螺儀、加速度計、磁力計以及氣壓計這四種，
