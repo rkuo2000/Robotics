@@ -28,10 +28,11 @@ tags: [jekyll, ai]
 系統圖
 ![](https://uav.jreyn.net/user/pages/04.quadcopter-design/step-7-electronics-selection/quad%20wiring.jpg)
 ![](https://hom-wang.gitbooks.io/quadcopter/content/qd.png)
-
 * **機架 (Frame)**
 通常我們會用對角馬達的軸距（M2M）來敘述機身的大小，如果對角馬達的兩個轉軸相距 450mm 的距離，則稱為 F450
 ![](http://img.alicdn.com/bao/uploaded/i4/65872444/TB1TAIFmWAoBKNjSZSyXXaHAVXa_!!0-item_pic.jpg_210x210.jpg)
+* **腳架 (Landing Gear)**
+![](https://robu.in/wp-content/uploads/2017/05/F450-F550-Landing-skit-2.png)
 * **螺旋槳（Propeller)**
 四軸中有兩對螺旋槳，一對螺旋槳順時針旋轉，另一對螺旋槳則是逆時針旋轉，並不是所有螺旋槳都一樣的<br>
 通常會用像 1045 或 10x4.5 的方式來分別不同規格的螺旋槳，其意思為直徑10 inch，螺距 4.5 inch。<br>
@@ -40,6 +41,14 @@ tags: [jekyll, ai]
 * **電子調速器（Electronic Speed Controller）ESC**
 通常市售的電調只需輸入 PWM，並透過調整 PWM 的占空比即可控制無刷馬達轉速
 ![](https://a.rimg.com.tw/s2/6/00/98/21202132148376_553_m.jpg)
+* **鋰電池 (LiPo)**
+Lithium-ion polymer battery
+<table>
+<
+<td><img src="https://a.rimg.com.tw/s1/5/3a/a5/22209045359269_638.jpg"></td>
+<td><img src="https://a.rimg.com.tw/s1/e/35/ab/22209043850667_916.jpg"></td>
+</tr>
+<table>
 * **感測器原理**
 慣性測量單元（Inertial Measurement Unit, IMU）捕捉物體運動的資訊、測量物體姿態的一種電子元件，又稱為慣性感測器，主要由陀螺儀（Gyroscope）與加速度計（Accelerometer）組成，部分的應用中有時也會加入磁力計（Magnetometer）與氣壓計（Barometer）來輔助估算相關訊息，經常使用在載具的導航上面。
 四軸飛行器上面常會使用一些感測器做為回授，來取得飛行器的姿態、航向或是高度等資訊，常見有陀螺儀、加速度計、磁力計以及氣壓計這四種，
