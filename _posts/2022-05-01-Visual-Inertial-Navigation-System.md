@@ -238,8 +238,8 @@ cd ..
 </tr>
 </table>
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/PL-VIO_benchmark.png?raw=true)
-**[Code](https://github.com/rkuo2000/PL-VIO)**<br>
-![](https://github.com/rkuo2000/PL-VIO/raw/master/doc/image/plvio.gif)
+**Code:** [HeYijia/PL-VIO](https://github.com/HeYijia/PL-VIO)<br>
+![](https://github.com/HeYijia/PL-VIO/raw/master/doc/image/plvio.gif)
 
 ---
 ### PL-VINS
