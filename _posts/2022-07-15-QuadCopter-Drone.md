@@ -30,7 +30,7 @@ tags: [jekyll, ai]
 ![](https://hom-wang.gitbooks.io/quadcopter/content/qd.png)
 * **機架 (Frame)**
 通常我們會用對角馬達的軸距（M2M）來敘述機身的大小，如果對角馬達的兩個轉軸相距 450mm 的距離，則稱為 F450
-![](https://ph-test-11.slatic.net/p/c62efacb047a9e22bfdc30c09ff31eb0.jpg}
+![](https://ph-test-11.slatic.net/p/c62efacb047a9e22bfdc30c09ff31eb0.jpg)
 * **腳架 (Landing Gear)**
 ![](https://robu.in/wp-content/uploads/2017/05/F450-F550-Landing-skit-2.png)
 * **螺旋槳（Propeller)**
