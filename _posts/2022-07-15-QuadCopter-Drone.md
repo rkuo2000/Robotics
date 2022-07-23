@@ -180,7 +180,7 @@ UAS (Unmanned Aircraft Systems)
 
 ---
 ### GPS 模組
-![](https://a.rimg.com.tw/s3/ebay/2f3/496/fpvracingdrone%40ebay/e/bf/ed/1604f206c0fe72bb67c723b518c2a6c4_30204806590445.jpg)
+<img width="50%" height="50%" src="https://a.rimg.com.tw/s3/ebay/2f3/496/fpvracingdrone%40ebay/e/bf/ed/1604f206c0fe72bb67c723b518c2a6c4_30204806590445.jpg">
 
 ---
 ## 鋰電池 (LiPo)
