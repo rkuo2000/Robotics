@@ -185,16 +185,14 @@ UAS (Unmanned Aircraft Systems)
 ---
 ## 鋰電池 (LiPo)
 Lithium-ion polymer battery
-![](https://m.media-amazon.com/images/I/71YxBmNDzQL._AC_SX522_.jpg)
-**電池種類介紹與充電注意事項-新手教學**<br>
-<iframe width="1061" height="597" src="https://www.youtube.com/embed/FhCqE8k54fE" title="《韓吉老師碎碎念》電池種類介紹與充電注意事項-新手教學" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 <table>
 <tr>
 <td><img src="https://a.rimg.com.tw/s1/5/3a/a5/22209045359269_638.jpg"></td>
 <td><img src="https://a.rimg.com.tw/s1/e/35/ab/22209043850667_916.jpg"></td>
 </tr>
 </table>
+<iframe width="1061" height="597" src="https://www.youtube.com/embed/FhCqE8k54fE" title="《韓吉老師碎碎念》電池種類介紹與充電注意事項-新手教學" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### 放電能力
 電池的放電能力是以倍數（C）來表示的，1C是指電池用1C放電可以持續工作1小時。
 例：2200mAH容量的電池持續工作1小時(1C)，那么平均電流是2200mA,即2.2A.
