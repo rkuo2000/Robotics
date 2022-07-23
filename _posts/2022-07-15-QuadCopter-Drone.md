@@ -173,8 +173,8 @@ UAS (Unmanned Aircraft Systems)
 四軸飛行器上面常會使用一些感測器做為回授，來取得飛行器的姿態、航向或是高度等資訊，常見有陀螺儀、加速度計、磁力計以及氣壓計這四種，
 <table>
 <tr>
-<img src="https://a.rimg.com.tw/s2/f/ed/90/21823129994640_268.jpg"></td>
-<img src="https://a.rimg.com.tw/s1/2/45/09/21721347568905_401.jpg"></td>
+<td><img src="https://a.rimg.com.tw/s2/f/ed/90/21823129994640_268.jpg"></td>
+<td><img src="https://a.rimg.com.tw/s1/2/45/09/21721347568905_401.jpg"></td>
 </tr>
 </table>
 
