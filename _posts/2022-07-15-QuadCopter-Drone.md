@@ -155,7 +155,7 @@ UAS (Unmanned Aircraft Systems)
 <table>
 <tr>
 <td><img src="https://a.rimg.com.tw/s1/9/af/39/21614442402617_341.jpg"></td>
-<td><img src="http://docs.px4.io/main/assets/img/pixhawk4_hero_upright.74e8a52a.jpg"></td>
+<td><img width="50%" height="50%" src="http://docs.px4.io/main/assets/img/pixhawk4_hero_upright.74e8a52a.jpg"></td>
 </tr>
 <tr>
 <td><img src="https://ardupilot.org/copter/_images/APM25encl1.jpg"></td>
