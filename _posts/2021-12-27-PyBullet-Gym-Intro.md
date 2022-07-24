@@ -10,8 +10,7 @@ This introduction includes PyBullet-Gym intro, Quadruped-Robot Gym, Drone Gym, a
 
 ---
 ## PyBullet-Gym
-### [OpenAI Gym](https://gym.openai.com/)
-[Github](https://github.com/openai/gym)<br>
+### [OpenAI Gym](https://github.com/openai/gym)
 `pip3 install gym`<br>
 
 ### [Stable Baselines 3](https://github.com/DLR-RM/stable-baselines3)
