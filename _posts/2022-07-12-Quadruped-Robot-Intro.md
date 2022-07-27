@@ -104,9 +104,8 @@ Kendryte k210 for face recognition, deep sort, ...<br>
 
 ### GoodBoy
 [GoodBoy - 3D Printed Arduino Robot Dog](https://www.instructables.com/GoodBoy-3D-Printed-Arduino-Robot-Dog/)
-![](https://content.instructables.com/ORIG/FTE/XZKY/KAL2REG5/FTEXZKYKAL2REG5.jpg?auto=webp&frame=1&width=933&height=1024&fit=bounds&md=ef24373d70f1e5b140744b4366a53980)
-<iframe width="400" height="211" src="https://www.youtube.com/embed/uE5hZhkQkwI" title="GoodBoy Robot Dog" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<iframe width="400" height="211" src="https://www.youtube.com/embed/g_WedkmtFfw" title="GoodBoy Robot Dog Design Discussion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="422" src="https://www.youtube.com/embed/uE5hZhkQkwI" title="GoodBoy Robot Dog" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="800" height="422" src="https://www.youtube.com/embed/g_WedkmtFfw" title="GoodBoy Robot Dog Design Discussion" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 ### Py-Apple Dog (菠萝狗)
