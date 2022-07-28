@@ -169,9 +169,6 @@ GRUB_DEFAULT=saved
 ---
 ## 安裝機器人作業系統
 
-### ROS install on Ubuntu 22.04 LTS
-
----
 ### ROS2 install on Ubuntu22.04 LTS
 <img width="25%" height="20%" src="https://www.ros.org/imgs/humble.png">
 
