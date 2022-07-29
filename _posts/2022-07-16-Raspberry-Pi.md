@@ -257,6 +257,31 @@ ros2 topic echo /turtle1/cmd_vel
 ```
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/ros2_run_turtlesim.png?raw=true)
 
+---
+### [v4l2_camera](https://index.ros.org/r/v4l2_camera/)
+A ROS 2 camera driver using Video4Linux2 (V4L2)<br>
+* Install ROS package
+`sudo apt-get install ros-humble-v4l2-camera`<br>
+
+* Build from source
+`git clone --branch foxy https://gitlab.com/boldhearts/ros2_v4l2_camera.git src/v4l2_camera`<br>
+`colcon build`<br>
+
+* Usage:
+`ros2 run v4l2_camera v4l2_camera_node`<br>
+
+`ros2 run rqt_image_view rqt_image_view`<br>
+
+* Dependencies
+**image_transport** - makes it possible to set up compressed transport of the images, as described below.<br>
+The ROS 2 port of image_transport in the image_common repository is needed inside of your workspace:<br>
+`git clone --branch ros2 https://github.com/ros-perception/image_common.git src/image_common`<br>
+
+* Nodes: v4l2_camera_node
+Published Topics:<br>
+/raw_image - sensor_msgs/Image<br>
+    
+<iframe width="893" height="558" src="https://www.youtube.com/embed/vgGuKtmOW4Q" title="Ros2 + Raspberry + Camera #Ros2 #Camera #Raspberry #Foxy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <br />
 <br />
 
