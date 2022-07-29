@@ -284,10 +284,19 @@ Published Topics:<br>
 <iframe width="893" height="558" src="https://www.youtube.com/embed/vgGuKtmOW4Q" title="Ros2 + Raspberry + Camera #Ros2 #Camera #Raspberry #Foxy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
-## OpenCV
-* Install OpenCV on OS with Python
+## OpenCV Image Processing
+
+### Install OpenCV
+* Install OpenCV on Ubuntu 22.04 (Python3.10.4)<br>
 `pip3 install opencv-python`<br>
 
+* Install OpenCV on Windows 11 
+  - Install [Python for Windows](https://www.python.org/downloads/)
+  - Install [Git for Windows](https://gitforwindows.org/)
+  - Run Gitbash to install opencv-python<br>
+    `pip3 install opencv-python`<br>
+
+---
 ### Object Detection with Color
 [Detect Objects of Similar Color using OpenCV in Python](https://techvidvan.com/tutorials/detect-objects-of-similar-color-using-opencv-in-python/)<br>
 ![](https://techvidvan.com/tutorials/wp-content/uploads/sites/2/2021/06/draw-contour.png)
