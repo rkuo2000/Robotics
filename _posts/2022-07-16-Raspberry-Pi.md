@@ -43,13 +43,14 @@ Pi-Camera與LiDAR驅動程式安裝, 以便進行影像處理, 物件偵測, 跟
 * Operating temperature: 0 – 50 degrees C ambient
 
 ---
-### RPi
+### Raspberry Pi standard GPIO header
 ![](https://www.raspberrypi-spy.co.uk/wp-content/uploads/2012/06/Raspberry-Pi-GPIO-Header-with-Photo-768x512.png)
 
 ---
 ## 安裝Ubuntu 22.04 LTS作業系統 (real-time版本)
 **[Install Ubuntu on a Raspberry Pi](https://ubuntu.com/download/raspberry-pi)**<br> 
 Download [Ubuntu Desktop 22.04 LTS 64-bit](https://ubuntu.com/download/raspberry-pi/thank-you?version=22.04&architecture=desktop-arm64+raspi)<br>
+![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/RPi4_Ubuntu2204_Desktop.png?raw=true)
 
 ### Ubuntu Desktop 22.04 LTS 64-bit
 [Install Ubuntu Core on a Raspberry Pi](https://ubuntu.com/download/raspberry-pi-core)
