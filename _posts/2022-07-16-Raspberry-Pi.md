@@ -285,9 +285,17 @@ Published Topics:<br>
 
 ---
 ## OpenCV
-
-### Install OpenCV
+* Install OpenCV on OS with Python
 `pip3 install opencv-python`<br>
+
+### Object Detection with Color
+[Detect Objects of Similar Color using OpenCV in Python](https://techvidvan.com/tutorials/detect-objects-of-similar-color-using-opencv-in-python/)<br>
+![](https://techvidvan.com/tutorials/wp-content/uploads/sites/2/2021/06/draw-contour.png)
+
+[Object Detection and Tracking with OpenCV and Python](https://www.bluetin.io/opencv/object-detection-tracking-opencv-python/)<br>
+![](https://www.bluetin.io/wp-content/uploads/2017/12/opencv-bounding-rectangle-example.jpg)
+
+[cam_object_tracking.py](https://github.com/rkuo2000/cv2/blob/master/cam_object_tracking.py)<br>
 
 ### Optical Flow
 **Blog:** [Introduction to Motion Estimation with Optical Flow](https://nanonets.com/blog/optical-flow/)<br>
@@ -295,6 +303,13 @@ Published Topics:<br>
 **Code:** [rkuo2000/cv2](https://github.com/rkuo2000/cv2)<br>
 * [optical-flow-sparse.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-sparse.py)
 * [optical-flow-dense.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-dense.py)
+**Usage:**<br>
+```
+cd ~
+git clone https://github.com/rkuo2000/cv2
+cd cv2
+python3 optical-flow-sparse.py
+```
 
 <br />
 <br />
