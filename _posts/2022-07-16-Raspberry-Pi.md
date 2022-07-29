@@ -305,6 +305,13 @@ Published Topics:<br>
 ![](https://www.bluetin.io/wp-content/uploads/2017/12/opencv-bounding-rectangle-example.jpg)
 
 [cam_object_tracking.py](https://github.com/rkuo2000/cv2/blob/master/cam_object_tracking.py)<br>
+* Usage:
+```
+cd ~
+git clone https://github.com/rkuo2000/cv2
+cd cv2
+python cam_object_tracking.py 
+```
 
 ---
 ### Optical Flow
@@ -312,15 +319,16 @@ Published Topics:<br>
 ![](https://nanonets.com/blog/content/images/2019/04/sparse-vs-dense.gif)
 
 **Code:** [rkuo2000/cv2](https://github.com/rkuo2000/cv2)<br>
-* [optical-flow-sparse.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-sparse.py)
-* [optical-flow-dense.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-dense.py)
-
+* [optical-flow-sparse.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-sparse.py) 顯示原影像與光跡
+* [optical-flow-dense.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-dense.py) 
+* [drone_optical_flow.py](https://github.com/rkuo2000/cv2/blob/master/drone_optical_flow.py) 只顯示光跡
 **Usage:**<br>
 ```
 cd ~
 git clone https://github.com/rkuo2000/cv2
 cd cv2
 python3 optical-flow-sparse.py
+python3 drone_optical_flow.py
 ```
 
 <br />
