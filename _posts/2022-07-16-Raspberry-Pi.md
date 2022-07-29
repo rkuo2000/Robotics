@@ -12,90 +12,51 @@ Pi-Camera與LiDAR驅動程式安裝, 以便進行影像處理, 物件偵測, 跟
 ---
 ## 樹莓派開發板(Raspberry Pi)
 
-### RPi4
+### RPi4B
 ![](https://www.taiwansensor.com.tw/wp-content/uploads/2020/04/RPI-006544-7-600x366.jpg)
-Specification:
+[RPi4B Specification](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/):
 * Processor：
   - Broadcom **BCM2711** 
   - quad-core Cortex-A72 (ARM v8)   
   - 64-bit SoC @ **1.5GHz**
-* Memory： 1GB / 2GB / 4GB LPDDR4   (depending on model)
+* Memory： 4GB LPDDR4-3200
 * Connectivity：
-  - 2.4 GHz and 5.0 GHz IEEE 802.11b/g/n/ac wireless LAN,   
-  - Bluetooth 5.0, BLE Gigabit Ethernet   
-  - 2 × USB 3.0 ports   
-  - 2 × USB 2.0 ports.
-* GPIO：Standard 40-pin GPIO header (fully backwards-compatible with previous boards)
+  - 2.4 GHz and 5.0 GHz IEEE 802.11ac wireless, Bluetooth 5.0, BLE   
+  - Gigabit Ethernet   
+  - 2 USB 3.0 ports; 2 USB 2.0 ports  
+* GPIO：Raspberry Pi Standard 40-pin GPIO header (fully backwards-compatible with previous boards)
 * Video & Sound： 
   - 2 × **micro HDMI** ports (up to **4Kp60** supported)   
   - 2-lane MIPI **DSI** display port     
   - 2-lane MIPI **CSI** camera port   
   - 4-pole stereo audio and composite video port
 * Multimedia：
-  - H.265 (4Kp60 decode);   
-  - H.264 (1080p60 decode, 1080p30 encode);   
-  - OpenGL ES 3.0 graphics
+  - H.265 (4kp60 decode), H264 (1080p60 decode, 1080p30 encode)
+  - OpenGL ES 3.1, Vulkan 1.0
 * SD card support： 
   - Micro SD card slot for loading operating system and data storage
 * Input power：
-  - 5V DC via USB-C connector (minimum 3A1)   
-  - 5V DC via GPIO header (minimum 3A1)   
+  - 5V DC via USB-C connector (minimum 3A)   
+  - 5V DC via GPIO header (minimum 3A)   
   - Power over Ethernet (PoE)–enabled (requires separate PoE HAT)
-* **5V 3A** Power Input
+  - A good quality 2.5A power supply can be used if downstream USB peripherals consume less than 500mA in total.
+* Operating temperature: 0 – 50 degrees C ambient
 
 ---
-### RPi3B+
-![](https://a.rimg.com.tw/s9/436/95b/rhyu005/5/2e/22210173970734_201.jpg)
-Specification:
-* Processor：
-  - Broadcom **BCM2837B0** 
-  - quad-core Cortex-A53 (ARM v8)   
-  - 64-bit SoC @ **1.4GHz**
-* Memory： 1GB LPDDR3   
-* Connectivity：
-  - 2.4 GHz and 5.0 GHz IEEE 802.11b/g/n/ac wireless LAN   
-  - Bluetooth 4.2, BLE, Gigabit Ethernet   
-  - 4 × USB 2.0 ports
-* GPIO：Standard 40-pin GPIO header
-* Video & Sound： 
-  - 1 × **fullsize HDMI** ports (up to FullHD 1920*1080)
-  - 1-lane MIPI **DSI** display port     
-  - 1-lane MIPI **CSI** camera port   
-  - 4-pole stereo audio and composite video port
-* Multimedia：  - 
-  - H.264,MPEG-4 (1080p30) decode, H.264 1080p30 encode
-  - composite video port
-  - OpenGL ES 1.1,2.0 graphics
-* SD card support： 
-  - Micro SD card slot for loading operating system and data storage
-* Input power：
-  - 5V/2.5A DC via micro USB connector
-  - 5V DC via GPIO header
-  - Power over Ethernet (PoE)-enabled (required seperate PoE HAT)
-* Environment: Operating temperature 0~50°C
-
----
-### RPi3B
-![](https://www.jameco.com/jameco/workshop/circuitnotes/raspberry_pi_circuit_note_fig2.jpg)
-Specification: same as RPi3B+ except **1.2GHz** BCM2837
+### RPi
+![](https://www.raspberrypi-spy.co.uk/wp-content/uploads/2012/06/Raspberry-Pi-GPIO-Header-with-Photo-768x512.png)
 
 ---
 ## 安裝Ubuntu 22.04 LTS作業系統 (real-time版本)
-**[Install Ubuntu on a Raspberry Pi](https://ubuntu.com/download/raspberry-pi)**<br>
-Download [Ubuntu Server 22.04 LTS 64-bit](https://ubuntu.com/download/raspberry-pi/thank-you?version=22.04&architecture=server-arm64+raspi)<br>
+**[Install Ubuntu on a Raspberry Pi](https://ubuntu.com/download/raspberry-pi)**<br> 
+Download [Ubuntu Desktop 22.04 LTS 64-bit](https://ubuntu.com/download/raspberry-pi/thank-you?version=22.04&architecture=desktop-arm64+raspi)<br>
 
-### Ubuntu server 22.04 LTS 64-bit
+### Ubuntu Desktop 22.04 LTS 64-bit
 [Install Ubuntu Core on a Raspberry Pi](https://ubuntu.com/download/raspberry-pi-core)
-1. What you need:　 
-* A microSD card (4GB minimum, 8GB recommended)
-* A computer with a microSD card drive
-* A Raspberry Pi 2, 3 or 4
-* A micro-USB power cable (USB-C for the Pi 4)
-* A Wi-Fi network or an ethernet cable with an internet connection
+1. get a SD card = 16GB
 
-2. Prepare the SD card
-* Download .img.xz & uncompress it to .img
-* To write .img into SDcard, you can use **Win32DiskImager** or **balenaEtcher**
+2. Download .img.xz & uncompress it to .img
+   To write .img into SDcard, you can use **Win32DiskImager** or **balenaEtcher**
 
 3. plugin SDcard and power up RPi3/4
 
