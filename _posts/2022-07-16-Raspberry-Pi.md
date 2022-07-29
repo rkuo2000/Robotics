@@ -297,12 +297,15 @@ Published Topics:<br>
 
 [cam_object_tracking.py](https://github.com/rkuo2000/cv2/blob/master/cam_object_tracking.py)<br>
 
+---
 ### Optical Flow
 **Blog:** [Introduction to Motion Estimation with Optical Flow](https://nanonets.com/blog/optical-flow/)<br>
 ![](https://nanonets.com/blog/content/images/2019/04/sparse-vs-dense.gif)
+
 **Code:** [rkuo2000/cv2](https://github.com/rkuo2000/cv2)<br>
 * [optical-flow-sparse.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-sparse.py)
 * [optical-flow-dense.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-dense.py)
+
 **Usage:**<br>
 ```
 cd ~
