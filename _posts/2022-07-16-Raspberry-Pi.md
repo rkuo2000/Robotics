@@ -282,6 +282,20 @@ Published Topics:<br>
 /raw_image - sensor_msgs/Image<br>
     
 <iframe width="893" height="558" src="https://www.youtube.com/embed/vgGuKtmOW4Q" title="Ros2 + Raspberry + Camera #Ros2 #Camera #Raspberry #Foxy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+## OpenCV
+
+### Install OpenCV
+`pip3 install opencv-python`<br>
+
+### Optical Flow
+**Blog:** [Introduction to Motion Estimation with Optical Flow](https://nanonets.com/blog/optical-flow/)<br>
+![](https://nanonets.com/blog/content/images/2019/04/sparse-vs-dense.gif)
+**Code:** [rkuo2000/cv2](https://github.com/rkuo2000/cv2)<br>
+* [optical-flow-sparse.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-sparse.py)
+* [optical-flow-dense.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-dense.py)
+
 <br />
 <br />
 
