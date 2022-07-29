@@ -466,7 +466,9 @@ Mission Planner is a full-featured ground station application for the ArduPilot 
 
 ---
 ## MAVlink
-https://ardupilot.org/dev/docs/raspberry-pi-via-mavlink.html
+[Communicating with Raspberry Pi via MAVLink](https://ardupilot.org/dev/docs/raspberry-pi-via-mavlink.html)<br>
+* Connect the flight controller’s TELEM2 port to the RPi’s Ground, TX and RX pin
+![](https://ardupilot.org/dev/_images/RaspberryPi_Pixhawk_wiring1.jpg)
 
 ---
 ## 先進技術
