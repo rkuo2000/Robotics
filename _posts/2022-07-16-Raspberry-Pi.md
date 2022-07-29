@@ -318,10 +318,15 @@ python cam_object_tracking.py
 **Blog:** [Introduction to Motion Estimation with Optical Flow](https://nanonets.com/blog/optical-flow/)<br>
 ![](https://nanonets.com/blog/content/images/2019/04/sparse-vs-dense.gif)
 
+**Blog:** [OpenCV Optical Flow介紹](https://meetonfriday.com/posts/e2795e5a/)<br>
+* 了解Optical Flow的概念，以及如何使用Lucas-Kanade method來計算它
+* 使用cv.calcOpticalFlowPyrLK()來追蹤影片的特徵點
+* 使用cv.calcOpticalFlowFarneback()來計算稠密光流
+
 **Code:** [rkuo2000/cv2](https://github.com/rkuo2000/cv2)<br>
-* [optical-flow-sparse.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-sparse.py) 顯示原影像與光跡
-* [optical-flow-dense.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-dense.py) 
-* [drone_optical_flow.py](https://github.com/rkuo2000/cv2/blob/master/drone_optical_flow.py) 只顯示光跡
+* [optical-flow-sparse.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-sparse.py) 顯示原影像與特徵點的光跡
+* [optical-flow-dense.py](https://github.com/rkuo2000/cv2/blob/master/optical-flow-dense.py) 顯示原影像與稠密度的光跡
+* [drone_optical_flow.py](https://github.com/rkuo2000/cv2/blob/master/drone_optical_flow.py) 只顯示特徵點的光跡
 
 **Usage:**<br>
 ```
