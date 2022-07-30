@@ -14,7 +14,7 @@ Pi-Camera與IMU驅動程式設計, 以便進行強化學習PyBullet-Gym.
 
 ### RPi4B
 ![](https://www.taiwansensor.com.tw/wp-content/uploads/2020/04/RPI-006544-7-600x366.jpg)
-[RPi4B Specification](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/):
+[RPi4B Specification](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/):<br>
 * Processor：
   - Broadcom **BCM2711** 
   - quad-core Cortex-A72 (ARM v8)   
@@ -47,7 +47,9 @@ Pi-Camera與IMU驅動程式設計, 以便進行強化學習PyBullet-Gym.
 ![](https://www.raspberrypi-spy.co.uk/wp-content/uploads/2012/06/Raspberry-Pi-GPIO-Header-with-Photo-768x512.png)
 
 ---
-## 安裝Ubuntu 22.04 LTS作業系統 (real-time版本)
+## 安裝Ubuntu 22.04 LTS作業系統 (支援Real-Time)
+Based on upstream v5.15, the 22.04 LTS kernel integrates the out-of-tree PREEMPT_RT patch for x86_64 and AArch64 architectures.<br>
+
 **[Install Ubuntu on a Raspberry Pi](https://ubuntu.com/download/raspberry-pi)**<br> 
 Download [Ubuntu Desktop 22.04 LTS 64-bit](https://ubuntu.com/download/raspberry-pi/thank-you?version=22.04&architecture=desktop-arm64+raspi)<br>
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/RPi4_Ubuntu2204_Desktop.png?raw=true)
@@ -119,6 +121,27 @@ cd ~/cv2
 ```
 cd ~/cv2
 python3 cam_object_tracking.py 
+```
+
+* Change Color range
+1. use PaintBrush to find color range in HSV color space.
+<table>
+  <tr>
+    <td><img src="https://github.com/rkuo2000/Robotics/blob/gh-pages/images/PaintBrush_HSV_Green1.png?raw=true"></td>
+    <td><img src="https://github.com/rkuo2000/Robotics/blob/gh-pages/images/PaintBrush_HSV_Green2.png?raw=true"></td>
+  </tr>
+</table>
+2. edit .py to modify the color range
+```
+# color range = blue
+lower_blue = np.array([110,50,50])
+upper_blue = np.array([130,255,255])
+```
+
+```
+# color range = green
+lower_blue = np.array([75,55,0])
+upper_blue = np.array([153,98,0])
 ```
 
 ---
