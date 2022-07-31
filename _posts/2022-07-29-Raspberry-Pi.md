@@ -48,7 +48,7 @@ tags: [jekyll, ai]
 ---
 ## Ubuntu 22.04 LTS 作業系統 (Real-Time OS)
 
-### [Install Ubuntu on a Raspberry Pi](https://ubuntu.com/download/raspberry-pi)**<br> 
+### [Install Ubuntu on a Raspberry Pi](https://ubuntu.com/download/raspberry-pi)
 Based on upstream v5.15, the 22.04 LTS kernel integrates the out-of-tree PREEMPT_RT patch for x86_64 and AArch64 architectures.<br>
 * Download [Ubuntu Desktop 22.04 LTS 64-bit](https://ubuntu.com/download/raspberry-pi/thank-you?version=22.04&architecture=desktop-arm64+raspi)<br>
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/RPi4_Ubuntu2204_Desktop.png?raw=true)
@@ -76,7 +76,7 @@ Based on upstream v5.15, the 22.04 LTS kernel integrates the out-of-tree PREEMPT
 sudo apt update
 sudo apt upgrade
 ```
-* 安全更新
+* 安全地更新
 ```
 sudo apt install aptitude -y
 sudo aptitude safe-upgrade
