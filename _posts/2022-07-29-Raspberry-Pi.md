@@ -71,6 +71,18 @@ Based on upstream v5.15, the 22.04 LTS kernel integrates the out-of-tree PREEMPT
 ```
 
 ---
+### 作業系統更新
+```
+sudo apt update
+sudo apt upgrade
+```
+* 安全更新
+```
+sudo apt install aptitude -y
+sudo aptitude safe-upgrade
+```
+
+---
 ### Python3 packages
 `python3 -V`<br>
 * 安裝 pip3
