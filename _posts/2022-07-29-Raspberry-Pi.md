@@ -81,6 +81,7 @@ Based on upstream v5.15, the 22.04 LTS kernel integrates the out-of-tree PREEMPT
 ---
 ### [Control Raspberry Pi GPIO Pins from Python](https://www.ics.com/blog/control-raspberry-pi-gpio-pins-python#:~:text=Raspberry%20Pi%20model.-,RPi.,an%20MIT%20free%20software%20license.)
 * 安裝RPi.GPIO<br>
+* 
 `pip3 install RPi.GPIO`<br>
 GPIO程式範例:<br>
 ```
