@@ -85,7 +85,7 @@ sudo aptitude safe-upgrade
 ```
 sudo apt install openssh-server -y
 ```
-* PC to install [MobaXterm - Home edition (Free)](https://mobaxterm.mobatek.net/download.html) (free Xserver and tabbed SSH client for Windows)
+* PC to install [MobaXterm - Home edition (Free)](https://mobaxterm.mobatek.net/download.html)<br>
   `ssh ubuntu@192.168.0.22`<br>
   username ="bunutu", password="ubuntu2204"<br>
 
