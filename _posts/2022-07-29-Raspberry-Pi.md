@@ -85,9 +85,9 @@ sudo aptitude safe-upgrade
 ---
 ### Python3 packages
 `python3 -V`<br>
-* 安裝 pip3
+* 安裝 pip3<br>
 `sudo apt-get install python3-pip`<br>
-* 更新 pip3
+* 更新 pip3<br>
 `pip3 install --upgrade pip`<br>
 
 ---
