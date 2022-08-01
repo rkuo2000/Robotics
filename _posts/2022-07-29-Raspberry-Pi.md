@@ -295,7 +295,7 @@ You need to have a folder containing a set of checkerboard images taken using yo
 * Pose Estimation<br>
 [pose_estimation.py](https://github.com/rkuo2000/cv2/blob/master/ArUCo/pose_estimation.py)<br>
 `python3 pose_estimation.py --K_Matrix calibration_matrix.npy --D_Coeff distortion_coefficients.npy --type DICT_5X5_100`<br>
-`https://github.com/rkuo2000/cv2/raw/master/ArUCo/Images/pose_output.gif`<br>
+![](https://github.com/rkuo2000/cv2/raw/master/ArUCo/Images/pose_output.gif)
 
 ---
 ## MAVlink
