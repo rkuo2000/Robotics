@@ -229,14 +229,25 @@ python3 drone_optical_flow.py
 ```
 
 ---
-### [ArUco](https://docs.opencv.org/4.6.0/d5/dae/tutorial_aruco_detection.html)
+## [ArUco](https://docs.opencv.org/4.6.0/d5/dae/tutorial_aruco_detection.html)
 ![](https://docs.opencv.org/4.6.0/markers.jpg)
 An ArUco marker is a synthetic square marker composed by a wide black border and an inner binary matrix which determines its identifier (id). 
 The marker size determines the size of the internal matrix. For instance a marker size of 4x4 is composed by 16 bits.<br>
 
 A marker can be found rotated in the environment, however, the detection process needs to be able to determine its original rotation, so that each corner is identified unequivocally. This is also done based on the binary codification.<br>
 
-**[ArUco markers generator](https://chev.me/arucogen/)**<br>
+**[Github:](https://github.com/GSNCodes/ArUCo-Markers-Pose-Estimation-Generation-Python)**<br>
+
+```
+cd ~
+git clone https://github.com/rkuo2000/cv2
+cd ~/cv2/ArUCo
+```
+
+---
+### [ArUco markers generator](https://chev.me/arucogen/)
+[generate_aruco_tags.py](https://github.com/rkuo2000/cv2/blob/master/ArUCo/generate_aruco_tags.py)<br>
+`python3 generate_aruco_tags.py --id 24 --type DICT_5X5_100 -o tags/`<br>
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/ArUco_markers_generator.png?raw=true)
 
 **ArUco dictionaries:**
@@ -266,17 +277,24 @@ ARUCO_DICT =
 	"DICT_APRILTAG_36h11": cv2.aruco.DICT_APRILTAG_36h11
 }
 ```
-**[Github:](https://github.com/GSNCodes/ArUCo-Markers-Pose-Estimation-Generation-Python)**<br>
-* repro: `git clone https://github.com/GSNCodes/ArUCo-Markers-Pose-Estimation-Generation-Python`<br>
 
-1. [generate_arco_tags.py](https://github.com/GSNCodes/ArUCo-Markers-Pose-Estimation-Generation-Python/blob/main/generate_aruco_tags.py)
-  - `python3 generate_aruco_tags.py --id 24 --type DICT_5X5_100 -o tags/`<br>
-2. [detect_aruco_images.py](https://github.com/GSNCodes/ArUCo-Markers-Pose-Estimation-Generation-Python/blob/main/detect_aruco_images.py)
-  - `python3 detect_aruco_images.py --image Images/test_image_1.png --type DICT_5X5_100` # Image file<br>
-  - `python3 detect_aruco_video.py --type DICT_5X5_100 --camera True` # WebCam<br>
-  - `python3 detect_aruco_video.py --type DICT_5X5_100 --camera False --video test_video.mp4` # Video file <br>
-![](https://929687.smushcdn.com/2633864/wp-content/uploads/2020/12/aruco_generate_tags_examples.jpg?lossy=1&strip=1&webp=1)
-3. [Calibration.py](https://github.com/GSNCodes/ArUCo-Markers-Pose-Estimation-Generation-Python/blob/main/calibration.py)
+### ArUCo Markers Detection
+[detect_aruco_images.py](https://github.com/rkuo2000/cv2/blob/master/ArUCo/detect_aruco_images.py)<br>
+* `python3 detect_aruco_images.py --image Images/test_image_1.png --type DICT_5X5_100` # Image file
+![](https://github.com/rkuo2000/cv2/raw/master/ArUCo/Images/output_sample.png)
+
+* `python3 detect_aruco_video.py --type DICT_5X5_100 --camera True` # WebCam
+
+* `python3 detect_aruco_video.py --type DICT_5X5_100 --camera False --video test_video.mp4` # Video file
+
+### ArUCo Pose Estimation
+* Calibration
+`python3 calibration.py --dir calibration_checkerboard/ --square_size 0.024`<br>
+
+* Pose Estimation
+[pose_estimation.py](https://github.com/rkuo2000/cv2/blob/master/ArUCo/pose_estimation.py)<br>
+`python3 pose_estimation.py --K_Matrix calibration_matrix.npy --D_Coeff distortion_coefficients.npy --type DICT_5X5_100`<br>
+`https://github.com/rkuo2000/cv2/raw/master/ArUCo/Images/pose_output.gif`<br>
 
 ---
 ## MAVlink
