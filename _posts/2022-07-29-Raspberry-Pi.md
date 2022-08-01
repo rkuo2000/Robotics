@@ -174,15 +174,14 @@ python3 picam.py
 ![](https://techvidvan.com/tutorials/wp-content/uploads/sites/2/2021/06/draw-contour.png)
 
 ---
-### Object Detection - Balls
-[Object Detection and Tracking with OpenCV and Python](https://www.bluetin.io/opencv/object-detection-tracking-opencv-python/)<br>
+### [Object Detection - Balls](https://www.bluetin.io/opencv/object-detection-tracking-opencv-python/)
 [jpg_object_detection.py](https://github.com/rkuo2000/cv2/blob/master/jpg_object_detection.py)<br>
 `python3 jpg_object_detection.py`<br>
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/cv2-object-detection-balls.png?raw=true)
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/cv2-object-detection-contours.png?raw=true)
 
 ---
-### Object Tracking with Camera
+### Object Tracking 
 [cam_object_tracking.py](https://github.com/rkuo2000/cv2/blob/master/cam_object_tracking.py)<br>
 * Usage:
 ```
