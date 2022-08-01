@@ -198,12 +198,14 @@ python3 cam_object_tracking.py
   </tr>
 </table>
 2. edit .py to adjust the color range<br>
-  - Blue color<br>
+
+  - Blue color  
 ```
 lower_blue = np.array([100,90,90])
 upper_blue = np.array([120,255,255])
 ```
-  - Green color<br>
+
+  - Green color
 ```
 lower_blue = np.array([ 50, 90, 90])
 upper_blue = np.array([100,255,255])
