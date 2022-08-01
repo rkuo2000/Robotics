@@ -169,14 +169,21 @@ python3 picam.py
 ```
 
 ---
-### Object Detection using Color
+### Object Detection
 [Detect Objects of Similar Color using OpenCV in Python](https://techvidvan.com/tutorials/detect-objects-of-similar-color-using-opencv-in-python/)<br>
 ![](https://techvidvan.com/tutorials/wp-content/uploads/sites/2/2021/06/draw-contour.png)
 
+---
+### Object Detection - Balls
 [Object Detection and Tracking with OpenCV and Python](https://www.bluetin.io/opencv/object-detection-tracking-opencv-python/)<br>
 ![](https://www.bluetin.io/wp-content/uploads/2017/12/opencv-bounding-rectangle-example.jpg)
+[jpg_object_detection.py](https://github.com/rkuo2000/cv2/blob/master/jpg_object_detection.py)
+`python3 jpg_object_detection.py`<br>
+![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/cv2-object-detection-balls.png?raw=true)
+![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/cv2-object-detection-contours.png?raw=true)
 
 ---
+### Object Tracking with Camera
 [cam_object_tracking.py](https://github.com/rkuo2000/cv2/blob/master/cam_object_tracking.py)<br>
 * Usage:
 ```
