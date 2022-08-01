@@ -140,7 +140,7 @@ GPIO.cleanup()
 
 ### Install OpenCV
 * Install OpenCV on **Ubuntu 22.04** (RPi4B)
-`pip3 install opencv-python`<br>
+`pip3 install opencv-contrib-python`<br>
 
 * Install OpenCV on **Windows 11** (PC)
   - Install [Python for Windows](https://www.python.org/downloads/)
