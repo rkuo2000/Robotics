@@ -69,6 +69,7 @@ Based on upstream v5.15, the 22.04 LTS kernel integrates the out-of-tree PREEMPT
 
 7. For using pi-camera (v1.3)<br>
 `sudo nano /boot/firmware/config.txt`<br>
+
 ```
 [all]
 dtoverlay=vc4-kms-v3d
