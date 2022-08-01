@@ -288,12 +288,12 @@ ARUCO_DICT =
 * `python3 detect_aruco_video.py --type DICT_5X5_100 --camera False --video test_video.mp4` # Video file
 
 ### ArUCo Pose Estimation
+[pose_estimation.py](https://github.com/rkuo2000/cv2/blob/master/ArUCo/pose_estimation.py)<br>
 * Calibration<br>
 `python3 calibration.py --dir calibration_checkerboard/ --square_size 0.024`<br>
 You need to have a folder containing a set of checkerboard images taken using your camera. Make sure that these checkerboard images are of different poses and orientation. You need to provide the path to this directory and the size of the square in metres. You can also change the shape of the checkerboard pattern using the parameters given. Make sure this matches with your checkerboard pattern. This code will generate two numpy files calibration_matrix.npy and distortion_coefficients.npy. These files are required to execute the next step that involves pose estimation.
 
 * Pose Estimation<br>
-[pose_estimation.py](https://github.com/rkuo2000/cv2/blob/master/ArUCo/pose_estimation.py)<br>
 `python3 pose_estimation.py --K_Matrix calibration_matrix.npy --D_Coeff distortion_coefficients.npy --type DICT_5X5_100`<br>
 ![](https://github.com/rkuo2000/cv2/raw/master/ArUCo/Images/pose_output.gif)
 
