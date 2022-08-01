@@ -231,9 +231,9 @@ python3 drone_optical_flow.py
 ---
 ## [ArUco](https://docs.opencv.org/4.6.0/d5/dae/tutorial_aruco_detection.html)
 ![](https://docs.opencv.org/4.6.0/markers.jpg)
+
 An ArUco marker is a synthetic square marker composed by a wide black border and an inner binary matrix which determines its identifier (id). 
 The marker size determines the size of the internal matrix. For instance a marker size of 4x4 is composed by 16 bits.<br>
-
 A marker can be found rotated in the environment, however, the detection process needs to be able to determine its original rotation, so that each corner is identified unequivocally. This is also done based on the binary codification.<br>
 
 **[Github:](https://github.com/GSNCodes/ArUCo-Markers-Pose-Estimation-Generation-Python)**<br>
