@@ -189,7 +189,7 @@ cd ~/cv2
 python3 cam_object_tracking.py 
 ```
 
-* Change Color range
+* Change Color range<br>
 1. use PaintBrush(小畫家) to find color range in **HSV** (挑兩個點找出綠色的範圍)
 <table>
   <tr>
@@ -197,7 +197,7 @@ python3 cam_object_tracking.py
     <td><img src="https://github.com/rkuo2000/Robotics/blob/gh-pages/images/PaintBrush_HSV_Green2.png?raw=true"></td>
   </tr>
 </table>
-2. edit .py to adjust the color range
+2. edit .py to adjust the color range<br>
   - Blue color
 ```
 lower_blue = np.array([110,50,50])
