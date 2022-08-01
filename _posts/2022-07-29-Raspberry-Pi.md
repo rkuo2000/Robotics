@@ -176,8 +176,7 @@ python3 picam.py
 ---
 ### Object Detection - Balls
 [Object Detection and Tracking with OpenCV and Python](https://www.bluetin.io/opencv/object-detection-tracking-opencv-python/)<br>
-![](https://www.bluetin.io/wp-content/uploads/2017/12/opencv-bounding-rectangle-example.jpg)
-[jpg_object_detection.py](https://github.com/rkuo2000/cv2/blob/master/jpg_object_detection.py)
+[jpg_object_detection.py](https://github.com/rkuo2000/cv2/blob/master/jpg_object_detection.py)<br>
 `python3 jpg_object_detection.py`<br>
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/cv2-object-detection-balls.png?raw=true)
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/cv2-object-detection-contours.png?raw=true)
