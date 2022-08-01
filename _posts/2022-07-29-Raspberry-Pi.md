@@ -266,7 +266,7 @@ ARUCO_DICT =
 	"DICT_APRILTAG_36h11": cv2.aruco.DICT_APRILTAG_36h11
 }
 ```
-** [Github:](https://github.com/GSNCodes/ArUCo-Markers-Pose-Estimation-Generation-Python)**<br>
+**[Github:](https://github.com/GSNCodes/ArUCo-Markers-Pose-Estimation-Generation-Python)**<br>
 * repro: `git clone https://github.com/GSNCodes/ArUCo-Markers-Pose-Estimation-Generation-Python`<br>
 
 1. [generate_arco_tags.py](https://github.com/GSNCodes/ArUCo-Markers-Pose-Estimation-Generation-Python/blob/main/generate_aruco_tags.py)
