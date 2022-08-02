@@ -104,17 +104,19 @@ sudo aptitude safe-upgrade
 username ="bunutu", password="ubuntu2204"<br>
 
 ---
-### X-server running on PC 
-* PC安裝 **[MobaXterm - Home edition (Free)](https://mobaxterm.mobatek.net/download.html)**<br>
+### 分享樹莓派之顯示輸出 
+* 在PC上啟動X-server<br>
+在PC上安裝 **[MobaXterm - Home edition (Free)](https://mobaxterm.mobatek.net/download.html)**<br>
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/MobaXterm_logo.png?raw=true)
-* modify ~/.bashrc<br>
+
+* 在RPi4B上修改路徑設定檔, 並修改/dev/video0權限<br>
+  - `nano ~/.bashrc`<br>
 ```
 export DISPLAY=192.168.0.13:0.0 #PC X-server IP address
 export LIBGL_ALWAYS_INDIRECT=
 export LIBGL_ALWAYS_SOFTWARE=1
 ```
-* chmod /dev/video0<br>
-`sudo chmod 777 /dev/video0`<br>
+  - `sudo chmod 777 /dev/video0`<br>
 
 ---
 ### Python3 packages
