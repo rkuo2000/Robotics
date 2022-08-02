@@ -109,14 +109,14 @@ username ="bunutu", password="ubuntu2204"<br>
 在PC上安裝 **[MobaXterm - Home edition (Free)](https://mobaxterm.mobatek.net/download.html)**<br>
 ![](https://github.com/rkuo2000/Robotics/blob/gh-pages/images/MobaXterm_logo.png?raw=true)
 
-* 在RPi4B上修改路徑設定檔, 並修改/dev/video0權限<br>
+* 在RPi4B上修改/dev/video0權限, 並修改.bashrc如下<br>
+  - `sudo chmod 777 /dev/video0`<br>
   - `nano ~/.bashrc`<br>
 ```
 export DISPLAY=192.168.0.13:0.0 #PC X-server IP address
 export LIBGL_ALWAYS_INDIRECT=
 export LIBGL_ALWAYS_SOFTWARE=1
 ``` 
-  - `sudo chmod 777 /dev/video0`<br>
 
 ---
 ### Python3 packages
