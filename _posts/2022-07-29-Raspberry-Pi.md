@@ -115,7 +115,7 @@ username ="bunutu", password="ubuntu2204"<br>
 export DISPLAY=192.168.0.13:0.0 #PC X-server IP address
 export LIBGL_ALWAYS_INDIRECT=
 export LIBGL_ALWAYS_SOFTWARE=1
-```
+``` 
   - `sudo chmod 777 /dev/video0`<br>
 
 ---
