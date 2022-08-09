@@ -293,38 +293,9 @@ python jpg_contours.py H00.png
 <table>
 <tr>
 <td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/copter_H00_contours.png?raw=true"></td>
-<td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/copter_H03_contours.png?raw=true"></td>
+<td><img width="50%" height="50%" src="https://github.com/rkuo2000/cv2/blob/master/copter/copter_H03_contours.png?raw=true"></td>
 </tr>
 </table>
-
----
-### [Skin Detection](https://nalinc.github.io/blog/2018/skin-detection-python-opencv/)
-[jpg_skin_detection.py](https://github.com/rkuo2000/cv2/blob/master/jpg_skin_detection.py)<br>
-![](https://nalinc.github.io/assets/img/skin-detection/ycrcb.png)
-```
-image = cv2.imread("rock_climbing.png")
-
-imgYCrCb  = cv2.cvtColor(image,cv2.COLOR_BGR2YCR_CB)
-
-# min & max YCbCr of Skin
-min_YCrCb = np.array([  0,135, 85],np.uint8)
-max_YCrCb = np.array([255,180,135],np.uint8)
-
-mask = cv2.inRange(imgYCrCb,min_YCrCb,max_YCrCb)
-
-skin = cv2.bitwise_and(image, image, mask = mask)
-```
-
-[cam_skin_detection.py](https://github.com/rkuo2000/cv2/blob/master/cam_skin_detection.py)<br>
-```
-imgYCrCb = cv2.cvtColor(frame, cv2.COLOR_BGR2YCR_CB)
-min_YCrCb = np.array([  0,135, 85], np.uint8)
-max_YCrCb = np.array([255,180,135], np.uint8)
-
-mask = cv2.inRange(imgYCrCb, min_YCrCb, max_YCrCb)
-
-skin = cv2.bitwise_and(frame, frame, mask=mask)
-```
 
 ---
 ### Optical Flow (光流)
