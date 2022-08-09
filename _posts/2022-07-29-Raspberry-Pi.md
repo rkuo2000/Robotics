@@ -285,7 +285,7 @@ cv2.imshow("contours", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 ```
-* Exercises:<br>
+**Exercises:**<br>
 `cd ~/cv2/copter`<br>
 * `python jpg_contours.py H00.png`<br>
 ![](https://github.com/rkuo2000/cv2/blob/master/copter/copter_contours_H00.png?raw=true)
