@@ -238,7 +238,16 @@ upper_blue = np.array([100,255,255])
 
 ---
 ### Landing Mark Detection
-[jpg_contours.py](https://github.com/rkuo2000/cv2/blob/master/copter/jpg_contours.py)
+<table>
+<tr>
+<td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/H00.png?raw=true"></td>
+<td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/H01.png?raw=true"></td>
+<td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/H02.png?raw=true"></td>
+<td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/H03.png?raw=true"></td>	
+</tr>
+</table>
+
+[jpg_contours.py](https://github.com/rkuo2000/cv2/blob/master/copter/jpg_contours.py)<br>
 ```
 import numpy as np
 import sys
@@ -283,14 +292,8 @@ python jpg_contours.py H00.png
 ```
 <table>
 <tr>
-<img src="https://github.com/rkuo2000/cv2/blob/master/copter/H00.png?raw=true">
-<img src="https://github.com/rkuo2000/cv2/blob/master/copter/copter_H00_contours.png?raw=true>
-</tr>
-</table>
-<table>
-<tr>
-<img src="https://github.com/rkuo2000/cv2/blob/master/copter/H03.png?raw=true">
-<img src="https://github.com/rkuo2000/cv2/blob/master/copter/copter_H03_contours.png?raw=true>
+<td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/copter_H00_contours.png?raw=true></td>
+<td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/copter_H03_contours.png?raw=true></td>
 </tr>
 </table>
 
