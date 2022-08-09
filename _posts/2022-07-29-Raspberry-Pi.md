@@ -291,7 +291,6 @@ cd ~/cv2/copter
 python jpg_contours.py H00.png
 ```
 ![](https://github.com/rkuo2000/cv2/blob/master/copter/copter_contours_H00.png?raw=true)
-![](https://github.com/rkuo2000/cv2/blob/master/copter/copter_H03_contours.png?raw=true)
 
 ---
 ### Optical Flow (光流)
