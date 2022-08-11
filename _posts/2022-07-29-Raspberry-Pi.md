@@ -698,6 +698,39 @@ while True:
         sys.exit(0)
 ```	
 10. Read and write parameters
+```
+import time
+from pymavlink import mavutil
+
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master.wait_heartbeat()
+
+master.mav.param_request_read_send( master.target_system, master.target_component, b'SURFACE_DEPTH', -1)
+
+message = master.recv_match(type='PARAM_VALUE', blocking=True).to_dict()
+print('name: %s\tvalue: %d' % (message['param_id'].decode("utf-8"), message['param_value']))
+
+time.sleep(1)
+master.mav.param_set_send( master.target_system, master.target_component, b'SURFACE_DEPTH', -12, mavutil.mavlink.MAV_PARAM_TYPE_REAL32)
+
+# Read ACK
+# IMPORTANT: The receiving component should acknowledge the new parameter value by sending a
+# param_value message to all communication partners.
+# This will also ensure that multiple GCS all have an up-to-date list of all parameters.
+# If the sending GCS did not receive a PARAM_VALUE message within its timeout time,
+# it should re-send the PARAM_SET message.
+message = master.recv_match(type='PARAM_VALUE', blocking=True).to_dict()
+print('name: %s\tvalue: %d' % (message['param_id'].decode("utf-8"), message['param_value']))
+
+time.sleep(1)
+
+# Request parameter value to confirm
+master.mav.param_request_read_send(master.target_system, master.target_component, b'SURFACE_DEPTH', -1)
+
+# Print new value in RAM
+message = master.recv_match(type='PARAM_VALUE', blocking=True).to_dict()
+print('name: %s\tvalue: %d' % (message['param_id'].decode("utf-8"), message['param_value']))	
+```
 11. Receive data and filter by message type
 12. Request message interval
 13. Control Camera Gimbal
