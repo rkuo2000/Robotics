@@ -1195,11 +1195,18 @@ while True:
 ### [MAVROS](https://github.com/mavlink/mavros/)
 MAVLink extendable communication node for ROS.<br>
 
-[Installation]<br>
-`sudo apt-get install ros-kinetic-mavros ros-kinetic-mavros-extras`<br>
-`wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh`<br>
-`./install_geographiclib_datasets.sh`<br>
+**Installation**<br>
+```	
+source_ros2
+sudo apt-get install ros-humble-mavros ros-humble-mavros-extras	
+wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+chmod +x install_geographiclib_datasets.sh
+./install_geographiclib_datasets.sh
+```
 
+`ros2 run mavros mavros_node`<br>
+`ros2 run mavros mavros_node _fcu_url:=/dev/ttyACM0:921600 _gcs_url:=udp://@172.16.254.1`<br>
+	
 ---
 ## ROS2 機器人作業系統
 <img width="25%" height="20%" src="https://www.ros.org/imgs/humble.png">
