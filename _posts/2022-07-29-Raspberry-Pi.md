@@ -404,7 +404,7 @@ High Level Message Flow
 <tr><td>message COMMAND_LONG 0 0 400 0 1 21196 0 0 0 0 0</td><td>force arm the vehicle (try to bypass arming checks)</td></tr>
 <tr><td>message COMMAND_LONG 0 0 400 0 0 0 0 0 0 0 0</td><td>disarm the vehicle (may fail if not landed)</td></tr>
 <tr><td>message COMMAND_LONG 0 0 400 0 0 21196 0 0 0 0 0</td><td>force disarm the vehicle even if flying</td></tr>
-<table>
+</table>
 
 **Movement Commands**<br>
 * [SET_POSITION_TARGET_LOCAL_NED](https://ardupilot.org/dev/docs/copter-commands-in-guided-mode.html#copter-commands-in-guided-mode-set-position-target-local-ned)
