@@ -428,7 +428,7 @@ Set the Servo position with MAV_CMD_DO_SET_SERVO
 <table>
 <tr><td>MAVProxy/SITL Command</td><td>Description</td></tr>
 <tr><td>message COMMAND_LONG 0 0 183 0 8 1200 0 0 0 0 0</td><td>Move servo output 8 to 1200</td></tr>
-<table>
+</table>
 	
 ---
 ### [Communicating with Raspberry Pi via MAVLink](https://ardupilot.org/dev/docs/raspberry-pi-via-mavlink.html)
