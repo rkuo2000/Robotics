@@ -399,13 +399,11 @@ High Level Message Flow
 
 * [Arming and Disarming](https://ardupilot.org/dev/docs/mavlink-arming-and-disarming.html)
 <table>
-<tr>
-<td>MAVProxy/SITL Command</td>
-<td>Description</td>
-</tr>
-<tr>
-<td>`message COMMAND_LONG 0 0 400 0 1 0 0 0 0 0 0`</td><td>arm the vehicle (may fail because of arming checks)</td>
-</tr>
+<tr><td>MAVProxy/SITL Command</td><td>Description</td></tr>
+<tr><td>message COMMAND_LONG 0 0 400 0 1 0 0 0 0 0 0</td><td>arm the vehicle (may fail because of arming checks)</td></tr>
+<tr><td>message COMMAND_LONG 0 0 400 0 1 21196 0 0 0 0 0</td><td>force arm the vehicle (try to bypass arming checks)</td></tr>
+<tr><td>message COMMAND_LONG 0 0 400 0 0 0 0 0 0 0 0</td><td>disarm the vehicle (may fail if not landed)</td></tr>
+<tr><td>message COMMAND_LONG 0 0 400 0 0 21196 0 0 0 0 0</td><td>force disarm the vehicle even if flying</td></tr>
 <table>
 
 **Movement Commands**<br>
@@ -425,6 +423,13 @@ High Level Message Flow
 * [MAV_CMD_DO_SET_ROI](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html#mav-cmd-do-set-roi)
 * [MAV_CMD_NAV_LOITER_UNLIM](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html#mav-cmd-nav-loiter-unlim)
 
+* [Move a Servo](https://ardupilot.org/dev/docs/mavlink-move-servo.html)
+Set the Servo position with MAV_CMD_DO_SET_SERVO
+<table>
+<tr><td>MAVProxy/SITL Command</td><td>Description</td></tr>
+<tr><td>message COMMAND_LONG 0 0 183 0 8 1200 0 0 0 0 0</td><td>Move servo output 8 to 1200</td></tr>
+<table>
+	
 ---
 ### [Communicating with Raspberry Pi via MAVLink](https://ardupilot.org/dev/docs/raspberry-pi-via-mavlink.html)
 Connect the flight controller’s **TELEM2** port to the RPi’s **TXD0**(GPIO14), **RXD0**(GPIO) and **Ground**  pins.
@@ -473,32 +478,241 @@ mavproxy.py --master=/dev/ttyUSB0 --out=udp:192.168.1.1:14550
 mavproxy.py --master=/dev/ttyACM0,115200 --out=/dev/ttyUSB0,57600
 mavproxy.py --master=/dev/ttyACM0,115200 --out=COM17,57600
 mavproxy.py --master=/dev/ttyACM0,57600 --out=udpbcast:192.168.2.255:14550
+mavproxy.py --master=udpout:10.10.1.1:14550
+mavproxy.py --master=tcpout:10.10.1.1:14550
+mavproxy.py --master=/dev/ttyUSB0 --cmd="param load init.parm; module load map;"
 ```
 
 ---
 ### [pymavlink](https://github.com/ArduPilot/pymavlink)
-[examples](https://github.com/ArduPilot/pymavlink/tree/master/examples)<br>
-[mavlink command reference](https://ardupilot.org/dev/docs/mavlink-commands.html)<br>
+[examples](https://www.ardusub.com/developers/pymavlink.html#run-pymavlink-on-the-companion-computer)<br>
+* python
+```
+import pymavlink
+print(pymavlink.__doc__)
+```	
 
-### Copter Commands in Guided Mode:<br>
-**Movement Commnads**<br>
-* SET_POSITION_TARGET_LOCAL_NED
-* SET_POSITION_TARGET_GLOBAL_INT
-* SET_ATTITUDE_TARGET
+1. Autopilot connected to the computer via serial
+```
+from pymavlink import mavutil
+master = mavutil.mavlink_connection("/dev/ttyACM0", baud=115200)
+master.reboot_autopilot()
+```
+	
+2. Run pyMavlink on the surface computer
+```
+import time
+from pymavlink import mavutil
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
 
-**MAV_CMDs**<br>
-These MAV_CMDs can be processed if packaged within a COMMAND_LONG message.<br> 
-* MAV_CMD_CONDITION_YAW
-* MAV_CMD_DO_CHANGE_SPEED
-* MAV_CMD_DO_FLIGHTTERMINATION - disarms motors immediately (Copter falls!).
-* MAV_CMD_DO_PARACHUTE
-* MAV_CMD_DO_SET_ROI
-* MAV_CMD_NAV_TAKEOFF
-* MAV_CMD_NAV_LOITER_UNLIM
-* MAV_CMD_NAV_RETURN_TO_LAUNCH
-* MAV_CMD_NAV_LAND
-* MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN
+# Make sure the connection is valid
+master.wait_heartbeat()
 
+# Get some information !
+while True:
+    try:
+        print(master.recv_match().to_dict())
+    except:
+        pass
+    time.sleep(0.1)	
+```
+{'mavpackettype': 'AHRS2', 'roll': -0.11364290863275528, 'pitch': -0.02841472253203392, 'yaw': 2.0993032455444336, 'altitude': 0.0, 'lat': 0, 'lng': 0}<br>
+{'mavpackettype': 'AHRS3', 'roll': 0.025831475853919983, 'pitch': 0.006112074479460716, 'yaw': 2.1514968872070312, 'altitude': 0.0, 'lat': 0, 'lng': 0, 'v1': 0.0, 'v2': 0.0, 'v3': 0.0, 'v4': 0.0}<br>
+{'mavpackettype': 'VFR_HUD', 'airspeed': 0.0, 'groundspeed': 0.0, 'heading': 123, 'throttle': 0, 'alt': 3.129999876022339, 'climb': 3.2699999809265137}<br>
+{'mavpackettype': 'AHRS', 'omegaIx': 0.0014122836291790009, 'omegaIy': -0.022567369043827057, 'omegaIz': 0.02394154854118824, 'accel_weight': 0.0, 'renorm_val': 0.0, 'error_rp': 0.08894175291061401, 'error_yaw': 0.0990816056728363}	<br>
+	
+3. Run pyMavlink on the companion computer
+```
+import time
+from pymavlink import mavutil
+
+def wait_conn():
+    """
+    Sends a ping to stabilish the UDP communication and awaits for a response
+    """
+    msg = None
+    while not msg:
+        master.mav.ping_send(
+            int(time.time() * 1e6), # Unix time in microseconds
+            0, # Ping number
+            0, # Request ping of all systems
+            0 # Request ping of all components
+        )
+        msg = master.recv_match()
+        time.sleep(0.5)	
+
+master = mavutil.mavlink_connection('udpout:0.0.0.0:9000')
+wait_conn()
+
+# Get some information !
+while True:
+    try:
+        print(master.recv_match().to_dict())
+    except:
+        pass
+    time.sleep(0.1)	
+```
+{'mavpackettype': 'AHRS2', 'roll': -0.11364290863275528, 'pitch': -0.02841472253203392, 'yaw': 2.0993032455444336, 'altitude': 0.0, 'lat': 0, 'lng': 0}<br>
+{'mavpackettype': 'AHRS3', 'roll': 0.025831475853919983, 'pitch': 0.006112074479460716, 'yaw': 2.1514968872070312, 'altitude': 0.0, 'lat': 0, 'lng': 0, 'v1': 0.0, 'v2': 0.0, 'v3': 0.0, 'v4': 0.0}<br>
+{'mavpackettype': 'VFR_HUD', 'airspeed': 0.0, 'groundspeed': 0.0, 'heading': 123, 'throttle': 0, 'alt': 3.129999876022339, 'climb': 3.2699999809265137}<br>
+{'mavpackettype': 'AHRS', 'omegaIx': 0.0014122836291790009, 'omegaIy': -0.022567369043827057, 'omegaIz': 0.02394154854118824, 'accel_weight': 0.0, 'renorm_val': 0.0, 'error_rp': 0.08894175291061401, 'error_yaw': 0.0990816056728363}<br>
+	
+4. Send Message to QGroundControl
+```
+from pymavlink import mavutil
+master = mavutil.mavlink_connection('udpout:localhost:14550', source_system=1)
+master.mav.statustext_send(mavutil.mavlink.MAV_SEVERITY_NOTICE, "QGC will read this".encode())
+```
+5. Arm/Disarm the vehicle
+from pymavlink import mavutil
+
+# Create the connection
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+# Wait a heartbeat before sending commands
+master.wait_heartbeat()
+
+# https://mavlink.io/en/messages/common.html#MAV_CMD_COMPONENT_ARM_DISARM
+
+# Arm
+```
+master.mav.command_long_send(master.target_system, master.target_component, mavutil.mavlink.MAV_CMD_COMPONENT_ARM_DISARM,  0,  1, 0, 0, 0, 0, 0, 0)
+print("Waiting for the vehicle to arm")
+master.motors_armed_wait()
+print('Armed!')
+	
+master.mav.command_long_send(master.target_system, master.target_component, mavutil.mavlink.MAV_CMD_COMPONENT_ARM_DISARM,   0,  0, 0, 0, 0, 0, 0, 0)
+master.motors_disarmed_wait()
+```
+6. Change flight mode
+```
+import sys
+from pymavlink import mavutil
+
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master.wait_heartbeat()
+
+# Choose a mode
+mode = 'STABILIZE'
+
+# Check if mode is available
+if mode not in master.mode_mapping():
+    print('Unknown mode : {}'.format(mode))
+    print('Try:', list(master.mode_mapping().keys()))
+    sys.exit(1)
+
+# Get mode ID
+mode_id = master.mode_mapping()[mode]
+# Set new mode
+# master.mav.command_long_send(
+#    master.target_system, master.target_component,
+#    mavutil.mavlink.MAV_CMD_DO_SET_MODE, 0,
+#    0, mode_id, 0, 0, 0, 0, 0) or:
+# master.set_mode(mode_id) or:
+master.mav.set_mode_send(master.target_system, mavutil.mavlink.MAV_MODE_FLAG_CUSTOM_MODE_ENABLED,  mode_id)
+
+while True:
+    # Wait for ACK command
+    # Would be good to add mechanism to avoid endlessly blocking
+    # if the autopilot sends a NACK or never receives the message
+    ack_msg = master.recv_match(type='COMMAND_ACK', blocking=True)
+    ack_msg = ack_msg.to_dict()
+
+    # Continue waiting if the acknowledged command is not `set_mode`
+    if ack_msg['command'] != mavutil.mavlink.MAV_CMD_DO_SET_MODE:
+        continue
+
+    # Print the ACK result !
+    print(mavutil.mavlink.enums['MAV_RESULT'][ack_msg['result']].description)
+    break
+```
+7. Send RC (Joystick)
+```
+from pymavlink import mavutil
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master.wait_heartbeat()
+
+def set_rc_channel_pwm(channel_id, pwm=1500):
+    """ Set RC channel pwm value
+    Args:
+        channel_id (TYPE): Channel ID
+        pwm (int, optional): Channel pwm value 1100-1900
+    """
+    if channel_id < 1 or channel_id > 18:
+        print("Channel does not exist.")
+        return
+
+    # Mavlink 2 supports up to 18 channels: https://mavlink.io/en/messages/common.html#RC_CHANNELS_OVERRIDE
+    rc_channel_values = [65535 for _ in range(18)]
+    rc_channel_values[channel_id - 1] = pwm
+    master.mav.rc_channels_override_send(
+        master.target_system,                # target_system
+        master.target_component,             # target_component
+        *rc_channel_values)                  # RC channel list, in microseconds.
+
+# Set some roll
+set_rc_channel_pwm(2, 1600)
+
+# Set some yaw
+set_rc_channel_pwm(4, 1600)
+
+# The camera pwm value sets the servo speed of a sweep from the current angle to
+#  the min/max camera angle. It does not set the servo position.
+# Set camera tilt to 45º (max) with full speed
+set_rc_channel_pwm(8, 1900)
+
+# Set channel 12 to 1500us
+# This can be used to control a device connected to a servo output by setting the
+# SERVO[N]_Function to RCIN12 (Where N is one of the PWM outputs)
+set_rc_channel_pwm(12, 1500)
+```
+8. Send Manual Control
+```
+from pymavlink import mavutil
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master.wait_heartbeat()
+
+# Send a positive x value, negative y, negative z, positive rotation and no button.
+# https://mavlink.io/en/messages/common.html#MANUAL_CONTROL
+# Warning: Because of some legacy workaround, z will work between [0-1000]
+# where 0 is full reverse, 500 is no output and 1000 is full throttle.
+# x,y and r will be between [-1000 and 1000].
+master.mav.manual_control_send( master.target_system,  500, -500,  250,  500,  0)
+
+# To active button 0 (first button), 3 (fourth button) and 7 (eighth button)
+# It's possible to check and configure this buttons in the Joystick menu of QGC
+buttons = 1 + 1 << 3 + 1 << 7
+master.mav.manual_control_send(master.target_system, 0,  0,  500,  0, buttons) # 500 means neutral throttle
+```	
+9. Read all parameters
+```	
+import time
+import sys
+from pymavlink import mavutil
+
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master.wait_heartbeat()
+
+# Request all parameters
+master.mav.param_request_list_send(master.target_system, master.target_component)
+while True:
+    time.sleep(0.01)
+    try:
+        message = master.recv_match(type='PARAM_VALUE', blocking=True).to_dict()
+        print('name: %s\tvalue: %d' % (message['param_id'], message['param_value']))
+    except Exception as error:
+        print(error)
+        sys.exit(0)
+```	
+10. Read and write parameters
+11. Receive data and filter by message type
+12. Request message interval
+13. Control Camera Gimbal
+14. Set Servo PWM
+15. Advanced Servo/Gripper Example
+16. Set Target Depth/Attitude
+17. Send GPS position
+18. Send rangefinder/computer vision distance measurement to the autopilot	
+	
 ---
 ### [MAVROS](https://github.com/mavlink/mavros/)
 MAVLink extendable communication node for ROS.<br>
