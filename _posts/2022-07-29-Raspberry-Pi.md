@@ -563,6 +563,7 @@ from pymavlink import mavutil
 master = mavutil.mavlink_connection('udpout:localhost:14550', source_system=1)
 master.mav.statustext_send(mavutil.mavlink.MAV_SEVERITY_NOTICE, "QGC will read this".encode())
 ```
+
 5. Arm/Disarm the vehicle
 ```	
 from pymavlink import mavutil
@@ -577,6 +578,7 @@ print('Armed!')
 master.mav.command_long_send(master.target_system, master.target_component, mavutil.mavlink.MAV_CMD_COMPONENT_ARM_DISARM,   0,  0, 0, 0, 0, 0, 0, 0)
 master.motors_disarmed_wait()
 ```
+
 6. Change flight mode
 ```
 import sys
@@ -619,6 +621,7 @@ while True:
     print(mavutil.mavlink.enums['MAV_RESULT'][ack_msg['result']].description)
     break
 ```
+
 7. Send RC (Joystick)
 ```
 from pymavlink import mavutil
@@ -659,6 +662,7 @@ set_rc_channel_pwm(8, 1900)
 # SERVO[N]_Function to RCIN12 (Where N is one of the PWM outputs)
 set_rc_channel_pwm(12, 1500)
 ```
+
 8. Send Manual Control
 ```
 from pymavlink import mavutil
@@ -676,7 +680,8 @@ master.mav.manual_control_send( master.target_system,  500, -500,  250,  500,  0
 # It's possible to check and configure this buttons in the Joystick menu of QGC
 buttons = 1 + 1 << 3 + 1 << 7
 master.mav.manual_control_send(master.target_system, 0,  0,  500,  0, buttons) # 500 means neutral throttle
-```	
+```
+	
 9. Read all parameters
 ```	
 import time
@@ -696,7 +701,8 @@ while True:
     except Exception as error:
         print(error)
         sys.exit(0)
-```	
+```
+
 10. Read and write parameters
 ```
 import time
@@ -731,14 +737,459 @@ master.mav.param_request_read_send(master.target_system, master.target_component
 message = master.recv_match(type='PARAM_VALUE', blocking=True).to_dict()
 print('name: %s\tvalue: %d' % (message['param_id'].decode("utf-8"), message['param_value']))	
 ```
+	
 11. Receive data and filter by message type
+```
+from pymavlink import mavutil
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+
+while True:
+    msg = master.recv_match()
+    if not msg:
+        continue
+    if msg.get_type() == 'HEARTBEAT':
+        print("\n\n*****Got message: %s*****" % msg.get_type())
+        print("Message: %s" % msg)
+        print("\nAs dictionary: %s" % msg.to_dict())
+        # Armed = MAV_STATE_STANDBY (4), Disarmed = MAV_STATE_ACTIVE (3)
+        print("\nSystem status: %s" % msg.system_status)
+```
+
 12. Request message interval
+```
+import time
+from pymavlink import mavutil
+
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master.wait_heartbeat()
+
+def request_message_interval(message_id: int, frequency_hz: float):
+    """
+    Request MAVLink message in a desired frequency,
+    documentation for SET_MESSAGE_INTERVAL:
+        https://mavlink.io/en/messages/common.html#MAV_CMD_SET_MESSAGE_INTERVAL
+
+    Args:
+        message_id (int): MAVLink message ID
+        frequency_hz (float): Desired frequency in Hz
+    """
+    master.mav.command_long_send(
+        master.target_system, master.target_component,
+        mavutil.mavlink.MAV_CMD_SET_MESSAGE_INTERVAL, 0,
+        message_id, # The MAVLink message ID
+        1e6 / frequency_hz, # The interval between two messages in microseconds. Set to -1 to disable and 0 to request default rate.
+        0, 0, 0, 0, # Unused parameters
+        0, # Target address of message stream (if message has target address fields). 0: Flight-stack default (recommended), 1: address of requestor, 2: broadcast.
+    )
+	
+# Configure AHRS2 message to be sent at 1Hz
+request_message_interval(mavutil.mavlink.MAVLINK_MSG_ID_AHRS2, 1)
+
+# Configure ATTITUDE message to be sent at 2Hz
+request_message_interval(mavutil.mavlink.MAVLINK_MSG_ID_ATTITUDE, 2)
+
+# Get some information !
+while True:
+    try:
+        print(master.recv_match().to_dict())
+    except:
+        pass
+    time.sleep(0.1)
+```
+
 13. Control Camera Gimbal
+```
+import time
+from pymavlink import mavutil
+
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master.wait_heartbeat()
+
+def look_at(tilt, roll=0, pan=0):
+    """
+    Moves gimbal to given position
+    Args:
+        tilt (float): tilt angle in centidegrees (0 is forward)
+        roll (float, optional): pan angle in centidegrees (0 is forward)
+        pan  (float, optional): pan angle in centidegrees (0 is forward)
+    """
+    master.mav.command_long_send(
+        master.target_system,
+        master.target_component,
+        mavutil.mavlink.MAV_CMD_DO_MOUNT_CONTROL,
+        1,
+        tilt,
+        roll,
+        pan,
+        0, 0, 0,
+        mavutil.mavlink.MAV_MOUNT_MODE_MAVLINK_TARGETING)
+
+# cycles the camera up and down
+while True:
+    for angle in range(-50, 50):
+        look_at(angle*100)
+        time.sleep(0.1)
+    for angle in range(-50, 50):
+        look_at(-angle*100)
+        time.sleep(0.1)
+```
+
 14. Set Servo PWM
+```
+import time
+from pymavlink import mavutil
+
+def set_servo_pwm(servo_n, microseconds):
+    """ Sets AUX 'servo_n' output PWM pulse-width.
+
+    Uses https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_SERVO
+
+    'servo_n' is the AUX port to set (assumes port is configured as a servo).
+        Valid values are 1-3 in a normal BlueROV2 setup, but can go up to 8
+        depending on Pixhawk type and firmware.
+    'microseconds' is the PWM pulse-width to set the output to. Commonly
+        between 1100 and 1900 microseconds.
+
+    """
+    # master.set_servo(servo_n+8, microseconds) or:
+    master.mav.command_long_send(
+        master.target_system, master.target_component,
+        mavutil.mavlink.MAV_CMD_DO_SET_SERVO,
+        0,            # first transmission of this command
+        servo_n + 8,  # servo instance, offset by 8 MAIN outputs
+        microseconds, # PWM pulse-width
+        0,0,0,0,0     # unused parameters
+    )
+
+# Create the connection
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+# Wait a heartbeat before sending commands
+master.wait_heartbeat()
+
+# command servo_1 to go from min to max in steps of 50us, over 2 seconds
+for us in range(1100, 1900, 50):
+    set_servo_pwm(1, us)
+    time.sleep(0.125)	
+```
+
 15. Advanced Servo/Gripper Example
+```
+from pymavlink import mavutil
+
+class RawServoOutput:
+    """ A class for commanding a mavlink-controlled servo output port. """
+    # https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_SERVO
+    CMD_SET = mavutil.mavlink.MAV_CMD_DO_SET_SERVO
+
+    def __init__(self, master, instance, pwm_limits=(1100, 1500, 1900),
+                 set_default=True):
+        """ Initialise a RawServoOutput instance.
+
+        'master' is a mavlink connection
+        'instance' is the servo output (e.g. Pixhawk MAIN 1-8, AUX 9-16)
+        'pwm_limits' is a tuple of min, default, and max pwm pulse-widths
+            in microseconds (default (1100, 1500, 1900)).
+        'set_default' is a boolean specifying whether to command the output
+            to the specified default pulse-width (default True).
+
+        """
+        self.master     = master
+        self.instance   = instance
+        self.min_us, self._current, self.max_us = pwm_limits
+        self._diff      = self.max_us - self.min_us
+
+        if set_default:
+            self.set_direct(self._current)
+
+    def set_direct(self, us):
+        """ Directly set the PWM pulse width.
+
+        'us' is the PWM pulse width in microseconds.
+            Must be between self.min_us and self.max_us.
+
+        """
+        assert self.min_us <= us <= self.max_us, "Invalid input value."
+
+        # self.master.set_servo(self.instance, us) or:
+        self.master.mav.command_long_send(
+            self.master.target_system, self.master.target_component,
+            self.CMD_SET,
+            0, # first transmission of this command
+            self.instance, us,
+            0,0,0,0,0 # unused parameters
+        )
+        self._current = us
+	
+    def set_ratio(self, proportion):
+        """ Set the PWM pulse-width ratio (auto-scale between min and max).
+
+        'proportion' is a 0-1 value, where 0 corresponds to self.min_us, and
+            1 corresponds to self.max_us.
+
+        """
+        self.set_direct(proportion * self._diff + self.min_us)
+
+    def inc(self, us=50):
+        """ Increment the PWM pulse width by 'us' microseconds. """
+        self.set_direct(max(self.max_us, self._current+us))
+
+    def dec(self, us=50):
+        """ Decrement the PWM pulse width by 'us' microseconds. """
+        self.set_direct(min(self.min_us, self._current-us))
+
+    def set_min(self):
+        """ Set the PWM to self.min_us. """
+        self.set_ratio(0)
+
+    def set_max(self):
+        """ Set the PWM to self.max_us. """
+        self.set_ratio(1)
+	
+    def center(self):
+        """ Set the PWM to half-way between self.min_us and self.max_us. """
+        self.set_ratio(0.5)
+	
+class AuxServoOutput(RawServoOutput):
+    """ A class representing a mavlink-controlled auxiliary servo output. """
+    def __init__(self, master, servo_n, main_outputs=8, **kwargs):
+        """ Initiliase a servo instance.
+
+        'master' is a mavlink connection.
+        'servo_n' is one of the auxiliary servo outputs, like the servo_n
+            outputs with QGroundControl joystick control.
+            Most likely a value between 1-3, but possibly up to 6 or 8
+            depending on setup.
+        'main_outputs' is the number of MAIN outputs are present on the
+            autopilot device (default 8).
+        **kwargs are passed to RawServoOutput.
+
+        """
+        super().__init__(master, servo_n+main_outputs, **kwargs)
+        self._main_outputs = main_outputs
+
+    @property
+    def servo_n(self):
+        """ Return the AUX servo number of this output. """
+        return self.instance - self._main_outputs
+
+class Gripper(AuxServoOutput):
+    """ A class representing a Blue Robotics' gripper. """
+    def __init__(self, master, servo_n, pwm_limits=(1100, 1100, 1500),
+                 **kwargs):
+        """ Initialise a Gripper instance.
+
+        'master' is a mavlink connection.
+        'servo_n' is one of the auxiliary servo outputs, like the servo_n
+            outputs with QGroundControl joystick control.
+            Most likely a value between 1-3, but possibly up to 6 or 8
+            depending on setup.
+        'pwm_limits' is a tuple of min, default, and max pwm pulse-widths
+            in microseconds (default (1100, 1100, 1900)).
+        **kwargs are passed to AuxServoOutput.
+
+        """
+        super().__init__(master, servo_n, pwm_limits=pwm_limits, **kwargs)
+
+    def open(self):
+        """ Command the gripper to open. """
+        self.set_max()
+
+    def close(self):
+        """ Command the gripper to close. """
+        self.set_min()
+	
+if __name__ == '__main__':
+    from time import sleep
+
+    # Connect to the autopilot (pixhawk) from the surface computer,
+    #  via the companion.
+    autopilot = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+    # Wait for a heartbeat from the autopilot before sending commands
+    autopilot.wait_heartbeat()
+
+    # create a gripper instance on servo_1 (AUX output 1)
+    gripper = Gripper(autopilot, 1)
+
+    # open and close the gripper a few times
+    for _ in range(3):
+        gripper.open()
+        sleep(2)
+        gripper.close()
+        sleep(1)	
+```
+
 16. Set Target Depth/Attitude
+```
+import time
+import math
+from pymavlink import mavutil
+from pymavlink.quaternion import QuaternionBase
+
+def set_target_depth(depth):
+    """ Sets the target depth while in depth-hold mode.
+    Uses https://mavlink.io/en/messages/common.html#SET_POSITION_TARGET_GLOBAL_INT
+    'depth' is technically an altitude, so set as negative meters below the surface
+        -> set_target_depth(-1.5) # sets target to 1.5m below the water surface.
+    """
+    master.mav.set_position_target_global_int_send(
+        int(1e3 * (time.time() - boot_time)), # ms since boot
+        master.target_system, master.target_component,
+        coordinate_frame=mavutil.mavlink.MAV_FRAME_GLOBAL_INT,
+        type_mask=( # ignore everything except z position
+            mavutil.mavlink.POSITION_TARGET_TYPEMASK_X_IGNORE |
+            mavutil.mavlink.POSITION_TARGET_TYPEMASK_Y_IGNORE |
+            # DON'T mavutil.mavlink.POSITION_TARGET_TYPEMASK_Z_IGNORE |
+            mavutil.mavlink.POSITION_TARGET_TYPEMASK_VX_IGNORE |
+            mavutil.mavlink.POSITION_TARGET_TYPEMASK_VY_IGNORE |
+            mavutil.mavlink.POSITION_TARGET_TYPEMASK_VZ_IGNORE |
+            mavutil.mavlink.POSITION_TARGET_TYPEMASK_AX_IGNORE |
+            mavutil.mavlink.POSITION_TARGET_TYPEMASK_AY_IGNORE |
+            mavutil.mavlink.POSITION_TARGET_TYPEMASK_AZ_IGNORE |
+            # DON'T mavutil.mavlink.POSITION_TARGET_TYPEMASK_FORCE_SET |
+            mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_IGNORE |
+            mavutil.mavlink.POSITION_TARGET_TYPEMASK_YAW_RATE_IGNORE
+        ), lat_int=0, lon_int=0, alt=depth, # (x, y WGS84 frame pos - not used), z [m]
+        vx=0, vy=0, vz=0, # velocities in NED frame [m/s] (not used)
+        afx=0, afy=0, afz=0, yaw=0, yaw_rate=0
+        # accelerations in NED frame [N], yaw, yaw_rate
+        #  (all not supported yet, ignored in GCS Mavlink)
+    )
+
+def set_target_attitude(roll, pitch, yaw):
+    """ Sets the target attitude while in depth-hold mode.
+    'roll', 'pitch', and 'yaw' are angles in degrees.
+    """
+    master.mav.set_attitude_target_send(
+        int(1e3 * (time.time() - boot_time)), # ms since boot
+        master.target_system, master.target_component,
+        # allow throttle to be controlled by depth_hold mode
+        mavutil.mavlink.ATTITUDE_TARGET_TYPEMASK_THROTTLE_IGNORE,
+        # -> attitude quaternion (w, x, y, z | zero-rotation is 1, 0, 0, 0)
+        QuaternionBase([math.radians(angle) for angle in (roll, pitch, yaw)]),
+        0, 0, 0, 0 # roll rate, pitch rate, yaw rate, thrust
+    )
+
+# Create the connection
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+boot_time = time.time()
+# Wait a heartbeat before sending commands
+master.wait_heartbeat()
+
+# arm ArduSub autopilot and wait until confirmed
+master.arducopter_arm()
+master.motors_armed_wait()
+
+# set the desired operating mode
+DEPTH_HOLD = 'ALT_HOLD'
+DEPTH_HOLD_MODE = master.mode_mapping()[DEPTH_HOLD]
+while not master.wait_heartbeat().custom_mode == DEPTH_HOLD_MODE:
+    master.set_mode(DEPTH_HOLD)
+
+# set a depth target
+set_target_depth(-0.5)
+
+# go for a spin
+# (set target yaw from 0 to 500 degrees in steps of 10, one update per second)
+roll_angle = pitch_angle = 0
+for yaw_angle in range(0, 500, 10):
+    set_target_attitude(roll_angle, pitch_angle, yaw_angle)
+    time.sleep(1) # wait for a second
+
+# spin the other way with 3x larger steps
+for yaw_angle in range(500, 0, -30):
+    set_target_attitude(roll_angle, pitch_angle, yaw_angle)
+    time.sleep(1)
+
+# clean up (disarm) at the end
+master.arducopter_disarm()
+master.motors_disarmed_wait()
+```
+
 17. Send GPS position
-18. Send rangefinder/computer vision distance measurement to the autopilot	
+```
+import time
+from pymavlink import mavutil
+
+master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
+master.wait_heartbeat()
+
+# GPS_TYPE need to be MAV
+while True:
+    time.sleep(0.2)
+    master.mav.gps_input_send(
+        0,  # Timestamp (micros since boot or Unix epoch)
+        0,  # ID of the GPS for multiple GPS inputs
+        # Flags indicating which fields to ignore (see GPS_INPUT_IGNORE_FLAGS enum).
+        # All other fields must be provided.
+        (mavutil.mavlink.GPS_INPUT_IGNORE_FLAG_VEL_HORIZ |
+         mavutil.mavlink.GPS_INPUT_IGNORE_FLAG_VEL_VERT |
+         mavutil.mavlink.GPS_INPUT_IGNORE_FLAG_SPEED_ACCURACY),
+        0,  # GPS time (milliseconds from start of GPS week)
+        0,  # GPS week number
+        3,  # 0-1: no fix, 2: 2D fix, 3: 3D fix. 4: 3D with DGPS. 5: 3D with RTK
+        0,  # Latitude (WGS84), in degrees * 1E7
+        0,  # Longitude (WGS84), in degrees * 1E7
+        0,  # Altitude (AMSL, not WGS84), in m (positive for up)
+        1,  # GPS HDOP horizontal dilution of position in m
+        1,  # GPS VDOP vertical dilution of position in m
+        0,  # GPS velocity in m/s in NORTH direction in earth-fixed NED frame
+        0,  # GPS velocity in m/s in EAST direction in earth-fixed NED frame
+        0,  # GPS velocity in m/s in DOWN direction in earth-fixed NED frame
+        0,  # GPS speed accuracy in m/s
+        0,  # GPS horizontal accuracy in m
+        0,  # GPS vertical accuracy in m
+        7   # Number of satellites visible.
+    )
+```
+
+18. Send rangefinder/computer vision distance measurement to the autopilot
+```
+import time
+from pymavlink import mavutil
+
+# Wait for server connection
+def wait_conn():
+    """
+    Sends a ping to the autopilot to stabilish the UDP connection and waits for a reply
+    """
+    msg = None
+    while not msg:
+        master.mav.ping_send(
+            int(time.time() * 1e6), # Unix time in microseconds
+            0, # Ping number
+            0, # Request ping of all systems
+            0 # Request ping of all components
+        )
+        msg = master.recv_match()
+        time.sleep(0.5)
+	
+# Send a ping to start connection and wait for any reply.	
+master = mavutil.mavlink_connection('udpout:localhost:9000')
+wait_conn()
+	
+master.mav.param_set_send(  1,  1,  b"RNGFND_TYPE", 10, mavutil.mavlink.MAV_PARAM_TYPE_INT8)
+
+min_measurement = 10 # minimum valid measurement that the autopilot should use
+max_measurement = 40 # maximum valid measurement that the autopilot should use
+distance = 20 # You will need to supply the distance measurement
+sensor_type = mavutil.mavlink.MAV_DISTANCE_SENSOR_UNKNOWN
+sensor_id = 1
+orientation = mavutil.mavlink.MAV_SENSOR_ROTATION_PITCH_270 # downward facing
+covariance = 0
+
+tstart = time.time()
+while True:
+    time.sleep(0.5)
+    master.mav.distance_sensor_send(
+        int((time.time() - tstart) * 1000),
+        min_measurement,
+        max_measurement,
+        distance,
+        sensor_type,
+        sensor_id,
+        orientation,
+        covariance)	
+```
 	
 ---
 ### [MAVROS](https://github.com/mavlink/mavros/)
