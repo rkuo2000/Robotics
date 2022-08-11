@@ -527,9 +527,7 @@ import time
 from pymavlink import mavutil
 
 def wait_conn():
-    """
-    Sends a ping to stabilish the UDP communication and awaits for a response
-    """
+    # Sends a ping to stabilish the UDP communication and awaits for a response
     msg = None
     while not msg:
         master.mav.ping_send(
@@ -542,9 +540,8 @@ def wait_conn():
         time.sleep(0.5)	
 
 master = mavutil.mavlink_connection('udpout:0.0.0.0:9000')
-wait_conn()
+wait_conn() 
 
-# Get some information !
 while True:
     try:
         print(master.recv_match().to_dict())
