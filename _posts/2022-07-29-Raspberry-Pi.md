@@ -387,8 +387,45 @@ You need to have a folder containing a set of checkerboard images taken using yo
 ![](https://github.com/rkuo2000/cv2/raw/master/ArUCo/Images/pose_output.gif)
 
 ---
-## MAVlink
+## [MAVlink](https://ardupilot.org/dev/docs/mavlink-commands.html)
 
+### [MAVLink Basics](https://ardupilot.org/dev/docs/mavlink-basics.html)
+![](https://ardupilot.org/dev/_images/mavlink-frame.png)
+High Level Message Flow
+![](https://ardupilot.org/dev/_images/mavlink-message-flow.png)
+
+---
+### [Copter Commands in Guided Mode](https://ardupilot.org/dev/docs/copter-commands-in-guided-mode.html)
+
+* [Arming and Disarming](https://ardupilot.org/dev/docs/mavlink-arming-and-disarming.html)
+<table>
+<tr>
+<td>MAVProxy/SITL Command</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>`message COMMAND_LONG 0 0 400 0 1 0 0 0 0 0 0`</td><td>arm the vehicle (may fail because of arming checks)</td>
+</tr>
+<table>
+
+**Movement Commands**<br>
+* [SET_POSITION_TARGET_LOCAL_NED](https://ardupilot.org/dev/docs/copter-commands-in-guided-mode.html#copter-commands-in-guided-mode-set-position-target-local-ned)
+* [SET_POSITION_TARGET_GLOBAL_INT](https://ardupilot.org/dev/docs/copter-commands-in-guided-mode.html#copter-commands-in-guided-mode-set-position-target-global-int)
+* [SET_ATTITUDE_TARGET (supported in Guided and Guided_NoGPS modes)](https://ardupilot.org/dev/docs/copter-commands-in-guided-mode.html#copter-commands-in-guided-mode-set-attitude-target)
+
+**MAV_CMDs**<br>
+* [MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN](https://mavlink.io/en/messages/common.html#MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN)
+* [MAV_CMD_NAV_TAKEOFF](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html#mav-cmd-nav-takeoff)
+* [MAV_CMD_NAV_LAND](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html#mav-cmd-nav-land)
+* [MAV_CMD_NAV_RETURN_TO_LAUNCH](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html#mav-cmd-nav-return-to-launch)
+* [MAV_CMD_CONDITION_YAW](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html#mav-cmd-condition-yaw)
+* [MAV_CMD_DO_CHANGE_SPEED](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html#mav-cmd-do-change-speed)
+* [MAV_CMD_DO_FLIGHTTERMINATION - disarms motors immediately (Copter falls!).](https://mavlink.io/en/messages/common.html#MAV_CMD_DO_FLIGHTTERMINATION)
+* [MAV_CMD_DO_PARACHUTE](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html#mav-cmd-do-parachute)
+* [MAV_CMD_DO_SET_ROI](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html#mav-cmd-do-set-roi)
+* [MAV_CMD_NAV_LOITER_UNLIM](https://ardupilot.org/copter/docs/common-mavlink-mission-command-messages-mav_cmd.html#mav-cmd-nav-loiter-unlim)
+
+---
 ### [Communicating with Raspberry Pi via MAVLink](https://ardupilot.org/dev/docs/raspberry-pi-via-mavlink.html)
 Connect the flight controller’s **TELEM2** port to the RPi’s **TXD0**(GPIO14), **RXD0**(GPIO) and **Ground**  pins.
 
@@ -408,17 +445,17 @@ pip3 install PyYAML mavproxy --user
 echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
 ```
 
----
-### Over USB
+* **Over USB**<br>
 `pip3 install mavproxy pymavlink --user --upgrade`<br>
-* For Linux:<br>
+
+For Linux:<br>
 `mavproxy.py --master=/dev/ttyUSB0`<br>
-* For Windows:<br> 
+For Windows:<br> 
 `mavproxy --master=COM14`<br>
-* For MacOS:<br>
+For MacOS:<br>
 `mavproxy.py --master=/dev/ttyusbserialxxx`<br>
 
-### Over Network
+* **Over Network**<br>
 ```
 mavproxy.py --master=tcp:192.168.1.1:14550
 mavproxy.py --master=udp:127.0.0.1:14550
@@ -430,40 +467,13 @@ mavproxy.py --master=udpout:10.10.1.1:14550
 mavproxy.py --master=tcpout:10.10.1.1:14550
 ```
 
-### Startup Options
+* **Startup Options**
 ```
 mavproxy.py --master=/dev/ttyUSB0 --out=udp:192.168.1.1:14550
 mavproxy.py --master=/dev/ttyACM0,115200 --out=/dev/ttyUSB0,57600
 mavproxy.py --master=/dev/ttyACM0,115200 --out=COM17,57600
 mavproxy.py --master=/dev/ttyACM0,57600 --out=udpbcast:192.168.2.255:14550
 ```
-
----
-### Telemtry Forwarding
-![](https://ardupilot.org/mavproxy/_images/Mavproxy_usage.jpg)
-
-### Local Forwarding
-```
-mavproxy.py --master=/dev/ttyACM0 --baudrate 115200 --out 127.0.0.1:14550
-mavproxy.py --out 127.0.0.1:14550
-```
-
-* For Windows PC, start a command prompt and enter
-`mavproxy --master=COMx --out 127.0.0.1:14550`<br>
-
-### Startup Scripts
-
-[Settings](https://ardupilot.org/mavproxy/docs/getting_started/settings.html)<br>
-
-### Examples (Aircraft's name is "Quaddy")
-`mavproxy.py --baud=57600 --aircraft="Quaddy" --speech --console --map --quadcopter`<br>
-`mavproxy.py --master=COM17,9600 --out=udpin:0.0.0.0:14550 --daemon`<br>
-`mavproxy.py --master=\dev\ttyUSB0,57600 --master=udpin:192.168.16.15:2626`<br>
-
-### Multiple Vehicles with MAVProxy
-![](https://ardupilot.org/mavproxy/_images/multi_veh.png)
-* Use alllinks <cmd> to send <cmd> to all vehicles in turn. For example, alllinks mode rtl will set RTL mode on all vehicles.
-* Use vehicle <n> to set the active vehicle
 
 ---
 ### [pymavlink](https://github.com/ArduPilot/pymavlink)
