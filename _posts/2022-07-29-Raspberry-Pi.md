@@ -504,11 +504,8 @@ master.reboot_autopilot()
 import time
 from pymavlink import mavutil
 master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
-
-# Make sure the connection is valid
 master.wait_heartbeat()
 
-# Get some information !
 while True:
     try:
         print(master.recv_match().to_dict())
@@ -527,7 +524,6 @@ import time
 from pymavlink import mavutil
 
 def wait_conn():
-    # Sends a ping to stabilish the UDP communication and awaits for a response
     msg = None
     while not msg:
         master.mav.ping_send(
@@ -584,37 +580,22 @@ from pymavlink import mavutil
 master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
 master.wait_heartbeat()
 
-# Choose a mode
 mode = 'STABILIZE'
-
-# Check if mode is available
 if mode not in master.mode_mapping():
     print('Unknown mode : {}'.format(mode))
     print('Try:', list(master.mode_mapping().keys()))
     sys.exit(1)
 
-# Get mode ID
 mode_id = master.mode_mapping()[mode]
-# Set new mode
-# master.mav.command_long_send(
-#    master.target_system, master.target_component,
-#    mavutil.mavlink.MAV_CMD_DO_SET_MODE, 0,
-#    0, mode_id, 0, 0, 0, 0, 0) or:
-# master.set_mode(mode_id) or:
 master.mav.set_mode_send(master.target_system, mavutil.mavlink.MAV_MODE_FLAG_CUSTOM_MODE_ENABLED,  mode_id)
 
 while True:
-    # Wait for ACK command
-    # Would be good to add mechanism to avoid endlessly blocking
-    # if the autopilot sends a NACK or never receives the message
     ack_msg = master.recv_match(type='COMMAND_ACK', blocking=True)
     ack_msg = ack_msg.to_dict()
 
-    # Continue waiting if the acknowledged command is not `set_mode`
     if ack_msg['command'] != mavutil.mavlink.MAV_CMD_DO_SET_MODE:
         continue
 
-    # Print the ACK result !
     print(mavutil.mavlink.enums['MAV_RESULT'][ack_msg['result']].description)
     break
 ```
@@ -626,16 +607,10 @@ master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
 master.wait_heartbeat()
 
 def set_rc_channel_pwm(channel_id, pwm=1500):
-    """ Set RC channel pwm value
-    Args:
-        channel_id (TYPE): Channel ID
-        pwm (int, optional): Channel pwm value 1100-1900
-    """
     if channel_id < 1 or channel_id > 18:
         print("Channel does not exist.")
         return
 
-    # Mavlink 2 supports up to 18 channels: https://mavlink.io/en/messages/common.html#RC_CHANNELS_OVERRIDE
     rc_channel_values = [65535 for _ in range(18)]
     rc_channel_values[channel_id - 1] = pwm
     master.mav.rc_channels_override_send(
@@ -643,20 +618,9 @@ def set_rc_channel_pwm(channel_id, pwm=1500):
         master.target_component,             # target_component
         *rc_channel_values)                  # RC channel list, in microseconds.
 
-# Set some roll
 set_rc_channel_pwm(2, 1600)
-
-# Set some yaw
 set_rc_channel_pwm(4, 1600)
-
-# The camera pwm value sets the servo speed of a sweep from the current angle to
-#  the min/max camera angle. It does not set the servo position.
-# Set camera tilt to 45º (max) with full speed
 set_rc_channel_pwm(8, 1900)
-
-# Set channel 12 to 1500us
-# This can be used to control a device connected to a servo output by setting the
-# SERVO[N]_Function to RCIN12 (Where N is one of the PWM outputs)
 set_rc_channel_pwm(12, 1500)
 ```
 
@@ -666,15 +630,8 @@ from pymavlink import mavutil
 master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
 master.wait_heartbeat()
 
-# Send a positive x value, negative y, negative z, positive rotation and no button.
-# https://mavlink.io/en/messages/common.html#MANUAL_CONTROL
-# Warning: Because of some legacy workaround, z will work between [0-1000]
-# where 0 is full reverse, 500 is no output and 1000 is full throttle.
-# x,y and r will be between [-1000 and 1000].
 master.mav.manual_control_send( master.target_system,  500, -500,  250,  500,  0)
 
-# To active button 0 (first button), 3 (fourth button) and 7 (eighth button)
-# It's possible to check and configure this buttons in the Joystick menu of QGC
 buttons = 1 + 1 << 3 + 1 << 7
 master.mav.manual_control_send(master.target_system, 0,  0,  500,  0, buttons) # 500 means neutral throttle
 ```
@@ -688,7 +645,6 @@ from pymavlink import mavutil
 master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
 master.wait_heartbeat()
 
-# Request all parameters
 master.mav.param_request_list_send(master.target_system, master.target_component)
 while True:
     time.sleep(0.01)
@@ -716,21 +672,13 @@ print('name: %s\tvalue: %d' % (message['param_id'].decode("utf-8"), message['par
 time.sleep(1)
 master.mav.param_set_send( master.target_system, master.target_component, b'SURFACE_DEPTH', -12, mavutil.mavlink.MAV_PARAM_TYPE_REAL32)
 
-# Read ACK
-# IMPORTANT: The receiving component should acknowledge the new parameter value by sending a
-# param_value message to all communication partners.
-# This will also ensure that multiple GCS all have an up-to-date list of all parameters.
-# If the sending GCS did not receive a PARAM_VALUE message within its timeout time,
-# it should re-send the PARAM_SET message.
 message = master.recv_match(type='PARAM_VALUE', blocking=True).to_dict()
 print('name: %s\tvalue: %d' % (message['param_id'].decode("utf-8"), message['param_value']))
 
 time.sleep(1)
 
-# Request parameter value to confirm
 master.mav.param_request_read_send(master.target_system, master.target_component, b'SURFACE_DEPTH', -1)
 
-# Print new value in RAM
 message = master.recv_match(type='PARAM_VALUE', blocking=True).to_dict()
 print('name: %s\tvalue: %d' % (message['param_id'].decode("utf-8"), message['param_value']))	
 ```
@@ -779,13 +727,10 @@ def request_message_interval(message_id: int, frequency_hz: float):
         0, # Target address of message stream (if message has target address fields). 0: Flight-stack default (recommended), 1: address of requestor, 2: broadcast.
     )
 	
-# Configure AHRS2 message to be sent at 1Hz
 request_message_interval(mavutil.mavlink.MAVLINK_MSG_ID_AHRS2, 1)
 
-# Configure ATTITUDE message to be sent at 2Hz
 request_message_interval(mavutil.mavlink.MAVLINK_MSG_ID_ATTITUDE, 2)
 
-# Get some information !
 while True:
     try:
         print(master.recv_match().to_dict())
@@ -821,7 +766,6 @@ def look_at(tilt, roll=0, pan=0):
         0, 0, 0,
         mavutil.mavlink.MAV_MOUNT_MODE_MAVLINK_TARGETING)
 
-# cycles the camera up and down
 while True:
     for angle in range(-50, 50):
         look_at(angle*100)
@@ -848,7 +792,6 @@ def set_servo_pwm(servo_n, microseconds):
         between 1100 and 1900 microseconds.
 
     """
-    # master.set_servo(servo_n+8, microseconds) or:
     master.mav.command_long_send(
         master.target_system, master.target_component,
         mavutil.mavlink.MAV_CMD_DO_SET_SERVO,
@@ -858,12 +801,9 @@ def set_servo_pwm(servo_n, microseconds):
         0,0,0,0,0     # unused parameters
     )
 
-# Create the connection
 master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
-# Wait a heartbeat before sending commands
 master.wait_heartbeat()
 
-# command servo_1 to go from min to max in steps of 50us, over 2 seconds
 for us in range(1100, 1900, 50):
     set_servo_pwm(1, us)
     time.sleep(0.125)	
@@ -875,7 +815,6 @@ from pymavlink import mavutil
 
 class RawServoOutput:
     """ A class for commanding a mavlink-controlled servo output port. """
-    # https://mavlink.io/en/messages/common.html#MAV_CMD_DO_SET_SERVO
     CMD_SET = mavutil.mavlink.MAV_CMD_DO_SET_SERVO
 
     def __init__(self, master, instance, pwm_limits=(1100, 1500, 1900),
@@ -907,7 +846,6 @@ class RawServoOutput:
         """
         assert self.min_us <= us <= self.max_us, "Invalid input value."
 
-        # self.master.set_servo(self.instance, us) or:
         self.master.mav.command_long_send(
             self.master.target_system, self.master.target_component,
             self.CMD_SET,
@@ -998,16 +936,11 @@ class Gripper(AuxServoOutput):
 if __name__ == '__main__':
     from time import sleep
 
-    # Connect to the autopilot (pixhawk) from the surface computer,
-    #  via the companion.
     autopilot = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
-    # Wait for a heartbeat from the autopilot before sending commands
     autopilot.wait_heartbeat()
 
-    # create a gripper instance on servo_1 (AUX output 1)
     gripper = Gripper(autopilot, 1)
 
-    # open and close the gripper a few times
     for _ in range(3):
         gripper.open()
         sleep(2)
@@ -1066,38 +999,29 @@ def set_target_attitude(roll, pitch, yaw):
         0, 0, 0, 0 # roll rate, pitch rate, yaw rate, thrust
     )
 
-# Create the connection
 master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
 boot_time = time.time()
-# Wait a heartbeat before sending commands
 master.wait_heartbeat()
 
-# arm ArduSub autopilot and wait until confirmed
 master.arducopter_arm()
 master.motors_armed_wait()
 
-# set the desired operating mode
 DEPTH_HOLD = 'ALT_HOLD'
 DEPTH_HOLD_MODE = master.mode_mapping()[DEPTH_HOLD]
 while not master.wait_heartbeat().custom_mode == DEPTH_HOLD_MODE:
     master.set_mode(DEPTH_HOLD)
 
-# set a depth target
 set_target_depth(-0.5)
 
-# go for a spin
-# (set target yaw from 0 to 500 degrees in steps of 10, one update per second)
 roll_angle = pitch_angle = 0
 for yaw_angle in range(0, 500, 10):
     set_target_attitude(roll_angle, pitch_angle, yaw_angle)
     time.sleep(1) # wait for a second
 
-# spin the other way with 3x larger steps
 for yaw_angle in range(500, 0, -30):
     set_target_attitude(roll_angle, pitch_angle, yaw_angle)
     time.sleep(1)
 
-# clean up (disarm) at the end
 master.arducopter_disarm()
 master.motors_disarmed_wait()
 ```
@@ -1110,7 +1034,6 @@ from pymavlink import mavutil
 master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
 master.wait_heartbeat()
 
-# GPS_TYPE need to be MAV
 while True:
     time.sleep(0.2)
     master.mav.gps_input_send(
@@ -1144,7 +1067,6 @@ while True:
 import time
 from pymavlink import mavutil
 
-# Wait for server connection
 def wait_conn():
     """
     Sends a ping to the autopilot to stabilish the UDP connection and waits for a reply
@@ -1160,7 +1082,6 @@ def wait_conn():
         msg = master.recv_match()
         time.sleep(0.5)
 	
-# Send a ping to start connection and wait for any reply.	
 master = mavutil.mavlink_connection('udpout:localhost:9000')
 wait_conn()
 	
