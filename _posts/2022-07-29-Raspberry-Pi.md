@@ -485,6 +485,8 @@ mavproxy.py --master=/dev/ttyUSB0 --cmd="param load init.parm; module load map;"
 
 ---
 ### [pymavlink](https://github.com/ArduPilot/pymavlink)
+`pip install pymavlink`<br>
+
 [examples](https://www.ardusub.com/developers/pymavlink.html#run-pymavlink-on-the-companion-computer)<br>
 `python`<br>
 ```
@@ -497,21 +499,6 @@ print(pymavlink.__doc__)
 from pymavlink import mavutil
 master = mavutil.mavlink_connection("/dev/ttyACM0", baud=115200)
 master.reboot_autopilot()
-```
-	
-2. Run pyMavlink on the surface computer<br>
-```
-import time
-from pymavlink import mavutil
-master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
-master.wait_heartbeat()
-
-while True:
-    try:
-        print(master.recv_match().to_dict())
-    except:
-        pass
-    time.sleep(0.1)
 ```
 
 ---
