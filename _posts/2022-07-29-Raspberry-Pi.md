@@ -493,6 +493,7 @@ print(pymavlink.__doc__)
 ```	
 
 1. Autopilot connected to the computer via serial
+
 ```
 from pymavlink import mavutil
 master = mavutil.mavlink_connection("/dev/ttyACM0", baud=115200)
@@ -500,6 +501,7 @@ master.reboot_autopilot()
 ```
 	
 2. Run pyMavlink on the surface computer
+
 ```
 import time
 from pymavlink import mavutil
