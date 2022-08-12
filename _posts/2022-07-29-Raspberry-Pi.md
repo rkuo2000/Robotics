@@ -486,7 +486,7 @@ mavproxy.py --master=/dev/ttyUSB0 --cmd="param load init.parm; module load map;"
 ---
 ### [pymavlink](https://github.com/ArduPilot/pymavlink)
 [examples](https://www.ardusub.com/developers/pymavlink.html#run-pymavlink-on-the-companion-computer)<br>
-* python
+`python`<br>
 ```
 import pymavlink
 print(pymavlink.__doc__)
@@ -1218,8 +1218,8 @@ A ROS2 camera driver using Video4Linux2 (V4L2)<br>
 /v4l2-camera<br>
 `ros2 node info /v4l2-camera`<br>
 
-<br />
-<br />
+<br>
+<br>
 
 *This site was last updated {{ site.time | date: "%B %d, %Y" }}.*
 
