@@ -513,6 +513,7 @@ while True:
         pass
     time.sleep(0.1)	
 ```
+
 {'mavpackettype': 'AHRS2', 'roll': -0.11364290863275528, 'pitch': -0.02841472253203392, 'yaw': 2.0993032455444336, 'altitude': 0.0, 'lat': 0, 'lng': 0}<br>
 {'mavpackettype': 'AHRS3', 'roll': 0.025831475853919983, 'pitch': 0.006112074479460716, 'yaw': 2.1514968872070312, 'altitude': 0.0, 'lat': 0, 'lng': 0, 'v1': 0.0, 'v2': 0.0, 'v3': 0.0, 'v4': 0.0}<br>
 {'mavpackettype': 'VFR_HUD', 'airspeed': 0.0, 'groundspeed': 0.0, 'heading': 123, 'throttle': 0, 'alt': 3.129999876022339, 'climb': 3.2699999809265137}<br>
@@ -545,6 +546,7 @@ while True:
         pass
     time.sleep(0.1)	
 ```
+
 {'mavpackettype': 'AHRS2', 'roll': -0.11364290863275528, 'pitch': -0.02841472253203392, 'yaw': 2.0993032455444336, 'altitude': 0.0, 'lat': 0, 'lng': 0}<br>
 {'mavpackettype': 'AHRS3', 'roll': 0.025831475853919983, 'pitch': 0.006112074479460716, 'yaw': 2.1514968872070312, 'altitude': 0.0, 'lat': 0, 'lng': 0, 'v1': 0.0, 'v2': 0.0, 'v3': 0.0, 'v4': 0.0}<br>
 {'mavpackettype': 'VFR_HUD', 'airspeed': 0.0, 'groundspeed': 0.0, 'heading': 123, 'throttle': 0, 'alt': 3.129999876022339, 'climb': 3.2699999809265137}<br>
@@ -557,7 +559,7 @@ master = mavutil.mavlink_connection('udpout:localhost:14550', source_system=1)
 master.mav.statustext_send(mavutil.mavlink.MAV_SEVERITY_NOTICE, "QGC will read this".encode())
 ```
 
-5. Arm/Disarm the vehicle
+5. Arm/Disarm the vehicle<br>
 ```	
 from pymavlink import mavutil
 master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
@@ -572,7 +574,7 @@ master.mav.command_long_send(master.target_system, master.target_component, mavu
 master.motors_disarmed_wait()
 ```
 
-6. Change flight mode
+6. Change flight mode<br>
 ```
 import sys
 from pymavlink import mavutil
@@ -600,7 +602,7 @@ while True:
     break
 ```
 
-7. Send RC (Joystick)
+7. Send RC (Joystick)<br>
 ```
 from pymavlink import mavutil
 master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
@@ -624,7 +626,7 @@ set_rc_channel_pwm(8, 1900)
 set_rc_channel_pwm(12, 1500)
 ```
 
-8. Send Manual Control
+8. Send Manual Control<br>
 ```
 from pymavlink import mavutil
 master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
@@ -636,7 +638,7 @@ buttons = 1 + 1 << 3 + 1 << 7
 master.mav.manual_control_send(master.target_system, 0,  0,  500,  0, buttons) # 500 means neutral throttle
 ```
 	
-9. Read all parameters
+9. Read all parameters<br>
 ```	
 import time
 import sys
@@ -656,7 +658,7 @@ while True:
         sys.exit(0)
 ```
 
-10. Read and write parameters
+10. Read and write parameters<br>
 ```
 import time
 from pymavlink import mavutil
@@ -683,7 +685,7 @@ message = master.recv_match(type='PARAM_VALUE', blocking=True).to_dict()
 print('name: %s\tvalue: %d' % (message['param_id'].decode("utf-8"), message['param_value']))	
 ```
 	
-11. Receive data and filter by message type
+11. Receive data and filter by message type<br>
 ```
 from pymavlink import mavutil
 master = mavutil.mavlink_connection('udpin:0.0.0.0:14550')
@@ -700,7 +702,7 @@ while True:
         print("\nSystem status: %s" % msg.system_status)
 ```
 
-12. Request message interval
+12. Request message interval<br>
 ```
 import time
 from pymavlink import mavutil
@@ -739,7 +741,7 @@ while True:
     time.sleep(0.1)
 ```
 
-13. Control Camera Gimbal
+13. Control Camera Gimbal<br>
 ```
 import time
 from pymavlink import mavutil
@@ -775,7 +777,7 @@ while True:
         time.sleep(0.1)
 ```
 
-14. Set Servo PWM
+14. Set Servo PWM<br>
 ```
 import time
 from pymavlink import mavutil
@@ -809,7 +811,7 @@ for us in range(1100, 1900, 50):
     time.sleep(0.125)	
 ```
 
-15. Advanced Servo/Gripper Example
+15. Advanced Servo/Gripper Example<br>
 ```
 from pymavlink import mavutil
 
@@ -948,7 +950,7 @@ if __name__ == '__main__':
         sleep(1)	
 ```
 
-16. Set Target Depth/Attitude
+16. Set Target Depth/Attitude<br>
 ```
 import time
 import math
@@ -1026,7 +1028,7 @@ master.arducopter_disarm()
 master.motors_disarmed_wait()
 ```
 
-17. Send GPS position
+17. Send GPS position<br>
 ```
 import time
 from pymavlink import mavutil
@@ -1062,7 +1064,7 @@ while True:
     )
 ```
 
-18. Send rangefinder/computer vision distance measurement to the autopilot
+18. Send rangefinder/computer vision distance measurement to the autopilot<br>
 ```
 import time
 from pymavlink import mavutil
