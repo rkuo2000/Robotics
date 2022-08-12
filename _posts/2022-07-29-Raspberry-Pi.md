@@ -513,7 +513,18 @@ while True:
         pass
     time.sleep(0.1)
 ```
-	
+
+---
+### [DroneKit Channel Override](https://dronekit-python.readthedocs.io/en/latest/examples/channel_overrides.html)
+```
+pip install dronekit
+git clone http://github.com/dronekit/dronekit-python.git
+cd drone-kit-python
+cd dronekit-python/examples/channel_overrides/
+```
+
+[channel_overrides.py](https://github.com/dronekit/dronekit-python/blob/master/examples/channel_overrides/channel_overrides.py)<br>
+
 ---
 ### [MAVROS](https://github.com/mavlink/mavros/)
 MAVLink extendable communication node for ROS.<br>
