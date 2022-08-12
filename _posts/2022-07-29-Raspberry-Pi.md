@@ -492,16 +492,14 @@ import pymavlink
 print(pymavlink.__doc__)
 ```	
 
-1. Autopilot connected to the computer via serial
-
+1. Autopilot connected to the computer via serial<br>
 ```
 from pymavlink import mavutil
 master = mavutil.mavlink_connection("/dev/ttyACM0", baud=115200)
 master.reboot_autopilot()
 ```
 	
-2. Run pyMavlink on the surface computer
-
+2. Run pyMavlink on the surface computer<br>
 ```
 import time
 from pymavlink import mavutil
@@ -520,7 +518,7 @@ while True:
 {'mavpackettype': 'VFR_HUD', 'airspeed': 0.0, 'groundspeed': 0.0, 'heading': 123, 'throttle': 0, 'alt': 3.129999876022339, 'climb': 3.2699999809265137}<br>
 {'mavpackettype': 'AHRS', 'omegaIx': 0.0014122836291790009, 'omegaIy': -0.022567369043827057, 'omegaIz': 0.02394154854118824, 'accel_weight': 0.0, 'renorm_val': 0.0, 'error_rp': 0.08894175291061401, 'error_yaw': 0.0990816056728363}	<br>
 	
-3. Run pyMavlink on the companion computer
+3. Run pyMavlink on the companion computer<br>
 ```
 import time
 from pymavlink import mavutil
@@ -552,7 +550,7 @@ while True:
 {'mavpackettype': 'VFR_HUD', 'airspeed': 0.0, 'groundspeed': 0.0, 'heading': 123, 'throttle': 0, 'alt': 3.129999876022339, 'climb': 3.2699999809265137}<br>
 {'mavpackettype': 'AHRS', 'omegaIx': 0.0014122836291790009, 'omegaIy': -0.022567369043827057, 'omegaIz': 0.02394154854118824, 'accel_weight': 0.0, 'renorm_val': 0.0, 'error_rp': 0.08894175291061401, 'error_yaw': 0.0990816056728363}<br>
 	
-4. Send Message to QGroundControl
+4. Send Message to QGroundControl<br>
 ```
 from pymavlink import mavutil
 master = mavutil.mavlink_connection('udpout:localhost:14550', source_system=1)
