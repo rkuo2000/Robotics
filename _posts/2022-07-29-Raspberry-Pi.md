@@ -103,6 +103,9 @@ sudo aptitude safe-upgrade
 `ssh ubuntu@192.168.0.22`<br>
 username ="bunutu", password="ubuntu2204"<br>
 
+* set as Wireless AP
+[How to use your Raspberry Pi as a wireless access point](https://thepi.io/how-to-use-your-raspberry-pi-as-a-wireless-access-point/)<br>
+
 ---
 ### 分享樹莓派之顯示輸出 
 * 在PC上啟動X-server<br>
