@@ -7,7 +7,7 @@ tags: [jekyll, ai]
 ---
 
 The Robot Operating System(ROS) 是專為機器人軟體開發所設計出來的一套電腦作業系統架構。
-它其實是安裝在Linux的環境上面，專門負責為機器人的各個元件進行溝通與操作的一個框架。
+它其實是安裝在Linux的環境上面其實是安裝在Linux的環境上面的，ROS比較像是在負責為機器人的各個元件進行溝通與操作的一個框架。
 
 ---
 ## ROS簡介
@@ -377,11 +377,11 @@ ARIACPick-v0
 ---
 ## ROS2
 
-### [install ROS2 on ubuntu20.04 LTS](https://docs.ros.org/en/dashing/Installation/Ubuntu-Install-Debians.html#)
-![](https://docs.ros.org/en/dashing/_static/dashing-small.png)
+### ROS2 install on Ubuntu22.04 LTS
+<img width="50%" height="50%" src="https://www.ros.org/imgs/humble.png">
 
-### [install ROS2 on Ubuntu22.04 LTS](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html#)
-![](https://docs.ros.org/en/humble/_static/humble-small.png)
+Ubuntu 22.04 LTS install ROS2
+(https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html#)
  
 ```
 sudo apt install software-properties-common
