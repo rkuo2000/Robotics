@@ -371,12 +371,11 @@ ARIACPick-v0
 ---
 ## ROS2
 
-### ROS2 install on Ubuntu22.04 LTS
+### [Install ROS2 on Ubuntu20.04 LTS](https://docs.ros.org/en/dashing/Installation/Ubuntu-Install-Binary.html#)
+
+### [Install ROS2 on Ubuntu22.04 LTS](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html#)
 <img width="50%" height="50%" src="https://www.ros.org/imgs/humble.png">
 
-Ubuntu 22.04 LTS install ROS2
-(https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html#)
- 
 ```
 sudo apt install software-properties-common
 sudo add-apt-repository universe
@@ -391,9 +390,6 @@ sudo apt upgrade
 
 # Desktop Install (Recommended): ROS, RViz, demos, tutorials.
 sudo apt install ros-humble-desktop
-
-# ROS-Base Install (Bare Bones): Communication libraries, message packages, command line tools. No GUI tools.
-sudo apt install ros-humble-ros-base
 ```
 
 ```
