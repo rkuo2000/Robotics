@@ -161,6 +161,11 @@ to D:\WSL\Working
 &ensp;export LIBGL_ALWAYS_SOFTWARE=1<br>
 
 ---
+### Ubuntu22.04 on RPi4
+* **[How to install Ubuntu 22.04 LTS on Raspberry Pi 4](https://linuxhint.com/install-ubuntu-22-04-lts-raspberry-pi/)**
+* [Performance Tips for Ubuntu 22.04 on Raspberry Pi 4](https://teejeetech.com/2022/06/04/tweaks-for-ubuntu-22-04-on-raspberry-pi-4/)
+
+---
 ## ROS
 [ROS Noetic for Ubuntu20.04](http://wiki.ros.org/noetic/Installation/Ubuntu)<br>
 ### [Ubuntu install of ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
