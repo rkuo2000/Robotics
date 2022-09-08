@@ -374,6 +374,7 @@ ARIACPick-v0
 ### [Install ROS2 on Ubuntu20.04 LTS](https://docs.ros.org/en/dashing/Installation/Ubuntu-Install-Binary.html#)
 ![](https://docs.ros.org/en/dashing/_static/dashing-small.png)
 
+---
 ### [Install ROS2 on Ubuntu22.04 LTS](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html#)
 ![](https://docs.ros.org/en/humble/_static/humble-small.png)
 
