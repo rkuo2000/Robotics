@@ -229,14 +229,14 @@ python3 cam_object_tracking.py
 
   - Blue color  
 ```
-lower_blue = np.array([100, 90, 90])
-upper_blue = np.array([120,255,255])
+lower_bound = np.array([100, 90, 90])
+upper_bound = np.array([120,255,255])
 ```
 
   - Green color
 ```
-lower_blue = np.array([ 50, 90, 90])
-upper_blue = np.array([100,255,255])
+lower_bound = np.array([ 50, 90, 90])
+upper_bound = np.array([100,255,255])
 ```
 
 ---
@@ -248,53 +248,74 @@ upper_blue = np.array([100,255,255])
 <td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/H02.png?raw=true"></td>
 <td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/H03.png?raw=true"></td>	
 </tr>
+<tr>
+<td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/red_light.jpg?raw=true"></td>
+<td><img src="https://github.com/rkuo2000/cv2/blob/master/copter/green_light.jpg?raw=true"></td>
+</tr>
 </table>
 
-[jpg_contours.py](https://github.com/rkuo2000/cv2/blob/master/copter/jpg_contours.py)<br>
+[jpg_object_detect.py](https://github.com/rkuo2000/cv2/blob/master/copter/jpg_object_detect.py)<br>
+[cam_object_detect.py](https://github.com/rkuo2000/cv2/blob/master/copter/cam_object_detect.py)<br>
 ```
-import numpy as np
-import sys
 import cv2
+import sys
+import numpy as np
 
-if len(sys.argv)>1:
-    filename = sys.argv[1]
+if len(sys.argv) >1:
+    vid = int(sys.argv[1])
 else:
-    filename = "H03.png"
+    vid = 0
+cap = cv2.VideoCapture(vid)
 
-image = cv2.imread(filename)
-gray = cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
+while(cap.isOpened()):
+    ret, frame = cap.read()
+    #frame = cv2.flip(frame, 1) # 0: vertical flip, 1: horizontal flip
 
-blur = cv2.GaussianBlur(gray, (11,11), 0)
-cv2.imshow("Blur", blur)
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-edge = cv2.Canny(blur, 30, 160)
-cv2.imshow("Edge", edge)
+    # lower & upper bound for any color
+    lower_bound = np.array([  0,  90,  90])
+    upper_bound = np.array([255, 255, 255])
+    mask = cv2.inRange(hsv, lower_bound, upper_bound)
 
-(cnts, hierarchy) = cv2.findContours(edge,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+    # Bitwise-AND mask and original image
+    res = cv2.bitwise_and(frame, frame, mask=mask)
+    #cv2.imshow('RESULT', res)
 
-# Draw all contours
-cv2.drawContours(image, cnts, -1, (0,255,0), 1)
+    # Find Contours
+    contours, hierarchy = cv2.findContours(mask, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
-# draw center in yellow-dot
-for c in cnts:
-    M= cv2.moments(c)
-    cX = int(M["m10"]/M["m00"])
-    cY = int(M["m01"]/M["m00"])
-    print(cX, cY)
-    cv2.circle(image,(cX,cY), 5, (1,227,254), -1)
+    # Finding The Largest Contour
+    contour_sizes = [(cv2.contourArea(contour), contour) for contour in contours]
+    biggest_contour = max(contour_sizes, key=lambda x: x[0])[1]
 
-cv2.imshow("contours", image)
+    # Bounding Rectangle
+    x,y,w,h = cv2.boundingRect(biggest_contour)
+    cv2.rectangle(frame,(x,y),(x+w,y+h),(0,255,0),2)
+    cX = int(x + w/2)
+    cY = int(y + h/2)
+    cv2.circle(frame,(cX, cY), 5, (1,227,254), -1)
+    cv2.imshow('Bounding BOX', frame)
 
-cv2.waitKey(0)
+    print(x,y,w,h)
+    print(cX,cY)
+
+    if cv2.waitKey(10) & 0xFF == ord('q'):
+        break
+        
+cap.release()
 cv2.destroyAllWindows()
 ```
+
 **Exercises:**<br>
 `cd ~/cv2/copter`<br>
-* `python jpg_contours.py H00.png`<br>
-![](https://github.com/rkuo2000/cv2/blob/master/copter/copter_contours_H00.png?raw=true)
-
-* `python jpg_contours.py H03.png`<br>
-![](https://github.com/rkuo2000/cv2/blob/master/copter/copter_contours_H03.png?raw=true)
+* `python jpg_object_detect.py H00.png`<br>
+* `python jpg_object_detect.py H01.png`<br>
+* `python jpg_object_detect.py H02.png`<br>
+* `python jpg_object_detect.py H03.png`<br>
+* `python jpg_object_detect.py red_light.png`<br>
+* `python jpg_object_detect.py green_light.png`<br>
+* `python cam_object_detect.py`<br>
 
 ---
 ### Optical Flow (光流)
