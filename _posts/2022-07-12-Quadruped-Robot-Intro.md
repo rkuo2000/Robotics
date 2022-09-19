@@ -223,7 +223,7 @@ Components:
 ![](https://sciresol.s3.us-east-2.amazonaws.com/IJST/placeholders/2021/Issue-30/PH_1030.png)
 
 ---
-### [IHMC Open Robotics Software]*https://github.com/ihmcrobotics/ihmc-open-robotics-software)
+### [IHMC Open Robotics Software](https://github.com/ihmcrobotics/ihmc-open-robotics-software)
 Tested Robots:<br>
 * [Atlas](https://www.bostondynamics.com/atlas)
   ![](https://emmah1master3countries.files.wordpress.com/2021/01/d3333fc913a33c7d3bde8ee006dc1323.png)
