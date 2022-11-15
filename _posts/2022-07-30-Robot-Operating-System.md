@@ -493,7 +493,7 @@ ros2 run turtlesim turtlesim_node --ros-args --remap __node:=my_turtle
 ```
 * ROS2 Node Info
 ```
-ros2 node info /my_turtle
+ros2 node info /turtlesim
 ```
 
 ---
@@ -512,7 +512,7 @@ ros2 node info /my_turtle
 
 * ROS2 Nodes:
   - `ros2 node list`
-  - `ros2 node info /my_turtle`
+  - `ros2 node info /turtlesim`
 
 * ROS2 Topics
   - `ros2 topic list`
