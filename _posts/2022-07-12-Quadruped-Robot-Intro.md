@@ -140,6 +140,12 @@ Kendryte k210 for face recognition, deep sort, ...<br>
 * Robot Operation: [Stanford Pupper](https://pupper.readthedocs.io/en/latest/guide/operation.html)
 
 ---
+### ESP32 Small Robot Dog
+[Insturctables.com/ESP32-Small-Robot-Dog](https://www.instructables.com/ESP32-Small-Robot-Dog/)<br>
+<iframe width="868" height="489" src="https://www.youtube.com/embed/jzs04zd9bQk" title="ESP32 Small quadruped robot, robot dog, rotation in 3D" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+All STLs to print can be downloaded from Thingiverse page: [Robot dog, quadruped robot, 12DOF, 3DOF per leg](https://www.thingiverse.com/thing:4822059)<br>
+
+---
 ### Robot Dog Lassie
 **Blog:** [Ez Arduino 12 DOF Quadruped Robot – Robot Dog Lassie](https://duino4projects.com/ez-arduino-12-dof-quadruped-robot-robot-dog-lassie/)<br>
 ![](https://duino4projects.com/wp-content/uploads/2021/04/Hardware-Electronic-Components.jpg)
