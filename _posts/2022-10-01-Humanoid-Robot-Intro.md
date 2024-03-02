@@ -9,11 +9,19 @@ tags: [jekyll, ai]
 Introduction to Humanoid Robots including Robotic Hand, Bipedal Robot, Robot Face, etc.
 
 ---
-## [Humanoid Robot](https://en.wikipedia.org/wiki/Humanoid_robot)
+## AI-Robots
+
+### Figure AI 
+<iframe width="999" height="562" src="https://www.youtube.com/embed/tpp8cykrauk" title="圖 01 OpenAI + 微軟的人工智能機器人更新令科技界震驚" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
-### FigureAI
-<iframe width="999" height="562" src="https://www.youtube.com/embed/tpp8cykrauk" title="圖 01 OpenAI + 微軟的人工智能機器人更新令科技界震驚" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+### Sanctuary AI
+<iframe width="999" height="562" src="https://www.youtube.com/embed/SvlHlf1weYw" title="Sanctuary AI Teleoperation Explanatory Video for General-Purpose Robots" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+---
+### ADAM
+**Paper:** [ADAM: a robotic companion for enhanced quality of life in aging populations](https://www.frontiersin.org/articles/10.3389/fnbot.2024.1337608/full)<br>
+<iframe width="999" height="562" src="https://www.youtube.com/embed/bWg8qwCe4K0" title="新型模塊化人工智能機器人技術變得更加瘋狂（谷歌 DeepMind 的 RoboTool）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
 ### Tesla Optimus
