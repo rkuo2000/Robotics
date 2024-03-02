@@ -11,6 +11,11 @@ Introduction to Humanoid Robots including Robotic Hand, Bipedal Robot, Robot Fac
 ---
 ## [Humanoid Robot](https://en.wikipedia.org/wiki/Humanoid_robot)
 
+---
+### FigureAI
+<iframe width="999" height="562" src="https://www.youtube.com/embed/tpp8cykrauk" title="圖 01 OpenAI + 微軟的人工智能機器人更新令科技界震驚" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+---
 ### Tesla Optimus
 [Tesla AI](https://www.tesla.com/AI)<br>
 ![](https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i1f22h8xLb60/v0/-1x-1.jpg)
