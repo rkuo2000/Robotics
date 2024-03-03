@@ -1,15 +1,15 @@
 ---
 layout: post
-title: Introduction to Humanoid Robots
+title: Humanoid Robot Introduction
 author: [Richard Kuo]
 category: [Lecture]
 tags: [jekyll, ai]
 ---
 
-Introduction to Humanoid Robots including Robotic Hand, Bipedal Robot, Robot Face, etc.
+Introduction to Humanoid Robot
 
 ---
-## AI-Robots
+## Humanoid Robot
 
 ### Kepler Robot
 <iframe width="999" height="562" src="https://www.youtube.com/embed/bH1XzArE9rM" title="新型開普勒人工智能機器人（帶 40 個軸，展示多項新一代功能，價格揭曉)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
