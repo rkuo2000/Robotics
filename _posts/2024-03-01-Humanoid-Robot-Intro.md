@@ -15,8 +15,13 @@ Introduction to Humanoid Robot
 <iframe width="999" height="562" src="https://www.youtube.com/embed/bH1XzArE9rM" title="新型開普勒人工智能機器人（帶 40 個軸，展示多項新一代功能，價格揭曉)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
-### Figure AI 
-<iframe width="999" height="562" src="https://www.youtube.com/embed/tpp8cykrauk" title="圖 01 OpenAI + 微軟的人工智能機器人更新令科技界震驚" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+### Figure-01
+<iframe width="999" height="562" src="https://www.youtube.com/embed/tpp8cykrauk" title="Figure-01 OpenAI + 微軟的人工智能機器人更新令科技界震驚" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+---
+### GR-1
+![](https://lh7-us.googleusercontent.com/NP1ixRZkZE4a9eDnYbHzpZMqUu594lVZ1FtFoTnlL_ZcPZuZpQH3mYY_h7aoecHb_WS3u1u8WMRsxSQy2_KnJYmrmONvzN8D1NiAxpQsKQmDyitVMti4ukXrm7IYeo75sAi_IDOtPlGqiijdNK8O51c)
+<iframe width="1273" height="716" src="https://www.youtube.com/embed/wlIartJVmRE" title="Watch China-made Humanoid Robot GR-1 with AI brains, nimble joints, and potential of mass production" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
 ### Sanctuary AI
