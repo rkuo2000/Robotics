@@ -11,12 +11,15 @@ Introduction to Humanoid Robot
 ---
 ## Humanoid Robot
 
-### Kepler Robot
-<iframe width="999" height="562" src="https://www.youtube.com/embed/bH1XzArE9rM" title="新型開普勒人工智能機器人（帶 40 個軸，展示多項新一代功能，價格揭曉)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+### FigureAI
+[只用 13 天，OpenAI 做出了能聽、能說、能自主決策的機器人大模型](https://www.techbang.com/posts/113848-with-only-13-days-openai-made-a-robotic-model-that-can-listen)<br>
+![](https://cdn0.techbang.com/system/images/710025/original/d210e9d6f29c4641d71b116b7d7dbb60.jpg?1710471241)
+
+<iframe width="1017" height="572" src="https://www.youtube.com/embed/Sq1QZB5baNw" title="Figure Status Update - OpenAI Speech-to-Speech Reasoning" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
-### Figure-01
-<iframe width="999" height="562" src="https://www.youtube.com/embed/tpp8cykrauk" title="Figure-01 OpenAI + 微軟的人工智能機器人更新令科技界震驚" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+### Kepler Robot
+<iframe width="999" height="562" src="https://www.youtube.com/embed/bH1XzArE9rM" title="新型開普勒人工智能機器人（帶 40 個軸，展示多項新一代功能，價格揭曉)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
 ### GR-1
