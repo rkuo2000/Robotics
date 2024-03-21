@@ -11,6 +11,10 @@ Introduction to Humanoid Robot
 ---
 ## Humanoid Robot
 
+### NVidia Robotics
+<iframe width="1177" height="662" src="https://www.youtube.com/embed/kr7FaZPFp6M" title="NVIDIA Robotics: A Journey From AVs to Humanoids" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+---
 ### FigureAI
 [只用 13 天，OpenAI 做出了能聽、能說、能自主決策的機器人大模型](https://www.techbang.com/posts/113848-with-only-13-days-openai-made-a-robotic-model-that-can-listen)<br>
 ![](https://cdn0.techbang.com/system/images/710025/original/d210e9d6f29c4641d71b116b7d7dbb60.jpg?1710471241)
