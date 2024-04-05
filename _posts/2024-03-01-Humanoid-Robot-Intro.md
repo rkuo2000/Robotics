@@ -11,6 +11,11 @@ Introduction to Humanoid Robot
 ---
 ## Humanoid Robot
 
+---
+### UBTech Ernie
+<iframe width="1273" height="716" src="https://www.youtube.com/embed/u0kQcri0E8g" title="百度新型人工智能機器人震撼登場，7 項升級讓人眼前一亮（ERNIE + 新沃克 S 演示 + GOOGLE）" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+---
 ### NVidia Robotics
 <iframe width="1177" height="662" src="https://www.youtube.com/embed/kr7FaZPFp6M" title="NVIDIA Robotics: A Journey From AVs to Humanoids" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
